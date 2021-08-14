@@ -1,16 +1,10 @@
-# API-GraphQL
-<div align="center"><img src="https://numarquecenter.com/public/img/logo_numarquecenter.png" style="background-color: #0D1B46" /></div>
+# Prisma1 Template
 
 ![](https://img.shields.io/badge/staus-success-green.svg) ![](https://img.shields.io/badge/Shield_layer-🛡🛡🛡🛡🛡-gold.svg) ![](https://img.shields.io/badge/yarn-v1.21.1-pink.svg) ![](https://img.shields.io/badge/Nodejs-v10.22-lemon.svg) ![](https://img.shields.io/badge/GraphQL-v14.1.1-pink.svg) ![](https://img.shields.io/badge/Prisma-v1.34.10-lemon.svg)
 
 ----
 
-
-
 <div align="center"><img src="https://imgur.com/1MfnLVl.png" /><img src="https://imgur.com/DX1VKtn.png" width="70" /></div>
-
-<div align="center"><strong>Proyecto Nuconnect basado en Node v10.22 con tecnologias implementadas GraphQL/Prisma</strong></div>
-<div align="center">Proyecto Elaborado para el area institucional Grupo Nutec</div>
 
 ## Caracteristicas
 
@@ -25,24 +19,25 @@
 - **Custom Permissions**: Added layer authorization for all methods on `GraphQL` 
 
 ## Requerimientos
-* NodeJS v10.22
-* Yarn v1.21.1
-* MongoDB v3.0.8
+* NodeJS v10.+
+* Yarn v1.21.+
 * Docker v19.03.13
 
 ## Instalando
 
 Necesitas instalar todas las siguientes dependencias :
 
-> Para mas de detalles de instalación de `Prisma` visita [Prisma Docs](https://v1.prisma.io/docs/1.34/get-started/01-setting-up-prisma-new-database-TYPESCRIPT-t002/)
+> Para mas de detalles de instalación de `Prisma1` visita [Prisma1 Docs](https://v1.prisma.io/docs/1.34/get-started/01-setting-up-prisma-new-database-TYPESCRIPT-t002/)
 
 ```sh
 $ yarn install
 ```
 
 ```sh
+#pre
+configurar entorno creando archivo .env
 # 1. Situarse en el directorio de prisma
-$ cd ./prisma  
+$ cd ./project  
 # 2. Crear los contenedores necesarios
 $ cd  docker-compose up -d
 # 3. Realizar el deploy de prisma en el servicio `http://localhost:4466`
@@ -55,10 +50,7 @@ para mas detalles consulta [Aquí](https://v1.prisma.io/docs/1.34/get-started/01
 
 ### Iniciando el Servicio
 ```sh
-# 1. Ir al directorio del servidor
-$ cd /src
-
-# 2. Start server (corre en http://localhost:4000) y abre GraphQL Playground
+# Server start (corre en http://localhost:4000) y abre GraphQL Playground
 $ yarn start
 ```
 
@@ -94,16 +86,11 @@ $ yarn start
 
 ## Modelos
 
-> Breve descripción de los modelos que componen el sistema
+> Breve descripción de los modelos que componen el template
 
 |     Model     |       FileName       |                     description                     |     hasRelations    |
 |:-------------:|:--------------------:|:---------------------------------------------------:|:-------------------:|
-| `Ability`       | ability.prisma       | habilidades que tiene un usuario dentro del sistema |                     |
-| `Category`      | category.prisma      | categoría la cual usuario pertenece                 |                     |
-| `DownloadEvent` | downloadEvent.prisma | eventos de descarga por archivos                    | File                |
-| `File`          | file.prisma          | Archivos que son subidos al sistema                 | User [Category!]    |
-| `Rol`           | rol.prisma           | Rol usuario define sus habilidades                  | [Ability!]          |
-| `User`          | user.prisma          | Usuario que interactua en el sistema                | [File!] [Category!] |
+| `User`          | user.prisma          | Usuario que interactua en el sistema                |  |
 ## Contributors
 
 Gracias a estas increibles personas ([emoji key](https://github.com/all-contributors/all-contributors#emoji-key)):
@@ -113,7 +100,6 @@ Gracias a estas increibles personas ([emoji key](https://github.com/all-contribu
 <table>
   <tr>
     <td align="center"><a href="https://github.com/enriqueao"><img src="https://avatars2.githubusercontent.com/u/20671244?s=460&v=4" width="100px;" alt="Enrique Aguilar"/><br /><sub><b>Enrique Aguilar</b></sub></a><br /><a href="#code" title="code">💻📖🤔🔌⚠️📓 </a></td>
-    <td align="center"><a href="https://github.com/enriqueao"><img src="https://avatars2.githubusercontent.com/u/30660043?s=88&v=4" width="100px;" alt="Eduardo Noguez"/><br /><sub><b>Eduardo Noguez</b></sub></a><br /><a href="#code" title="code">🐛🤔</a></td>
   </tr>
 </table>
 

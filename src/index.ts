@@ -21,7 +21,7 @@ const server = new GraphQLServer({
   }),
 });
 
-const port = process.env.PORT | 4000;
+const port = process.env.PORT || 4000;
 
 const opts = {
   port,

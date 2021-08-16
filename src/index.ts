@@ -5,8 +5,6 @@ import { typeDefs } from './config/graphql';
 import resolvers from './resolvers';
 import { getUserId } from "./utils";
 
-const express = require("express");
-
 const server = new GraphQLServer({
   typeDefs,
   resolvers,

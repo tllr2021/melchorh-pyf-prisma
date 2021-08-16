@@ -23,3 +23,13 @@ export function getUserId(ctx: ContextParameters): ID_Input {
     throw new Error(error);
   }
 }
+
+export async function getUser(ctx: ContextParameters) {
+  try {
+    const userId = getUserId(ctx);
+    if (!userId) return null;
+    return await prisma.user({ id: userId });
+  } catch (error) {
+    throw new Error(error);
+  }
+}

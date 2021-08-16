@@ -1,4 +1,4 @@
-import { shield, allow } from "graphql-shield";
+import { shield, allow, deny, or, and } from "graphql-shield";
 const { ApolloError, } = require("apollo-server");
 import { isAuthenticated } from "./polices";
 
@@ -6,7 +6,7 @@ import { isAuthenticated } from "./polices";
 export const permissions = shield(
   {
     Query: {
-      "*": isAuthenticated,
+      "*": allow,
     },
     Mutation: {
       "*": allow,

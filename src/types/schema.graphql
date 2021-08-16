@@ -17,9 +17,3 @@ type AuthPayload {
   token: String!
   user: User!
 }
-
-type User {
-  id: ID!
-  email: String!
-  name: String!
-}

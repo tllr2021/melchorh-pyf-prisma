@@ -1,0 +1,1437 @@
+type Actor {
+  id: ID!
+  name: String!
+}
+
+type ActorConnection {
+  pageInfo: PageInfo!
+  edges: [ActorEdge]!
+  aggregate: AggregateActor!
+}
+
+input ActorCreateInput {
+  id: ID
+  name: String!
+}
+
+input ActorCreateManyInput {
+  create: [ActorCreateInput!]
+  connect: [ActorWhereUniqueInput!]
+}
+
+type ActorEdge {
+  node: Actor!
+  cursor: String!
+}
+
+enum ActorOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+}
+
+type ActorPreviousValues {
+  id: ID!
+  name: String!
+}
+
+input ActorScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  AND: [ActorScalarWhereInput!]
+  OR: [ActorScalarWhereInput!]
+  NOT: [ActorScalarWhereInput!]
+}
+
+type ActorSubscriptionPayload {
+  mutation: MutationType!
+  node: Actor
+  updatedFields: [String!]
+  previousValues: ActorPreviousValues
+}
+
+input ActorSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ActorWhereInput
+  AND: [ActorSubscriptionWhereInput!]
+}
+
+input ActorUpdateDataInput {
+  name: String
+}
+
+input ActorUpdateInput {
+  name: String
+}
+
+input ActorUpdateManyDataInput {
+  name: String
+}
+
+input ActorUpdateManyInput {
+  create: [ActorCreateInput!]
+  update: [ActorUpdateWithWhereUniqueNestedInput!]
+  upsert: [ActorUpsertWithWhereUniqueNestedInput!]
+  delete: [ActorWhereUniqueInput!]
+  connect: [ActorWhereUniqueInput!]
+  set: [ActorWhereUniqueInput!]
+  disconnect: [ActorWhereUniqueInput!]
+  deleteMany: [ActorScalarWhereInput!]
+  updateMany: [ActorUpdateManyWithWhereNestedInput!]
+}
+
+input ActorUpdateManyMutationInput {
+  name: String
+}
+
+input ActorUpdateManyWithWhereNestedInput {
+  where: ActorScalarWhereInput!
+  data: ActorUpdateManyDataInput!
+}
+
+input ActorUpdateWithWhereUniqueNestedInput {
+  where: ActorWhereUniqueInput!
+  data: ActorUpdateDataInput!
+}
+
+input ActorUpsertWithWhereUniqueNestedInput {
+  where: ActorWhereUniqueInput!
+  update: ActorUpdateDataInput!
+  create: ActorCreateInput!
+}
+
+input ActorWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  AND: [ActorWhereInput!]
+}
+
+input ActorWhereUniqueInput {
+  id: ID
+}
+
+type AggregateActor {
+  count: Int!
+}
+
+type AggregateDirector {
+  count: Int!
+}
+
+type AggregateMovie {
+  count: Int!
+}
+
+type AggregatePurchase {
+  count: Int!
+}
+
+type AggregateRoom {
+  count: Int!
+}
+
+type AggregateSeat {
+  count: Int!
+}
+
+type AggregateShow {
+  count: Int!
+}
+
+type AggregateTicket {
+  count: Int!
+}
+
+type AggregateUser {
+  count: Int!
+}
+
+type BatchPayload {
+  count: Long!
+}
+
+scalar DateTime
+
+type Director {
+  id: ID!
+  name: String!
+}
+
+type DirectorConnection {
+  pageInfo: PageInfo!
+  edges: [DirectorEdge]!
+  aggregate: AggregateDirector!
+}
+
+input DirectorCreateInput {
+  id: ID
+  name: String!
+}
+
+input DirectorCreateOneInput {
+  create: DirectorCreateInput
+  connect: DirectorWhereUniqueInput
+}
+
+type DirectorEdge {
+  node: Director!
+  cursor: String!
+}
+
+enum DirectorOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+}
+
+type DirectorPreviousValues {
+  id: ID!
+  name: String!
+}
+
+type DirectorSubscriptionPayload {
+  mutation: MutationType!
+  node: Director
+  updatedFields: [String!]
+  previousValues: DirectorPreviousValues
+}
+
+input DirectorSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: DirectorWhereInput
+  AND: [DirectorSubscriptionWhereInput!]
+}
+
+input DirectorUpdateDataInput {
+  name: String
+}
+
+input DirectorUpdateInput {
+  name: String
+}
+
+input DirectorUpdateManyMutationInput {
+  name: String
+}
+
+input DirectorUpdateOneRequiredInput {
+  create: DirectorCreateInput
+  update: DirectorUpdateDataInput
+  upsert: DirectorUpsertNestedInput
+  connect: DirectorWhereUniqueInput
+}
+
+input DirectorUpsertNestedInput {
+  update: DirectorUpdateDataInput!
+  create: DirectorCreateInput!
+}
+
+input DirectorWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  AND: [DirectorWhereInput!]
+}
+
+input DirectorWhereUniqueInput {
+  id: ID
+}
+
+scalar Long
+
+type Movie {
+  id: ID!
+  title: String!
+  year: Int!
+  summary: String!
+  director: Director!
+  actors(where: ActorWhereInput, orderBy: ActorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Actor!]
+  gender: String!
+  class: String!
+}
+
+type MovieConnection {
+  pageInfo: PageInfo!
+  edges: [MovieEdge]!
+  aggregate: AggregateMovie!
+}
+
+input MovieCreateInput {
+  id: ID
+  title: String!
+  year: Int!
+  summary: String!
+  director: DirectorCreateOneInput!
+  actors: ActorCreateManyInput
+  gender: String!
+  class: String!
+}
+
+input MovieCreateOneInput {
+  create: MovieCreateInput
+  connect: MovieWhereUniqueInput
+}
+
+type MovieEdge {
+  node: Movie!
+  cursor: String!
+}
+
+enum MovieOrderByInput {
+  id_ASC
+  id_DESC
+  title_ASC
+  title_DESC
+  year_ASC
+  year_DESC
+  summary_ASC
+  summary_DESC
+  gender_ASC
+  gender_DESC
+  class_ASC
+  class_DESC
+}
+
+type MoviePreviousValues {
+  id: ID!
+  title: String!
+  year: Int!
+  summary: String!
+  gender: String!
+  class: String!
+}
+
+type MovieSubscriptionPayload {
+  mutation: MutationType!
+  node: Movie
+  updatedFields: [String!]
+  previousValues: MoviePreviousValues
+}
+
+input MovieSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: MovieWhereInput
+  AND: [MovieSubscriptionWhereInput!]
+}
+
+input MovieUpdateDataInput {
+  title: String
+  year: Int
+  summary: String
+  director: DirectorUpdateOneRequiredInput
+  actors: ActorUpdateManyInput
+  gender: String
+  class: String
+}
+
+input MovieUpdateInput {
+  title: String
+  year: Int
+  summary: String
+  director: DirectorUpdateOneRequiredInput
+  actors: ActorUpdateManyInput
+  gender: String
+  class: String
+}
+
+input MovieUpdateManyMutationInput {
+  title: String
+  year: Int
+  summary: String
+  gender: String
+  class: String
+}
+
+input MovieUpdateOneRequiredInput {
+  create: MovieCreateInput
+  update: MovieUpdateDataInput
+  upsert: MovieUpsertNestedInput
+  connect: MovieWhereUniqueInput
+}
+
+input MovieUpsertNestedInput {
+  update: MovieUpdateDataInput!
+  create: MovieCreateInput!
+}
+
+input MovieWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  title: String
+  title_not: String
+  title_in: [String!]
+  title_not_in: [String!]
+  title_lt: String
+  title_lte: String
+  title_gt: String
+  title_gte: String
+  title_contains: String
+  title_not_contains: String
+  title_starts_with: String
+  title_not_starts_with: String
+  title_ends_with: String
+  title_not_ends_with: String
+  year: Int
+  year_not: Int
+  year_in: [Int!]
+  year_not_in: [Int!]
+  year_lt: Int
+  year_lte: Int
+  year_gt: Int
+  year_gte: Int
+  summary: String
+  summary_not: String
+  summary_in: [String!]
+  summary_not_in: [String!]
+  summary_lt: String
+  summary_lte: String
+  summary_gt: String
+  summary_gte: String
+  summary_contains: String
+  summary_not_contains: String
+  summary_starts_with: String
+  summary_not_starts_with: String
+  summary_ends_with: String
+  summary_not_ends_with: String
+  director: DirectorWhereInput
+  actors_some: ActorWhereInput
+  gender: String
+  gender_not: String
+  gender_in: [String!]
+  gender_not_in: [String!]
+  gender_lt: String
+  gender_lte: String
+  gender_gt: String
+  gender_gte: String
+  gender_contains: String
+  gender_not_contains: String
+  gender_starts_with: String
+  gender_not_starts_with: String
+  gender_ends_with: String
+  gender_not_ends_with: String
+  class: String
+  class_not: String
+  class_in: [String!]
+  class_not_in: [String!]
+  class_lt: String
+  class_lte: String
+  class_gt: String
+  class_gte: String
+  class_contains: String
+  class_not_contains: String
+  class_starts_with: String
+  class_not_starts_with: String
+  class_ends_with: String
+  class_not_ends_with: String
+  AND: [MovieWhereInput!]
+}
+
+input MovieWhereUniqueInput {
+  id: ID
+}
+
+type Mutation {
+  createActor(data: ActorCreateInput!): Actor!
+  updateActor(data: ActorUpdateInput!, where: ActorWhereUniqueInput!): Actor
+  updateManyActors(data: ActorUpdateManyMutationInput!, where: ActorWhereInput): BatchPayload!
+  upsertActor(where: ActorWhereUniqueInput!, create: ActorCreateInput!, update: ActorUpdateInput!): Actor!
+  deleteActor(where: ActorWhereUniqueInput!): Actor
+  deleteManyActors(where: ActorWhereInput): BatchPayload!
+  createDirector(data: DirectorCreateInput!): Director!
+  updateDirector(data: DirectorUpdateInput!, where: DirectorWhereUniqueInput!): Director
+  updateManyDirectors(data: DirectorUpdateManyMutationInput!, where: DirectorWhereInput): BatchPayload!
+  upsertDirector(where: DirectorWhereUniqueInput!, create: DirectorCreateInput!, update: DirectorUpdateInput!): Director!
+  deleteDirector(where: DirectorWhereUniqueInput!): Director
+  deleteManyDirectors(where: DirectorWhereInput): BatchPayload!
+  createMovie(data: MovieCreateInput!): Movie!
+  updateMovie(data: MovieUpdateInput!, where: MovieWhereUniqueInput!): Movie
+  updateManyMovies(data: MovieUpdateManyMutationInput!, where: MovieWhereInput): BatchPayload!
+  upsertMovie(where: MovieWhereUniqueInput!, create: MovieCreateInput!, update: MovieUpdateInput!): Movie!
+  deleteMovie(where: MovieWhereUniqueInput!): Movie
+  deleteManyMovies(where: MovieWhereInput): BatchPayload!
+  createPurchase(data: PurchaseCreateInput!): Purchase!
+  updatePurchase(data: PurchaseUpdateInput!, where: PurchaseWhereUniqueInput!): Purchase
+  updateManyPurchases(data: PurchaseUpdateManyMutationInput!, where: PurchaseWhereInput): BatchPayload!
+  upsertPurchase(where: PurchaseWhereUniqueInput!, create: PurchaseCreateInput!, update: PurchaseUpdateInput!): Purchase!
+  deletePurchase(where: PurchaseWhereUniqueInput!): Purchase
+  deleteManyPurchases(where: PurchaseWhereInput): BatchPayload!
+  createRoom(data: RoomCreateInput!): Room!
+  updateRoom(data: RoomUpdateInput!, where: RoomWhereUniqueInput!): Room
+  updateManyRooms(data: RoomUpdateManyMutationInput!, where: RoomWhereInput): BatchPayload!
+  upsertRoom(where: RoomWhereUniqueInput!, create: RoomCreateInput!, update: RoomUpdateInput!): Room!
+  deleteRoom(where: RoomWhereUniqueInput!): Room
+  deleteManyRooms(where: RoomWhereInput): BatchPayload!
+  createSeat(data: SeatCreateInput!): Seat!
+  updateSeat(data: SeatUpdateInput!, where: SeatWhereUniqueInput!): Seat
+  updateManySeats(data: SeatUpdateManyMutationInput!, where: SeatWhereInput): BatchPayload!
+  upsertSeat(where: SeatWhereUniqueInput!, create: SeatCreateInput!, update: SeatUpdateInput!): Seat!
+  deleteSeat(where: SeatWhereUniqueInput!): Seat
+  deleteManySeats(where: SeatWhereInput): BatchPayload!
+  createShow(data: ShowCreateInput!): Show!
+  updateShow(data: ShowUpdateInput!, where: ShowWhereUniqueInput!): Show
+  updateManyShows(data: ShowUpdateManyMutationInput!, where: ShowWhereInput): BatchPayload!
+  upsertShow(where: ShowWhereUniqueInput!, create: ShowCreateInput!, update: ShowUpdateInput!): Show!
+  deleteShow(where: ShowWhereUniqueInput!): Show
+  deleteManyShows(where: ShowWhereInput): BatchPayload!
+  createTicket(data: TicketCreateInput!): Ticket!
+  updateTicket(data: TicketUpdateInput!, where: TicketWhereUniqueInput!): Ticket
+  updateManyTickets(data: TicketUpdateManyMutationInput!, where: TicketWhereInput): BatchPayload!
+  upsertTicket(where: TicketWhereUniqueInput!, create: TicketCreateInput!, update: TicketUpdateInput!): Ticket!
+  deleteTicket(where: TicketWhereUniqueInput!): Ticket
+  deleteManyTickets(where: TicketWhereInput): BatchPayload!
+  createUser(data: UserCreateInput!): User!
+  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
+  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
+  deleteUser(where: UserWhereUniqueInput!): User
+  deleteManyUsers(where: UserWhereInput): BatchPayload!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Purchase {
+  id: ID!
+  numTickets: Int!
+  total: Float!
+  seat: Seat!
+  user: User
+}
+
+type PurchaseConnection {
+  pageInfo: PageInfo!
+  edges: [PurchaseEdge]!
+  aggregate: AggregatePurchase!
+}
+
+input PurchaseCreateInput {
+  id: ID
+  numTickets: Int!
+  total: Float!
+  seat: SeatCreateOneInput!
+  user: UserCreateOneInput
+}
+
+type PurchaseEdge {
+  node: Purchase!
+  cursor: String!
+}
+
+enum PurchaseOrderByInput {
+  id_ASC
+  id_DESC
+  numTickets_ASC
+  numTickets_DESC
+  total_ASC
+  total_DESC
+}
+
+type PurchasePreviousValues {
+  id: ID!
+  numTickets: Int!
+  total: Float!
+}
+
+type PurchaseSubscriptionPayload {
+  mutation: MutationType!
+  node: Purchase
+  updatedFields: [String!]
+  previousValues: PurchasePreviousValues
+}
+
+input PurchaseSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PurchaseWhereInput
+  AND: [PurchaseSubscriptionWhereInput!]
+}
+
+input PurchaseUpdateInput {
+  numTickets: Int
+  total: Float
+  seat: SeatUpdateOneRequiredInput
+  user: UserUpdateOneInput
+}
+
+input PurchaseUpdateManyMutationInput {
+  numTickets: Int
+  total: Float
+}
+
+input PurchaseWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  numTickets: Int
+  numTickets_not: Int
+  numTickets_in: [Int!]
+  numTickets_not_in: [Int!]
+  numTickets_lt: Int
+  numTickets_lte: Int
+  numTickets_gt: Int
+  numTickets_gte: Int
+  total: Float
+  total_not: Float
+  total_in: [Float!]
+  total_not_in: [Float!]
+  total_lt: Float
+  total_lte: Float
+  total_gt: Float
+  total_gte: Float
+  seat: SeatWhereInput
+  user: UserWhereInput
+  AND: [PurchaseWhereInput!]
+}
+
+input PurchaseWhereUniqueInput {
+  id: ID
+}
+
+type Query {
+  actor(where: ActorWhereUniqueInput!): Actor
+  actors(where: ActorWhereInput, orderBy: ActorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Actor]!
+  actorsConnection(where: ActorWhereInput, orderBy: ActorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ActorConnection!
+  director(where: DirectorWhereUniqueInput!): Director
+  directors(where: DirectorWhereInput, orderBy: DirectorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Director]!
+  directorsConnection(where: DirectorWhereInput, orderBy: DirectorOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): DirectorConnection!
+  movie(where: MovieWhereUniqueInput!): Movie
+  movies(where: MovieWhereInput, orderBy: MovieOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Movie]!
+  moviesConnection(where: MovieWhereInput, orderBy: MovieOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MovieConnection!
+  purchase(where: PurchaseWhereUniqueInput!): Purchase
+  purchases(where: PurchaseWhereInput, orderBy: PurchaseOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Purchase]!
+  purchasesConnection(where: PurchaseWhereInput, orderBy: PurchaseOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PurchaseConnection!
+  room(where: RoomWhereUniqueInput!): Room
+  rooms(where: RoomWhereInput, orderBy: RoomOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Room]!
+  roomsConnection(where: RoomWhereInput, orderBy: RoomOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RoomConnection!
+  seat(where: SeatWhereUniqueInput!): Seat
+  seats(where: SeatWhereInput, orderBy: SeatOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Seat]!
+  seatsConnection(where: SeatWhereInput, orderBy: SeatOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): SeatConnection!
+  show(where: ShowWhereUniqueInput!): Show
+  shows(where: ShowWhereInput, orderBy: ShowOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Show]!
+  showsConnection(where: ShowWhereInput, orderBy: ShowOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ShowConnection!
+  ticket(where: TicketWhereUniqueInput!): Ticket
+  tickets(where: TicketWhereInput, orderBy: TicketOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Ticket]!
+  ticketsConnection(where: TicketWhereInput, orderBy: TicketOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): TicketConnection!
+  user(where: UserWhereUniqueInput!): User
+  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
+  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
+  node(id: ID!): Node
+}
+
+type Room {
+  id: ID!
+  roomType: String!
+  seatNum: Int!
+}
+
+type RoomConnection {
+  pageInfo: PageInfo!
+  edges: [RoomEdge]!
+  aggregate: AggregateRoom!
+}
+
+input RoomCreateInput {
+  id: ID
+  roomType: String!
+  seatNum: Int!
+}
+
+input RoomCreateOneInput {
+  create: RoomCreateInput
+  connect: RoomWhereUniqueInput
+}
+
+type RoomEdge {
+  node: Room!
+  cursor: String!
+}
+
+enum RoomOrderByInput {
+  id_ASC
+  id_DESC
+  roomType_ASC
+  roomType_DESC
+  seatNum_ASC
+  seatNum_DESC
+}
+
+type RoomPreviousValues {
+  id: ID!
+  roomType: String!
+  seatNum: Int!
+}
+
+type RoomSubscriptionPayload {
+  mutation: MutationType!
+  node: Room
+  updatedFields: [String!]
+  previousValues: RoomPreviousValues
+}
+
+input RoomSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: RoomWhereInput
+  AND: [RoomSubscriptionWhereInput!]
+}
+
+input RoomUpdateDataInput {
+  roomType: String
+  seatNum: Int
+}
+
+input RoomUpdateInput {
+  roomType: String
+  seatNum: Int
+}
+
+input RoomUpdateManyMutationInput {
+  roomType: String
+  seatNum: Int
+}
+
+input RoomUpdateOneRequiredInput {
+  create: RoomCreateInput
+  update: RoomUpdateDataInput
+  upsert: RoomUpsertNestedInput
+  connect: RoomWhereUniqueInput
+}
+
+input RoomUpsertNestedInput {
+  update: RoomUpdateDataInput!
+  create: RoomCreateInput!
+}
+
+input RoomWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  roomType: String
+  roomType_not: String
+  roomType_in: [String!]
+  roomType_not_in: [String!]
+  roomType_lt: String
+  roomType_lte: String
+  roomType_gt: String
+  roomType_gte: String
+  roomType_contains: String
+  roomType_not_contains: String
+  roomType_starts_with: String
+  roomType_not_starts_with: String
+  roomType_ends_with: String
+  roomType_not_ends_with: String
+  seatNum: Int
+  seatNum_not: Int
+  seatNum_in: [Int!]
+  seatNum_not_in: [Int!]
+  seatNum_lt: Int
+  seatNum_lte: Int
+  seatNum_gt: Int
+  seatNum_gte: Int
+  AND: [RoomWhereInput!]
+}
+
+input RoomWhereUniqueInput {
+  id: ID
+}
+
+type Seat {
+  id: ID!
+  available: Boolean!
+  room: Room!
+}
+
+type SeatConnection {
+  pageInfo: PageInfo!
+  edges: [SeatEdge]!
+  aggregate: AggregateSeat!
+}
+
+input SeatCreateInput {
+  id: ID
+  available: Boolean
+  room: RoomCreateOneInput!
+}
+
+input SeatCreateOneInput {
+  create: SeatCreateInput
+  connect: SeatWhereUniqueInput
+}
+
+type SeatEdge {
+  node: Seat!
+  cursor: String!
+}
+
+enum SeatOrderByInput {
+  id_ASC
+  id_DESC
+  available_ASC
+  available_DESC
+}
+
+type SeatPreviousValues {
+  id: ID!
+  available: Boolean!
+}
+
+type SeatSubscriptionPayload {
+  mutation: MutationType!
+  node: Seat
+  updatedFields: [String!]
+  previousValues: SeatPreviousValues
+}
+
+input SeatSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: SeatWhereInput
+  AND: [SeatSubscriptionWhereInput!]
+}
+
+input SeatUpdateDataInput {
+  available: Boolean
+  room: RoomUpdateOneRequiredInput
+}
+
+input SeatUpdateInput {
+  available: Boolean
+  room: RoomUpdateOneRequiredInput
+}
+
+input SeatUpdateManyMutationInput {
+  available: Boolean
+}
+
+input SeatUpdateOneRequiredInput {
+  create: SeatCreateInput
+  update: SeatUpdateDataInput
+  upsert: SeatUpsertNestedInput
+  connect: SeatWhereUniqueInput
+}
+
+input SeatUpsertNestedInput {
+  update: SeatUpdateDataInput!
+  create: SeatCreateInput!
+}
+
+input SeatWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  available: Boolean
+  available_not: Boolean
+  room: RoomWhereInput
+  AND: [SeatWhereInput!]
+}
+
+input SeatWhereUniqueInput {
+  id: ID
+}
+
+type Show {
+  id: ID!
+  date: DateTime!
+  movie: Movie!
+  showType: String!
+}
+
+type ShowConnection {
+  pageInfo: PageInfo!
+  edges: [ShowEdge]!
+  aggregate: AggregateShow!
+}
+
+input ShowCreateInput {
+  id: ID
+  date: DateTime!
+  movie: MovieCreateOneInput!
+  showType: String!
+}
+
+input ShowCreateOneInput {
+  create: ShowCreateInput
+  connect: ShowWhereUniqueInput
+}
+
+type ShowEdge {
+  node: Show!
+  cursor: String!
+}
+
+enum ShowOrderByInput {
+  id_ASC
+  id_DESC
+  date_ASC
+  date_DESC
+  showType_ASC
+  showType_DESC
+}
+
+type ShowPreviousValues {
+  id: ID!
+  date: DateTime!
+  showType: String!
+}
+
+type ShowSubscriptionPayload {
+  mutation: MutationType!
+  node: Show
+  updatedFields: [String!]
+  previousValues: ShowPreviousValues
+}
+
+input ShowSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ShowWhereInput
+  AND: [ShowSubscriptionWhereInput!]
+}
+
+input ShowUpdateDataInput {
+  date: DateTime
+  movie: MovieUpdateOneRequiredInput
+  showType: String
+}
+
+input ShowUpdateInput {
+  date: DateTime
+  movie: MovieUpdateOneRequiredInput
+  showType: String
+}
+
+input ShowUpdateManyMutationInput {
+  date: DateTime
+  showType: String
+}
+
+input ShowUpdateOneRequiredInput {
+  create: ShowCreateInput
+  update: ShowUpdateDataInput
+  upsert: ShowUpsertNestedInput
+  connect: ShowWhereUniqueInput
+}
+
+input ShowUpsertNestedInput {
+  update: ShowUpdateDataInput!
+  create: ShowCreateInput!
+}
+
+input ShowWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  date: DateTime
+  date_not: DateTime
+  date_in: [DateTime!]
+  date_not_in: [DateTime!]
+  date_lt: DateTime
+  date_lte: DateTime
+  date_gt: DateTime
+  date_gte: DateTime
+  movie: MovieWhereInput
+  showType: String
+  showType_not: String
+  showType_in: [String!]
+  showType_not_in: [String!]
+  showType_lt: String
+  showType_lte: String
+  showType_gt: String
+  showType_gte: String
+  showType_contains: String
+  showType_not_contains: String
+  showType_starts_with: String
+  showType_not_starts_with: String
+  showType_ends_with: String
+  showType_not_ends_with: String
+  AND: [ShowWhereInput!]
+}
+
+input ShowWhereUniqueInput {
+  id: ID
+}
+
+type Subscription {
+  actor(where: ActorSubscriptionWhereInput): ActorSubscriptionPayload
+  director(where: DirectorSubscriptionWhereInput): DirectorSubscriptionPayload
+  movie(where: MovieSubscriptionWhereInput): MovieSubscriptionPayload
+  purchase(where: PurchaseSubscriptionWhereInput): PurchaseSubscriptionPayload
+  room(where: RoomSubscriptionWhereInput): RoomSubscriptionPayload
+  seat(where: SeatSubscriptionWhereInput): SeatSubscriptionPayload
+  show(where: ShowSubscriptionWhereInput): ShowSubscriptionPayload
+  ticket(where: TicketSubscriptionWhereInput): TicketSubscriptionPayload
+  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+}
+
+type Ticket {
+  id: ID!
+  show: Show!
+  room: Room!
+  seat: Seat!
+  price: Float!
+}
+
+type TicketConnection {
+  pageInfo: PageInfo!
+  edges: [TicketEdge]!
+  aggregate: AggregateTicket!
+}
+
+input TicketCreateInput {
+  id: ID
+  show: ShowCreateOneInput!
+  room: RoomCreateOneInput!
+  seat: SeatCreateOneInput!
+  price: Float!
+}
+
+type TicketEdge {
+  node: Ticket!
+  cursor: String!
+}
+
+enum TicketOrderByInput {
+  id_ASC
+  id_DESC
+  price_ASC
+  price_DESC
+}
+
+type TicketPreviousValues {
+  id: ID!
+  price: Float!
+}
+
+type TicketSubscriptionPayload {
+  mutation: MutationType!
+  node: Ticket
+  updatedFields: [String!]
+  previousValues: TicketPreviousValues
+}
+
+input TicketSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: TicketWhereInput
+  AND: [TicketSubscriptionWhereInput!]
+}
+
+input TicketUpdateInput {
+  show: ShowUpdateOneRequiredInput
+  room: RoomUpdateOneRequiredInput
+  seat: SeatUpdateOneRequiredInput
+  price: Float
+}
+
+input TicketUpdateManyMutationInput {
+  price: Float
+}
+
+input TicketWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  show: ShowWhereInput
+  room: RoomWhereInput
+  seat: SeatWhereInput
+  price: Float
+  price_not: Float
+  price_in: [Float!]
+  price_not_in: [Float!]
+  price_lt: Float
+  price_lte: Float
+  price_gt: Float
+  price_gte: Float
+  AND: [TicketWhereInput!]
+}
+
+input TicketWhereUniqueInput {
+  id: ID
+}
+
+type User {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  email: String!
+  password: String
+  name: String!
+  cardNumber: String!
+}
+
+type UserConnection {
+  pageInfo: PageInfo!
+  edges: [UserEdge]!
+  aggregate: AggregateUser!
+}
+
+input UserCreateInput {
+  id: ID
+  email: String!
+  password: String
+  name: String!
+  cardNumber: String!
+}
+
+input UserCreateOneInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
+}
+
+type UserEdge {
+  node: User!
+  cursor: String!
+}
+
+enum UserOrderByInput {
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  email_ASC
+  email_DESC
+  password_ASC
+  password_DESC
+  name_ASC
+  name_DESC
+  cardNumber_ASC
+  cardNumber_DESC
+}
+
+type UserPreviousValues {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  email: String!
+  password: String
+  name: String!
+  cardNumber: String!
+}
+
+type UserSubscriptionPayload {
+  mutation: MutationType!
+  node: User
+  updatedFields: [String!]
+  previousValues: UserPreviousValues
+}
+
+input UserSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: UserWhereInput
+  AND: [UserSubscriptionWhereInput!]
+}
+
+input UserUpdateDataInput {
+  email: String
+  password: String
+  name: String
+  cardNumber: String
+}
+
+input UserUpdateInput {
+  email: String
+  password: String
+  name: String
+  cardNumber: String
+}
+
+input UserUpdateManyMutationInput {
+  email: String
+  password: String
+  name: String
+  cardNumber: String
+}
+
+input UserUpdateOneInput {
+  create: UserCreateInput
+  update: UserUpdateDataInput
+  upsert: UserUpsertNestedInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: UserWhereUniqueInput
+}
+
+input UserUpsertNestedInput {
+  update: UserUpdateDataInput!
+  create: UserCreateInput!
+}
+
+input UserWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  email: String
+  email_not: String
+  email_in: [String!]
+  email_not_in: [String!]
+  email_lt: String
+  email_lte: String
+  email_gt: String
+  email_gte: String
+  email_contains: String
+  email_not_contains: String
+  email_starts_with: String
+  email_not_starts_with: String
+  email_ends_with: String
+  email_not_ends_with: String
+  password: String
+  password_not: String
+  password_in: [String!]
+  password_not_in: [String!]
+  password_lt: String
+  password_lte: String
+  password_gt: String
+  password_gte: String
+  password_contains: String
+  password_not_contains: String
+  password_starts_with: String
+  password_not_starts_with: String
+  password_ends_with: String
+  password_not_ends_with: String
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  cardNumber: String
+  cardNumber_not: String
+  cardNumber_in: [String!]
+  cardNumber_not_in: [String!]
+  cardNumber_lt: String
+  cardNumber_lte: String
+  cardNumber_gt: String
+  cardNumber_gte: String
+  cardNumber_contains: String
+  cardNumber_not_contains: String
+  cardNumber_starts_with: String
+  cardNumber_not_starts_with: String
+  cardNumber_ends_with: String
+  cardNumber_not_ends_with: String
+  AND: [UserWhereInput!]
+}
+
+input UserWhereUniqueInput {
+  id: ID
+  email: String
+  cardNumber: String
+}

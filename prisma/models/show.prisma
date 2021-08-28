@@ -1,0 +1,13 @@
+type Show{
+    id: ID! @id
+    date: DateTime!
+    movie: Movie! @relation(link: INLINE)
+    showType: String!
+}
+
+enum ShowType{
+    DOSD
+    TRESD
+    CUATRODX
+    IMAX
+}

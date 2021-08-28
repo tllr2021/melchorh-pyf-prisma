@@ -1,0 +1,12 @@
+type Room{
+    id: ID! @id
+    roomType: String!
+    seatNum: Int!
+}
+
+enum RoomType{
+    DOSD
+    TRESD
+    CUATRODX
+    IMAX
+}

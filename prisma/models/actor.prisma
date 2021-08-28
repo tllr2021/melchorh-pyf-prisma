@@ -1,0 +1,4 @@
+type Actor{
+    id: ID! @id
+    name: String!
+}

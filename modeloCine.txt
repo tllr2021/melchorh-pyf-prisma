@@ -1,0 +1,18 @@
+Sala
+    id sala, tipo sala, num asientos
+Asiento
+    id asiento, disponible, sala
+Funcion
+    id funcion, fecha, hora, pelicula, tipo funcion, sala, idioma
+Pelicula
+    id pelicula, titulo, año, director, actor, genero, clasificacion
+Actor
+    id actor, nombre
+Director
+    id director, nombre
+Ticket
+    id ticket, funcion, sala, asiento, tipo funcion, presio
+Compra
+    id compra, numero tickets, total, comprador
+Comprador
+    id comprador, usuario, contraseña, numero tarjeta

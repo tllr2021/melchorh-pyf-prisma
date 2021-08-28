@@ -1,0 +1,8 @@
+type Schedule {
+    id: ID! @id
+    startTime: DateTime!
+    finalTime: DateTime!
+    createdAt: DateTime! @createdAt
+    updatedAt: DateTime! @updatedAt
+    order: Order! @relation(link: INLINE)
+}

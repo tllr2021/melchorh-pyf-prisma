@@ -1,0 +1,6 @@
+type Movie {
+    id: ID! @id
+    name: String!
+    duration: Int!
+    year: DateTime!
+}

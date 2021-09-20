@@ -3,12 +3,13 @@ import { User } from './User'
 import { Order } from './Order'
 
 const path = require("path");
-const { mergeResolvers, fileLoader } = require("merge-graphql-schemas");
+import { mergeResolvers } from '@graphql-tools/merge';
+import { loadFilesSync } from '@graphql-tools/load-files';
 
-const resolversQuery = fileLoader(path.join(__dirname, "./Query/**/*.ts"));
+const resolversQuery = loadFilesSync(path.join(__dirname, "./Query/**/*.ts"));
 const Query = mergeResolvers(resolversQuery);
 
-const resolversMutation = fileLoader(path.join(__dirname, "./Mutation/**/*.ts"));
+const resolversMutation = loadFilesSync(path.join(__dirname, "./Mutation/**/*.ts"));
 const Mutation = mergeResolvers(resolversMutation);
 
 export default {

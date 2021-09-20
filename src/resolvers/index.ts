@@ -1,5 +1,6 @@
 import { Subscription } from './Subscription'
 import { User } from './User'
+import { Order } from './Order'
 
 const path = require("path");
 const { mergeResolvers, fileLoader } = require("merge-graphql-schemas");
@@ -15,4 +16,5 @@ export default {
   Mutation,
   Subscription,
   User,
+  Order,
 };

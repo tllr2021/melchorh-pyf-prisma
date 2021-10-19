@@ -1,0 +1,7 @@
+type Show{
+    id: ID! @id
+    date: DateTime!
+    movie: Movie! @relation(link: INLINE)
+    room: Room! @relation(link: INLINE)
+    showType: String!
+}

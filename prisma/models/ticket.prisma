@@ -1,0 +1,6 @@
+type Ticket{
+    id: ID! @id
+    show: Show! @relation(link: INLINE)
+    seat: Seat! @relation(link: INLINE)
+    price: Float!
+}

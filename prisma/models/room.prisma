@@ -1,6 +1,12 @@
-type Room {
+type Room{
     id: ID! @id
-    avaible: Boolean! @default(value: false)
-    createdAt: DateTime! @createdAt
-    updatedAt: DateTime! @updatedAt
+    roomType: String!
+    seats: [Seat!]! 
+}
+
+enum RoomType{
+    DOSD
+    TRESD
+    CUATRODX
+    IMAX
 }

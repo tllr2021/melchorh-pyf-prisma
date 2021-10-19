@@ -1,0 +1,5 @@
+type Seat{
+    id: ID! @id
+    available: Boolean! @default(value: true)
+    room: Room! @relation(link: INLINE)
+}

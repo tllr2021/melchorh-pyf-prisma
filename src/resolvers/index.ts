@@ -1,6 +1,6 @@
 import { Subscription } from './Subscription'
-import { User } from './User'
-import { Order } from './Order'
+//import { User } from './User'
+//import { Order } from './Order'
 
 const path = require("path");
 import { mergeResolvers } from '@graphql-tools/merge';
@@ -16,6 +16,6 @@ export default {
   Query,
   Mutation,
   Subscription,
-  User,
-  Order,
+  //User,
+  //Order,
 };

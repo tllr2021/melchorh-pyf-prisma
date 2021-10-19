@@ -1,0 +1,4 @@
+type Director{
+    id: ID! @id
+    name: String!
+}

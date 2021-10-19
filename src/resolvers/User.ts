@@ -1,6 +1,5 @@
-import { Context } from '../utils'
+import { Context } from "../utils";
 
-export const User = {
-  orders: ({ id }, args, ctx: Context) =>
-    ctx.prisma.user({ id }).orders(),
-};
+export const Movie = {
+    card: ({id}, args, ctx: Context) => ctx.prisma.user({id}).card(),
+}

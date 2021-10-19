@@ -9,6 +9,10 @@ type Mutation {
   login(email: String!, password: String!): AuthPayload!
 }
 
+type Mutation {
+  hola(data: String!): String!
+}
+
 type Subscription {
   feedSubscription: User
 }

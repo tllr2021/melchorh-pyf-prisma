@@ -1,6 +1,10 @@
-type Movie {
+type Movie{
     id: ID! @id
-    name: String!
-    duration: Int!
-    year: DateTime!
+    title: String!
+    year: Int!
+    summary: String!
+    director: Director! @relation(link: INLINE)
+    actors: [Actor!]! @relation(link: INLINE)
+    gender: String!
+    class: String!
 }

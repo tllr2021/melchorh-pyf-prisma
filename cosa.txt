@@ -1,0 +1,89 @@
+mutation {
+  dir1: createDirector(data:{name: "James Cameron"}){id}
+}
+
+query{
+  user(where: {email: "galac.9173@gmail.com"}){
+  	id
+    password
+    name
+  }
+}
+
+query{
+  actor(where: {id: "613382c602743900099a7dea"}){
+    name
+  }
+}
+
+query{
+  movie(where: {id: "613aafba02743900085bc2bd"}){
+    title
+    year
+    gender
+    director{
+      name
+    }
+    actors{
+      name
+    }
+  }
+}
+
+mutation {
+  terminator: createMovie(data: {
+    title:"Terminator", 
+    year: 1984, 
+    summary: "A machine from the future tries to kill the resistance leader.",
+    gender: "Science Fiction", 
+    class: "B15",
+    director: {
+      connect: {
+        id: "616af983a7b11b000814cc44"
+      }
+    }
+  }){id}
+}
+
+
+mutation {
+  terminator: createMovie(data: {
+    title:"Terminator", 
+    year: 1984, 
+    summary: "A machine from the future tries to kill the resistance leader.",
+    gender: "Science Fiction", 
+    class: "B15",
+    director: {
+      connect: {
+        id: "616af983a7b11b000814cc44"
+      }
+    }
+    actors: {
+      connect: [
+        {id: "616c8297a7b11b000814cc4b"},
+        {id: "616c82c5a7b11b000814cc4c"}
+      ]
+    }
+  }){id}
+}
+
+mutation {
+  terminator: createMovie(data: {
+    title:"Terminator", 
+    year: 1984, 
+    summary: "A machine from the future tries to kill the resistance leader.",
+    gender: "Science Fiction", 
+    class: "B15",
+    director: {
+      connect: {
+        id: "616df96c9bd1160009429cd6"
+      }
+    }
+    actors: {
+      connect: [
+        {id: "616df9979bd1160009429cd7"},
+        {id: "616df9a39bd1160009429cd8"}
+      ]
+    }
+  }){id}
+}

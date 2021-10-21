@@ -1,6 +1,6 @@
 import { Context } from "../utils";
 
 export const Movie = {
-    director: ({id}, args, ctx: Context) => ctx.prisma.movie({id}).director(),
-    actors: ({id}, args, ctx: Context) => ctx.prisma.movie({id}).actors()
+    director: (parent, args, ctx: Context) => ctx.prisma.movie({id: parent.id}).director(),
+    actors: (parent, args, ctx: Context) => ctx.prisma.movie({id: parent.id}).actors()
 }

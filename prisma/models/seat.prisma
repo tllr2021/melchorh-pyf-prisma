@@ -1,5 +1,5 @@
 type Seat{
     id: ID! @id
+    seatCode: String!
     available: Boolean! @default(value: true)
-    room: Room! @relation(link: INLINE)
 }

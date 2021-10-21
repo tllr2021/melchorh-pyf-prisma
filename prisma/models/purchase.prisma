@@ -1,7 +1,6 @@
 type Purchase{
     id: ID! @id
-    numTickets: Int!
-    tickets: [Ticket!]! @relation(link: INLINE)
+    products: [ProdNQuan] @relation(link: INLINE)
+    tickets: [Ticket] @relation(link: INLINE)
     total: Float!
-    user: User @relation(link: INLINE)
 }

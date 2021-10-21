@@ -1,0 +1,5 @@
+type ProdNQuan{
+    id: ID! @id
+    product: Product @relation(link: INLINE)
+    quantity: Int
+}

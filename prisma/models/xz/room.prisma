@@ -1,6 +1,0 @@
-type Room {
-    id: ID! @id
-    avaible: Boolean! @default(value: false)
-    createdAt: DateTime! @createdAt
-    updatedAt: DateTime! @updatedAt
-}

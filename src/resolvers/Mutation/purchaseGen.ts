@@ -106,16 +106,7 @@ export default {
         }
       }
       const ansOb = {id: purchase.id, purchase, message: "Transacción completada exitosamente."}
-      return ansOb; 
-      /* const product = await ctx.prisma.product({ name: productName });
-
-
-      if(token){
-        const decoded = jwt.verify(token, process.env.APP_SECRET);
-        let user = await ctx.prisma.updateUser({data: {history: {connect: {id: purchase.id}}}, where: {id: decoded.userId}});
-      }
-      const ansOb = {id: purchase.id, purchase, message: "Transacción completada exitosamente."}
-      return ansOb;*/
+      return ansOb;
     }
     
     

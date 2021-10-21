@@ -6,4 +6,5 @@ type User {
   password: String
   name: String!
   card: Card @relation(link: INLINE)
+  history: [Purchase] @relation(link: INLINE)
 }

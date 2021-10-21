@@ -1,23 +1,85 @@
-input AuthPwd {
-  pwd: String!
+input AuthChange {
   token: String!
+  password: String!
 }
 
-type Mutation {
-  setPwd(data: AuthPwd!): User!
-  signup(email: String!, password: String!, name: String!): AuthPayload!
-  login(email: String!, password: String!): AuthPayload!
-}
-
-type Mutation {
-  hola(data: String!): String!
-}
-
-type Subscription {
-  feedSubscription: User
+input CardUpdateInput {
+  token: String!
+  cardId: ID!
 }
 
 type AuthPayload {
   token: String!
   user: User!
+}
+
+type Mutation {
+  updatePassword(data: AuthChange!): User!
+  updateMyCard(data: CardUpdateInput!): User!
+  signup(email: String!, password: String!, name: String!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+}
+
+type Query {
+  viewProfile(token: String!): User!
+  viewCardStatus(token: String!): Card!
+}
+
+input generateRoomInput {
+  roomNum: Int!
+  roomType: RoomType!
+}
+
+type generateRoomAnswer {
+  id: ID
+  room: Room
+  message: String!
+}
+
+type Mutation {
+  generateRoom(data: generateRoomInput!): generateRoomAnswer!
+}
+
+input generateShowInput {
+  date: String!
+  movieId: ID!
+  roomNum: Int!
+  roomType: RoomType!
+}
+
+type generateShowAnswer {
+  id: ID
+  show: Show
+  message: String!
+}
+
+type Mutation {
+  generateShow(data: generateShowInput!): generateShowAnswer!
+}
+
+input prodNQuan {
+  name: String
+  quantity: Int
+}
+
+input generatePurchaseInput {
+  showId: ID
+  seats: [String]
+  products: [prodNQuan]
+  token: String
+  usePoints: Boolean
+}
+
+type generatePurchaseAnswer {
+  id: ID
+  purchase: Purchase
+  message: String!
+}
+
+type Mutation {
+  generatePurchase(data: generatePurchaseInput!): generatePurchaseAnswer!
+}
+
+type Subscription {
+  feedSubscription: User
 }

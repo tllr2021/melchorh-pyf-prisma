@@ -1,6 +1,5 @@
 type Card {
   id: ID! @id
-  createdAt: DateTime! @createdAt
-  updatedAt: DateTime! @updatedAt
-  cardNumber: String!
+  cardID: String! @unique
+  points: Float!
 }

@@ -1,6 +1,11 @@
 import { Subscription } from './Subscription'
-//import { User } from './User'
-//import { Order } from './Order'
+import { Movie } from './Movie'
+import { Room } from './Room'
+import { Show } from './Show'
+import { Purchase } from './Purchase'
+import { Ticket } from './Ticket'
+import { User } from './User'
+import { ProdNQuan } from './ProdNQuan'
 
 const path = require("path");
 import { mergeResolvers } from '@graphql-tools/merge';
@@ -16,6 +21,11 @@ export default {
   Query,
   Mutation,
   Subscription,
-  //User,
-  //Order,
+  Movie,
+  Room,
+  Show,
+  Purchase,
+  Ticket,
+  User,
+  ProdNQuan,
 };

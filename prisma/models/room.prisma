@@ -1,7 +1,8 @@
 type Room{
     id: ID! @id
-    roomType: String!
-    seats: [Seat!]! 
+    roomNum: Int!
+    roomType: RoomType!
+    seats: [Seat!]! @relation(link: INLINE)
 }
 
 enum RoomType{

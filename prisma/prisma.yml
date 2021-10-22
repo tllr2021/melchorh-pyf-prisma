@@ -13,6 +13,9 @@ datamodel:
   - ./models/card.prisma
   - ./models/product.prisma
   - ./models/prodnquan.prisma
+  - ./models/employee.prisma
+  - ./models/cinema.prisma
+  - ./models/payroll.prisma
 
 generate:
   - generator: typescript-client

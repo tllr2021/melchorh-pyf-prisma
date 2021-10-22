@@ -6,6 +6,8 @@ import { Purchase } from './Purchase'
 import { Ticket } from './Ticket'
 import { User } from './User'
 import { ProdNQuan } from './ProdNQuan'
+import { Cinema } from './Cinema'
+import { Payroll } from './Payroll'
 
 const path = require("path");
 import { mergeResolvers } from '@graphql-tools/merge';
@@ -28,4 +30,6 @@ export default {
   Ticket,
   User,
   ProdNQuan,
+  Cinema,
+  Payroll
 };

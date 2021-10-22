@@ -41,6 +41,12 @@ export default {
     const { token, password } = args.data;
     try {
       const decoded = await jwt.verify(token, process.env.APP_SECRET);
+      const user = await ctx.prisma.user({ id: decoded.userId });
+
+      if(!user){
+        return new ApolloError('Su usuario no existe.', 'ERR_AUTH')
+      }
+
       const pwd = await bcrypt.hash(password, 10)
 
       const updatedUser = await ctx.prisma.updateUser({data: {password: pwd}, where: {id: decoded.userId}});
@@ -54,6 +60,11 @@ export default {
     const { token, cardId} = args.data;
     try {
       const decoded = await jwt.verify(token, process.env.APP_SECRET);
+      const user = await ctx.prisma.user({ id: decoded.userId });
+
+      if(!user){
+        return new ApolloError('Su usuario no existe.', 'ERR_AUTH')
+      }
 
       const updatedUser = await ctx.prisma.updateUser({data: {card: {connect: {id: cardId}}}, where: {id: decoded.userId}});
 

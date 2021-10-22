@@ -1,0 +1,5 @@
+type Payroll {
+    id: ID! @id
+    employee: Employee! @relation(link: INLINE)
+    paid: Float!
+}

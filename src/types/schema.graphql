@@ -13,31 +13,9 @@ type AuthPayload {
   user: User!
 }
 
-type Mutation {
-  updatePassword(data: AuthChange!): User!
-  updateMyCard(data: CardUpdateInput!): User!
-  signup(email: String!, password: String!, name: String!): AuthPayload!
-  login(email: String!, password: String!): AuthPayload!
-}
-
-type Query {
-  viewProfile(token: String!): User!
-  viewCardStatus(token: String!): Card!
-}
-
-input generateRoomInput {
-  roomNum: Int!
-  roomType: RoomType!
-}
-
-type generateRoomAnswer {
-  id: ID
-  room: Room
-  message: String!
-}
-
-type Mutation {
-  generateRoom(data: generateRoomInput!): generateRoomAnswer!
+type AuthPayloadEmp {
+  token: String!
+  employee: Employee!
 }
 
 input generateShowInput {
@@ -45,16 +23,13 @@ input generateShowInput {
   movieId: ID!
   roomNum: Int!
   roomType: RoomType!
+  token: String!
 }
 
 type generateShowAnswer {
   id: ID
   show: Show
   message: String!
-}
-
-type Mutation {
-  generateShow(data: generateShowInput!): generateShowAnswer!
 }
 
 input prodNQuan {
@@ -68,6 +43,7 @@ input generatePurchaseInput {
   products: [prodNQuan]
   token: String
   usePoints: Boolean
+  cinemaId: ID!
 }
 
 type generatePurchaseAnswer {
@@ -76,8 +52,38 @@ type generatePurchaseAnswer {
   message: String!
 }
 
+type askSalaryAnswer {
+  employee: Employee
+  message: String!
+}
+
 type Mutation {
+  signup(email: String!, password: String!, name: String!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+  updatePassword(data: AuthChange!): User!
+  updateMyCard(data: CardUpdateInput!): User!
+
+  signupEmp(email: String!, password: String!, name: String!, area: String!, status: String!, empNum: Int!, token: String!): AuthPayloadEmp!
+  loginEmp(empNum: Int!, password: String!): AuthPayloadEmp!
+  changeEmpStatus(status: String, empNum: Int!, token: String!): Employee!
+  changeEmpInfo(password: String, area: String, empNum: Int!, token: String!): Employee!
+  assignEmpToCinema(empNum: Int!, cinemaId: ID!, token: String!): Cinema!
+  askSalary(token: String!): askSalaryAnswer!
+
+  cancelCard(token: String!, cardID: ID!): Card!
+  generateShow(data: generateShowInput!): generateShowAnswer!
   generatePurchase(data: generatePurchaseInput!): generatePurchaseAnswer!
+}
+
+type Query {
+  viewProfile(token: String!): User!
+  viewCardStatus(token: String!): Card!
+  
+  viewProfileEmp(token: String!): Employee!
+
+  cinemaFinancesBrief(cinemaId: ID!, token: String!): String!
+  cinemas(token: String!): [Cinema]
+  cinema(token: String!): Cinema
 }
 
 type Subscription {

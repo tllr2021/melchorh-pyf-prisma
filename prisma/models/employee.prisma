@@ -1,0 +1,11 @@
+type Employee {
+    id: ID! @unique @id
+    empNum: Int! @unique
+    name: String!
+    email: String! @unique
+    password: String!
+    days: Int!
+    status: String!
+    area: String!
+    cinemaId: String
+}

@@ -1,0 +1,8 @@
+type Cinema{
+    id: ID! @id
+    name: String!
+    address: String!
+    purchases: [Purchase] @relation(link: INLINE)
+    payroll: [Payroll] @relation(link: INLINE)
+    employees: [Employee] @relation(link: INLINE)
+}

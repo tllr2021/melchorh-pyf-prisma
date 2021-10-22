@@ -1,108 +1,352 @@
-# Prisma1 Template
+# Proyecto Prisma / GraphQL
 
-![](https://img.shields.io/badge/staus-success-green.svg) ![](https://img.shields.io/badge/Shield_layer-🛡🛡🛡🛡🛡-gold.svg) ![](https://img.shields.io/badge/yarn-v1.21.1-pink.svg) ![](https://img.shields.io/badge/Nodejs-v10.22-lemon.svg) ![](https://img.shields.io/badge/GraphQL-v14.1.1-pink.svg) ![](https://img.shields.io/badge/Prisma-v1.34.10-lemon.svg)
+El proyecto es una implementación de las tecnologías:
 
-----
+- **Prisma 1**
+- **GraphQL**
+- **Docker**
 
-<div align="center"><img src="https://imgur.com/1MfnLVl.png" /><img src="https://imgur.com/DX1VKtn.png" width="70" /></div>
+<div  align="center"><img  src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_light_prisma_icon_130444.png" width="70"/><img  src="https://imgur.com/DX1VKtn.png"  width="70" />
+<img src="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" width="70"/></div>
 
-## Caracteristicas
+Se pretende hacer un administrador de un cine, que sea capaz de manejar compras dentro del cine, acciones de nivel administrativo, como tener un registro de los empleados dentro del establecimiento así como ser capaz de proveer datos referentes a las finanzas del mismo, teniendo en cuenta ventas y pagos a empleados.
 
-- **Scalable GraphQL server:** The server uses [`graphql-yoga`](https://github.com/prisma/graphql-yoga) which is based on Apollo Server & Express
-- **Static type generation**: TypeScript types for GraphQL queries & mutations are generated in a build step
-- **Authentication**: Signup and login workflows are ready to use for your users
-- **GraphQL database:** Includes GraphQL database binding to [Prisma](https://www.prismagraphql.com) (running on MongoDB)
-- **Tooling**: Out-of-the-box support for [GraphQL Playground](https://github.com/prisma/graphql-playground) & [query performance tracing](https://github.com/apollographql/apollo-tracing)
-- **Extensible**: Simple and flexible [data model](./database/datamodel.graphql) – easy to adjust and extend
-- **No configuration overhead**: Preconfigured [`graphql-config`](https://github.com/prisma/graphql-config) setup
-- **Realtime updates**: Support for GraphQL subscriptions
-- **Custom Permissions**: Added layer authorization for all methods on `GraphQL` 
+## Levantamiento de Sistema
 
-## Requerimientos
-* NodeJS v10.+
-* Yarn v1.21.+
-* Docker v19.03.13
+Requerimientos antes de levantamiento: 
+- **NodeJS v.10.24.1** (necesaria para correr Prisma 1).
+- **Docker** instalado en la computadora destino.
 
-## Instalando
-
-Necesitas instalar todas las siguientes dependencias :
-
-> Para mas de detalles de instalación de `Prisma1` visita [Prisma1 Docs](https://v1.prisma.io/docs/1.34/get-started/01-setting-up-prisma-new-database-TYPESCRIPT-t002/)
-
+Obteniendo proyecto:
 ```sh
-$ yarn install
+git clone https://github.com/tllr2021/melchorh-pyf-prisma
+cd prisma melchorh-pyf-prisma
 ```
 
+Levantando servicios:
 ```sh
-#pre
-configurar entorno creando archivo .env
-# 1. Situarse en el directorio de prisma
-$ cd ./project  
-# 2. Crear los contenedores necesarios
-$ cd  docker-compose up -d
-# 3. Realizar el deploy de prisma en el servicio `http://localhost:4466`
-$ prisma deploy
-# 4. Realizar la primera carga de datos con el archivo `seed.graphql`
-$ prisma seed
+docker-compose up -d
 ```
 
-para mas detalles consulta [Aquí](https://v1.prisma.io/docs/1.34/get-started/01-setting-up-prisma-new-database-TYPESCRIPT-t002/)
-
-### Iniciando el Servicio
+Instalando dependencias de Node:
 ```sh
-# Server start (corre en http://localhost:4000) y abre GraphQL Playground
-$ yarn start
+npm i -g yarn prisma1
+yarn install
 ```
 
-![](https://imgur.com/hElq68i.png)
+Mandando modelos de Prisma al contenedor: 
+```sh
+prisma1 deploy
+```
 
-## Documentation
+Iniciando servidor: 
+```sh
+yarn install
+```
 
-### Commands
+El último paso es dirigirnos en un navegador a localhost:4000.
 
-* `$ yarn start` starts GraphQL server on `http://localhost:4000`
-* `$ prisma <subcommand>` gives access to local version of Prisma CLI (e.g. `yarn prisma deploy`)
+## Queries
 
-> **Note**: We recommend that you're using `yarn dev` during development as it will give you access to the GraphQL API or your server (defined by the [application schema](./src/schema.graphql)) as well as to the Prisma API directly (defined by the [Prisma database schema](./generated/prisma.graphql)). If you're starting the server with `yarn start`, you'll only be able to access the API of the application schema.
+- [Queries de Usuario](#queries-de-usuarios)
+-- [viewProfile](#viewcrofile)
+-- [viewCardStatus](#viewcardStatus)
+- [Queries de Empleados](#queries-de-empleados)
+-- [viewProfileEmp](#viewprofileemp)
+- [Queries de Administrador](#queries-de-administrador)
+-- [cinemaFinancesBrief](#cinemafinancesbrief)
+- [Más Queries de Administrador](#más-queries-de-administrador)
+-- [cinemas](#cinemas)
+-- [shows](#shows)
+-- [movies](#movies)
 
-### Project structure
+## Queries de Usuarios
 
-| File name                     | Description 　　　　　　　　                                                  |
-|-------------------------------|-------------------------------------------------------------------------------|
-| ├── .env                      | Define las variables de entorno                                               |
-| ├── .graphqlconfig.yml        | Configuration file based on graphql-config (e.g. used by GraphQL Playground). |
-| └── prisma (directory)        | Contains all files that are related to the Prisma database service            |
-| ├── docker-compose.yml        | Define la creación de servicios con Docker                                    |
-| ├── prisma.yml                | The root configuration file for your Prisma database service (docs)           |
-| └── models (directory)        | Defines your data model (written in GraphQL SDL)                              |
-| └── src (directory)           | Contains the source files for your GraphQL server                             |
-| ├── index.ts                  | The entry point for your GraphQL server                                       |
-| ├── schema.graphql            | The application schema defining the API exposed to client applications        |
-| ├── resolvers (directory)     | Contains the implementation of the resolvers for the application schema       |
-| └── types (directory)         | Define los tipos previamente creados y enlazados a generated                  |
-| └── generated (directory)     | Contains generated files                                                      |
-| └── prisma-client (directory) | The generated Prisma client                                                   |
+Para poder acceder se ocupa un **token** como parámetro, el **token** debe pertenecer al usuario.
+
+### viewProfile
+
+Permite a los usuarios hacer un chequeo de su información dentro de la plataforma. 
+
+>viewProfile(token: String!): User!
+
+El resultado de la petición será un objeto de tipo usuario.
+
+### viewCardStatus
+
+Permite a los usuarios hacer un chequeo de la información de su tarjeta. Funciona por ejemplo para ver el número de puntos con los que se cuenta.
+
+>viewCardStatus(token: String!): Card!
+
+El resultado de la petición será un objeto de tipo tarjeta.
+
+## Queries de Empleados
+
+### viewProfileEmp
+
+Permite a los empleados hacer un chequeo de su información dentro de la plataforma. Para poder acceder se ocupa un **token** como parámetro, el **token** debe pertenecer al empleado.
+
+>viewProfileEmp(token: String!): Employee!
+
+El resultado de la petición será un objeto de tipo empleado.
+
+  
+## Queries de Administrador
+
+### cinemaFinancesBrief
+
+Permite al administrador consultar la información de un solo cine dentro de la base de datos. Se debe proveer como parámetro el **id de Cine** del cine que se desea consultar. Para poder acceder se ocupa un **token** como parámetro, el **token** debe pertenecer al administrador. 
+
+>cinemaFinancesBrief( token: String!, cinemaId: ID!): String!
+
+El resultado de la petición será un texto breve resumiendo los datos de ventas, pagos a empleados y número de empleados.
 
 
-## Modelos
+### Más Queries de Administrador
 
-> Breve descripción de los modelos que componen el template
+Permiten al administrador consultar la información de los objetos dentro de la base de datos. Pueden ser impuestos parámetros a cumplir para un filtro de información. Para poder acceder se ocupa un **token** como parámetro, el **token** debe pertenecer al administrador. 
 
-|     Model     |       FileName       |                     description                     |     hasRelations    |
-|:-------------:|:--------------------:|:---------------------------------------------------:|:-------------------:|
-| `User`          | user.prisma          | Usuario que interactua en el sistema                |  |
-## Contributors
+### cinemas
 
-Gracias a estas increibles personas ([emoji key](https://github.com/all-contributors/all-contributors#emoji-key)):
+>cinemas(token: String!): [Cinema]
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/enriqueao"><img src="https://avatars2.githubusercontent.com/u/20671244?s=460&v=4" width="100px;" alt="Enrique Aguilar"/><br /><sub><b>Enrique Aguilar</b></sub></a><br /><a href="#code" title="code">💻📖🤔🔌⚠️📓 </a></td>
-  </tr>
-</table>
+El resultado de la petición será un arreglo de tipo cinema.
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-<!-- 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome! -->
+>cinema(token: String!): Cinema
+
+El resultado de la petición será un objeto de tipo cinema.
+
+### shows
+
+>shows(token: String!): [Show]
+
+El resultado de la petición será un arreglo de tipo show.
+
+>show(token: String!): Show
+
+El resultado de la petición será un objeto de tipo show.
+
+### movies
+
+>movies(token: String!): [Movie]
+
+El resultado de la petición será un arreglo de tipo película.
+
+>movie(token: String!): Movie
+
+El resultado de la petición será un objeto de tipo película.
+
+### products
+
+>products(token: String!): [Product]
+
+El resultado de la petición será un arreglo de tipo producto.
+
+>product(token: String!): Product
+
+El resultado de la petición será un objeto de tipo producto.
+
+
+## Mutations
+
+- [Mutations de Usuario](#mutations-de-usuarios)
+-- [signup](#signup)
+-- [login](#login)
+-- [updatePassword](#updatepassword)
+-- [updateMyCard](#updatemycard)
+-- [generatePurchase](#generatepurchase)
+- [Mutations de Empleados](#mutations-de-empleados)
+-- [loginEmp](#loginemp)
+-- [askSalary](#asksalary)
+- [Mutations de Administrador](#mutations-de-administrador)
+-- [signupEmp](#signupemp)
+-- [changeEmpStatus](#changeempstatus)
+-- [changeEmpInfo](#changeempinfo)
+-- [assignEmpToCinema](#assignemptocinema)
+-- [createCinema](#createcinema)
+-- [cancelCard](#cancelcard)
+-- [generateProduct](#generateproduct)
+-- [editProduct](#editproduct)
+-- [removeProduct](#removeproduct)
+-- [generateMovie](#generatemovie)
+-- [editMovie](#editmovie)
+-- [generateShow](#generateshow)
+-- [removeShow](#removeshow)
+
+
+## Mutations de Usuarios
+
+### signup
+
+Permite al usuario crear un perfil dentro de la plataforma.
+
+>signup(email: String!, password: String!, name: String!): AuthPayload!
+
+El resultado de la mutación es su token de autenticación y su usuario.
+
+### login
+
+Permite al usuario iniciar sesión en la plataforma para hacer uso de sus Queries, comprar boletos de cine o productos de la tienda del cine.
+
+>login(email: String!, password: String!): AuthPayload!
+
+El resultado de la mutación es su token de autenticación y su usuario.
+
+>Para poder hacer uso de las siguientes Queries se ocupa un **token** como parámetro, y la nueva contraseña. El **token** debe pertenecer al usuario.
+
+### updatePassword
+
+Permite al usuario cambiar su contraseña. 
+
+>updatePassword(data: AuthChange!): User!
+
+El resultado de la mutación es su usuario.
+
+### updateMyCard
+
+Permite al usuario cambiar de tarjeta con un nuevo código de tarjeta.
+
+>updateMyCard(data: CardUpdateInput!): User!
+
+El resultado de la mutación es su usuario.
+  
+### generatePurchase
+
+Permite al usuario comprar boletos para una función o productos en la tienda del cine. El usuario puede usar su **token** para añadir puntos a su tarjeta o usarlos para sus compras.
+
+>generatePurchase(data: generatePurchaseInput!): generatePurchaseAnswer!
+
+El resultado de la mutación es el id de su compra, su compra y un mensaje.
+
+## Mutations de Empleados
+
+### loginEmp
+
+Permite al empleado iniciar sesión dentro de la plataforma para hacer uso de sus Queries.
+
+>loginEmp(empNum: Int!, password: String!): AuthPayloadEmp!
+
+El resultado de la mutación es su token de autenticación y su perfil de empleado.
+
+### askSalary
+
+Permite al empleado pedir el salario de sus días trabajados. Para poder hacer uso de la función se ocupa un **token** como parámetro. El **token** debe pertenecer al empleado.
+
+>askSalary(token: String!): askSalaryAnswer!
+
+El resultado de la mutación es su perfil de empleado y un mensaje.
+
+## Mutations de Administrador
+
+Para poder hacer uso de las Queries se ocupa un **token** como parámetro. El **token** debe pertenecer al administrador.
+
+### signupEmp
+
+Permite al administrador registrar a un nuevo empleado a la plataforma. parámetro. 
+
+>signupEmp(token: String!, email: String!, password: String!, name: String!, area: String!, status: String!, empNum: Int!): AuthPayloadEmp!
+
+### changeEmpStatus
+
+Permite al administrador cambiar el status de un empleado dentro la plataforma. 
+
+>changeEmpStatus(token: String!, status: String, empNum: Int!): Employee!
+
+El resultado de la mutación es un objeto de tipo empleado.
+
+### changeEmpInfo
+
+Permite al administrador cambiar datos como el área del empleado así como su contraseña. 
+
+>changeEmpInfo(token: String!, password: String, area: String, empNum: Int!): Employee!
+
+El resultado de la mutación es un objeto de tipo empleado.
+
+### assignEmpToCinema
+
+Permite al administrador asignar a un empleado a un cine en concreto. 
+
+>assignEmpToCinema(token: String!, empNum: Int!, cinemaId: ID!): Cinema!
+
+ El resultado de la mutación es un objeto de tipo cine.
+
+### createCinema
+
+Permite al administrador crear un cine.
+
+>createCinema(token: String!, data: CinemaCreateInput!): Cinema!
+
+El resultado de la mutación es un objeto de tipo cine.
+
+### cancelCard
+
+Permite al administrador cancelar tarjetas.
+
+>cancelCard(token: String!, cardID: ID!): Card!
+
+ El resultado de la mutación es un objeto de tipo tarjeta.
+
+### generateProduct
+
+Permite al administrador añadir productos a la tienda del cine.
+
+>generateProduct(token: String!, data: ProductCreateInput!): Product!
+
+El resultado de la mutación es un objeto de tipo producto.
+
+### editProduct
+
+Permite al administrador editar los datos de un producto de la tienda del cine.
+
+>editProduct(token: String!, data: ProductUpdateInput!): Product!
+
+El resultado de la mutación es un objeto de tipo producto.
+
+
+### removeProduct
+
+Permite al administrador eliminar productos de la tienda del cine.
+
+>removeProduct(token: String!, productId: ID!): Product!
+
+ El resultado de la mutación es un objeto de tipo producto.
+
+### generateMovie
+
+Permite al administrador poner una película en cartelera.
+
+>generateMovie(token: String!, data: MovieCreateInput!): Movie!
+
+El resultado de la mutación es un objeto de tipo película.
+
+### editMovie
+
+Permite al administrador editar los datos de una película.
+
+>editMovie(token: String!, data: MovieUpdateInput!): Movie!
+
+El resultado de la mutación es un objeto de tipo película.
+
+### removeProduct
+
+Permite al administrador eliminar una película de la cartelera.
+
+>removeMovie(token: String!, cinemaId: ID!): Movie!
+
+ El resultado de la mutación es un objeto de tipo película.
+
+### generateShow
+
+Permite al administrador generar una función de cine.
+
+>generateShow(token: String!, data: generateShowInput!): generateShowAnswer!
+
+El resultado de la mutación es un objeto de tipo función.
+
+### removeShow
+
+Permite al administrador eliminar una función de cine.
+
+removeShow(token: String!, showId: ID!): Show!
+
+El resultado de la mutación es un objeto de tipo función.

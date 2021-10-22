@@ -57,7 +57,7 @@ export default {
     }
   },
   async updateMyCard(parent, args, ctx: Context) {
-    const { token, cardId} = args.data;
+    const { token, cardId } = args.data;
     try {
       const decoded = await jwt.verify(token, process.env.APP_SECRET);
       const user = await ctx.prisma.user({ id: decoded.userId });

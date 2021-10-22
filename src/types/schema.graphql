@@ -61,13 +61,18 @@ type Mutation {
   login(email: String!, password: String!): AuthPayload!
   updatePassword(data: AuthChange!): User!
   updateMyCard(data: CardUpdateInput!): User!
+  generatePurchase(data: generatePurchaseInput!): generatePurchaseAnswer!
+
+  
 
   signupEmp(token: String!, email: String!, password: String!, name: String!, area: String!, status: String!, empNum: Int!): AuthPayloadEmp!
   loginEmp(empNum: Int!, password: String!): AuthPayloadEmp!
+  askSalary(token: String!): askSalaryAnswer!
+
+
   changeEmpStatus(token: String!, status: String, empNum: Int!): Employee!
   changeEmpInfo(token: String!, password: String, area: String, empNum: Int!): Employee!
   assignEmpToCinema(token: String!, empNum: Int!, cinemaId: ID!): Cinema!
-  askSalary(token: String!): askSalaryAnswer!
 
   createCinema(token: String!, data: CinemaCreateInput!): Cinema!
   cancelCard(token: String!, cardID: ID!): Card!
@@ -82,8 +87,6 @@ type Mutation {
 
   generateShow(token: String!, data: generateShowInput!): generateShowAnswer!
   removeShow(token: String!, showId: ID!): Show!
-
-  generatePurchase(data: generatePurchaseInput!): generatePurchaseAnswer!
 }
 
 type Query {

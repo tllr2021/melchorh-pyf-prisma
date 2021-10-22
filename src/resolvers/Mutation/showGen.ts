@@ -8,8 +8,8 @@ const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'L', 'M']
 export default {
   generateShow: async (parent, args, ctx: Context) => {
     try{
-      const { date, movieId, roomNum, roomType, token } = args.data;
-      const decoded = await jwt.verify(token, process.env.APP_SECRET);
+      const { date, movieId, roomNum, roomType } = args.data;
+      const decoded = await jwt.verify(args.token, process.env.APP_SECRET);
       const admin = await ctx.prisma.user({id: decoded.userId});
 
       if(admin.email != 'admin@admin.com'){
@@ -48,6 +48,43 @@ export default {
 
       return ansOb;
       
+    }
+    catch(error){
+      return error;
+    }
+  },
+  removeShow: async (parent, args, ctx: Context) => {
+    try{
+      const decoded = await jwt.verify(args.token, process.env.APP_SECRET);
+      const admin = await ctx.prisma.user({id: decoded.userId});
+
+      if(admin.email != 'admin@admin.com'){
+        return new ApolloError('You need to be admin to perform this action', 'ERR_NOT_ADMIN')
+      }
+      
+      const show = await ctx.prisma.show({id: args.showId});
+
+      if(!show){
+        return new ApolloError('Este show no existe.', 'ERR_NOT_EXISTING')
+      }
+
+      const room = await ctx.prisma.show({id: args.showId}).room();
+
+      if(!room){
+        return new ApolloError('El show no tiene una sala.', 'ERR_NOT_EXISTING')
+      }
+
+      const seats = await ctx.prisma.room({id: room.id}).seats();
+
+      for(let i = 0; i < seats.length; i++){
+        const deletedSeat = await ctx.prisma.deleteSeat({id: seats[i].id})
+      }
+
+      const deletedRoom = await ctx.prisma.deleteRoom({id: room.id});
+
+      const deletedShow = await ctx.prisma.deleteShow({id: args.showId});
+
+      return deletedShow;
     }
     catch(error){
       return error;

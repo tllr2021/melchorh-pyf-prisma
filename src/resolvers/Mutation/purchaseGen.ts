@@ -1,3 +1,5 @@
+const { ApolloError, } = require("apollo-server");
+
 import { Context } from "../../utils";
 import * as jwt from 'jsonwebtoken'
 
@@ -19,8 +21,7 @@ export default {
       }
 
       if(seatEval.length != seats.length){
-        const ansOb = {id: null, purchase: null, message: "Asientos no disponibles."}
-        return ansOb;
+        return new ApolloError("Asientos no disponibles.", "ERR_NOT_AVAILABLE");
       }
 
       let seatReEval = [];
@@ -78,8 +79,7 @@ export default {
       }
 
       if(products.length != articles.length){
-        const ansOb = {id: null, purchase: null, message: "Productos no disponibles."}
-        return ansOb;
+        return new ApolloError("Producto no disponible.", "ERR_NOT_AVAILABLE");
       }
 
       let total = 0;

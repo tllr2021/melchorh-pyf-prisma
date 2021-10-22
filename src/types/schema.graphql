@@ -23,7 +23,6 @@ input generateShowInput {
   movieId: ID!
   roomNum: Int!
   roomType: RoomType!
-  token: String!
 }
 
 type generateShowAnswer {
@@ -71,7 +70,18 @@ type Mutation {
   askSalary(token: String!): askSalaryAnswer!
 
   cancelCard(token: String!, cardID: ID!): Card!
-  generateShow(data: generateShowInput!): generateShowAnswer!
+
+  generateProduct(token: String!, data: ProductCreateInput!): Product!
+  editProduct(token: String!, data: ProductUpdateInput!): Product!
+  removeProduct(token: String!, productId: ID!): Product!
+
+  generateMovie(token: String!, data: MovieCreateInput!): Movie!
+  editMovie(token: String!, data: MovieUpdateInput!): Movie!
+  removeMovie(token: String!, cinemaId: ID!): Movie!
+
+  generateShow(token: String!, data: generateShowInput!): generateShowAnswer!
+  removeShow(token: String!, showId: ID!): Show!
+
   generatePurchase(data: generatePurchaseInput!): generatePurchaseAnswer!
 }
 

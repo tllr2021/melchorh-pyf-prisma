@@ -3,7 +3,6 @@ const { ApolloError, } = require("apollo-server");
 import * as jwt from 'jsonwebtoken'
 import * as bcrypt from 'bcryptjs'
 import { Context } from '../../utils'
-import card from './card';
 
 export default {
   async signupEmp(parent, args, ctx: Context) {

@@ -62,13 +62,14 @@ type Mutation {
   updatePassword(data: AuthChange!): User!
   updateMyCard(data: CardUpdateInput!): User!
 
-  signupEmp(email: String!, password: String!, name: String!, area: String!, status: String!, empNum: Int!, token: String!): AuthPayloadEmp!
+  signupEmp(token: String!, email: String!, password: String!, name: String!, area: String!, status: String!, empNum: Int!): AuthPayloadEmp!
   loginEmp(empNum: Int!, password: String!): AuthPayloadEmp!
-  changeEmpStatus(status: String, empNum: Int!, token: String!): Employee!
-  changeEmpInfo(password: String, area: String, empNum: Int!, token: String!): Employee!
-  assignEmpToCinema(empNum: Int!, cinemaId: ID!, token: String!): Cinema!
+  changeEmpStatus(token: String!, status: String, empNum: Int!): Employee!
+  changeEmpInfo(token: String!, password: String, area: String, empNum: Int!): Employee!
+  assignEmpToCinema(token: String!, empNum: Int!, cinemaId: ID!): Cinema!
   askSalary(token: String!): askSalaryAnswer!
 
+  createCinema(token: String!, data: CinemaCreateInput!): Cinema!
   cancelCard(token: String!, cardID: ID!): Card!
 
   generateProduct(token: String!, data: ProductCreateInput!): Product!
@@ -91,7 +92,7 @@ type Query {
   
   viewProfileEmp(token: String!): Employee!
 
-  cinemaFinancesBrief(cinemaId: ID!, token: String!): String!
+  cinemaFinancesBrief( token: String!, cinemaId: ID!): String!
   cinemas(token: String!): [Cinema]
   cinema(token: String!): Cinema
 

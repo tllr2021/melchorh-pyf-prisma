@@ -9,6 +9,13 @@ export default {
 
     if(seats && showId){
       let prices = new Map([['DOSD', 60.00], ['TRESD', 70.00], ['IMAX', 80.00], ['CUATRODX', 90.00]])
+
+      const show = await ctx.prisma.show({id: showId});
+
+      if(!show){
+        return new ApolloError('La función no existe.', 'ERR_NOT_EXISTING')
+      }
+
       const roomS = await ctx.prisma.show({id: showId}).room().seats();
     
       let seatEval = [];
@@ -30,7 +37,6 @@ export default {
         seatReEval.push(seat);
       }
 
-      const show = await ctx.prisma.show({id: showId});
       const price = prices.get(show.showType)
 
       let tickets = [];
@@ -49,7 +55,13 @@ export default {
 
         if(valid){
           let user = await ctx.prisma.updateUser({data: {history: {connect: {id: purchase.id}}}, where: {id: decoded.userId}});
+
           let card = await ctx.prisma.user({id: user.id}).card();
+            
+          if(!card){
+            const ansOb = {id: purchase.id, purchase, message: "Se hizo la compra pero usted no tiene una tarjeta enlazada a su cuenta."}
+            return ansOb;
+          }
 
           if(usePoints == true){
             if(card.points > (tickets.length * price)){
@@ -100,8 +112,14 @@ export default {
 
         if(valid){
           let user = await ctx.prisma.updateUser({data: {history: {connect: {id: purchase.id}}}, where: {id: decoded.userId}});
-          let card = await ctx.prisma.user({id: user.id}).card();
 
+          let card = await ctx.prisma.user({id: user.id}).card();
+            
+          if(!card){
+            const ansOb = {id: purchase.id, purchase, message: "Se hizo la compra pero usted no tiene una tarjeta enlazada a su cuenta."}
+            return ansOb;
+          }
+            
           if(usePoints == true){
             if(card.points > total){
               let updatedCard = await ctx.prisma.updateCard({data: {points: (card.points - total)}, where: {id: card.id}});

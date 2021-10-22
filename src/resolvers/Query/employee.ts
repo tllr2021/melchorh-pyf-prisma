@@ -20,6 +20,4 @@ export default {
       return error;
     }
   },
-  employees: (parent, args, ctx: Context) => ctx.prisma.employees(),
-  employee: (parent, args, ctx: Context) => ctx.prisma.employee(args.where),
 };

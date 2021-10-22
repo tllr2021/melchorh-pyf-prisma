@@ -36,6 +36,10 @@ export default {
       if (!employee) {
         return new ApolloError('Invalid email or password', 'ERR_AUTH')
       }
+
+      if(!employee.cinemaId){
+        return new ApolloError('El empleado no tiene un cine asignado.', 'ERR_NO_CINEMA_ASSIGNED')
+      }
       
       const payroll = await ctx.prisma.createPayroll({employee: {connect: {empNum}}, paid: (employee.days * 200)});
 

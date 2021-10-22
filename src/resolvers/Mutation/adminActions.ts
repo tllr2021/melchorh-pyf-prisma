@@ -12,9 +12,14 @@ export default {
 
         const admin = await ctx.prisma.user({id: decoded.userId});
 
-        if(admin.email == 'admin@admin.com'){
+        if(admin.email != 'admin@admin.com'){
             return new ApolloError('You need to be admin to perform this action', 'ERR_NOT_ADMIN')
         }
+
+        if(empNum.toString().length > 5){
+            return new ApolloError('El número de de empleado debe tener 5 dígitos.', 'ERR_INCORRECT_LENGTH')
+        }
+
         const emp = await ctx.prisma.employee({empNum});
 
         if(emp){
@@ -69,13 +74,9 @@ export default {
         }
         let updatedEmp;
         if(args.password){
-            try {
-                const password = await bcrypt.hash(args.password, 10)
+            const password = await bcrypt.hash(args.password, 10)
 
-                updatedEmp = await ctx.prisma.updateEmployee({data: {password}, where: {empNum}});
-            } catch (error) {
-                return error;
-            }
+            updatedEmp = await ctx.prisma.updateEmployee({data: {password}, where: {empNum}});
         }
         if(area){
             updatedEmp = await ctx.prisma.updateEmployee({data: {area}, where: {empNum}});

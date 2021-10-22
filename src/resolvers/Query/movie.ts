@@ -14,7 +14,7 @@ export default {
           return new ApolloError('You need to be admin to perform this action', 'ERR_NOT_ADMIN')
       }
       
-      return ctx.prisma.cinema(args.where)
+      return ctx.prisma.movies(args.where)
     }
     catch (error){
         return error;
@@ -30,7 +30,7 @@ export default {
           return new ApolloError('You need to be admin to perform this action', 'ERR_NOT_ADMIN')
       }
       
-      return ctx.prisma.cinema(args.where)
+      return ctx.prisma.movie(args.where)
     }
     catch (error){
         return error;

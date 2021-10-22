@@ -94,6 +94,15 @@ type Query {
   cinemaFinancesBrief(cinemaId: ID!, token: String!): String!
   cinemas(token: String!): [Cinema]
   cinema(token: String!): Cinema
+
+  shows(token: String!): [Show]
+  show(token: String!): Show
+
+  movies(token: String!): [Movie]
+  movie(token: String!): Movie
+
+  products(token: String!): [Product]
+  product(token: String!): Product
 }
 
 type Subscription {

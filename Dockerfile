@@ -10,10 +10,6 @@ COPY package.json ${WORKDIR}
 
 RUN yarn install
 
-RUN npm i -g prisma1
-
-RUN prisma1 deploy
-
 COPY --chown=node . ${WORKDIR}
 
 ENV PORT=3000

@@ -16,12 +16,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/melchorh_proj:latest
       - name: Create env file
         run: |
           touch .env
@@ -29,3 +23,9 @@ jobs:
           echo APP_SECRET=${{ secrets.APP_SECRET }} >> .env
           echo ENVIRONMENT=${{ secrets.ENVIRONMENT }} >> .env
           echo URL_BASE=${{ secrets.URL_BASE }} >> .env
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/melchorh_proj:latest

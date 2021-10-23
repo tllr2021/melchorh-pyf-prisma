@@ -647,6 +647,7 @@ export interface ClientConstructor<T> {
  * Types
  */
 
+<<<<<<< HEAD
 export type ActorOrderByInput = "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC";
 
 export type CardOrderByInput =
@@ -676,6 +677,59 @@ export type TicketOrderByInput =
   | "id_DESC"
   | "price_ASC"
   | "price_DESC";
+=======
+export type CinemaOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "name_ASC"
+  | "name_DESC"
+  | "address_ASC"
+  | "address_DESC";
+
+export type RoomType = "DOSD" | "TRESD" | "CUATRODX" | "IMAX";
+
+export type EmployeeOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "empNum_ASC"
+  | "empNum_DESC"
+  | "name_ASC"
+  | "name_DESC"
+  | "email_ASC"
+  | "email_DESC"
+  | "password_ASC"
+  | "password_DESC"
+  | "days_ASC"
+  | "days_DESC"
+  | "status_ASC"
+  | "status_DESC"
+  | "area_ASC"
+  | "area_DESC"
+  | "cinemaId_ASC"
+  | "cinemaId_DESC";
+
+export type UserOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "createdAt_ASC"
+  | "createdAt_DESC"
+  | "updatedAt_ASC"
+  | "updatedAt_DESC"
+  | "email_ASC"
+  | "email_DESC"
+  | "password_ASC"
+  | "password_DESC"
+  | "name_ASC"
+  | "name_DESC";
+
+export type PayrollOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "paid_ASC"
+  | "paid_DESC";
+
+export type ActorOrderByInput = "id_ASC" | "id_DESC" | "name_ASC" | "name_DESC";
+>>>>>>> development
 
 export type SeatOrderByInput =
   | "id_ASC"
@@ -685,6 +739,7 @@ export type SeatOrderByInput =
   | "available_ASC"
   | "available_DESC";
 
+<<<<<<< HEAD
 export type PayrollOrderByInput =
   | "id_ASC"
   | "id_DESC"
@@ -724,6 +779,41 @@ export type DirectorOrderByInput =
   | "id_DESC"
   | "name_ASC"
   | "name_DESC";
+=======
+export type ProductOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "name_ASC"
+  | "name_DESC"
+  | "price_ASC"
+  | "price_DESC";
+
+export type PurchaseOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "total_ASC"
+  | "total_DESC";
+
+export type CardOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "cardID_ASC"
+  | "cardID_DESC"
+  | "points_ASC"
+  | "points_DESC";
+
+export type ProdNQuanOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "quantity_ASC"
+  | "quantity_DESC";
+
+export type TicketOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "price_ASC"
+  | "price_DESC";
+>>>>>>> development
 
 export type MovieOrderByInput =
   | "id_ASC"
@@ -739,6 +829,7 @@ export type MovieOrderByInput =
   | "class_ASC"
   | "class_DESC";
 
+<<<<<<< HEAD
 export type ProductOrderByInput =
   | "id_ASC"
   | "id_DESC"
@@ -747,6 +838,8 @@ export type ProductOrderByInput =
   | "price_ASC"
   | "price_DESC";
 
+=======
+>>>>>>> development
 export type RoomOrderByInput =
   | "id_ASC"
   | "id_DESC"
@@ -763,6 +856,7 @@ export type ShowOrderByInput =
   | "showType_ASC"
   | "showType_DESC";
 
+<<<<<<< HEAD
 export type UserOrderByInput =
   | "id_ASC"
   | "id_DESC"
@@ -778,12 +872,41 @@ export type UserOrderByInput =
   | "name_DESC";
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
+=======
+export type MutationType = "CREATED" | "UPDATED" | "DELETED";
+
+export type DirectorOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "name_ASC"
+  | "name_DESC";
+
+export interface EmployeeCreateInput {
+  id?: Maybe<ID_Input>;
+  empNum: Int;
+  name: String;
+  email: String;
+  password: String;
+  days: Int;
+  status: String;
+  area: String;
+  cinemaId?: Maybe<String>;
+}
+>>>>>>> development
 
 export type ActorWhereUniqueInput = AtLeastOne<{
   id: Maybe<ID_Input>;
 }>;
 
+<<<<<<< HEAD
 export interface ActorWhereInput {
+=======
+export interface PayrollUpdateWithWhereUniqueNestedInput {
+  where: PayrollWhereUniqueInput;
+  data: PayrollUpdateDataInput;
+}
+
+export interface TicketScalarWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -798,6 +921,82 @@ export interface ActorWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
+  price?: Maybe<Float>;
+  price_not?: Maybe<Float>;
+  price_in?: Maybe<Float[] | Float>;
+  price_not_in?: Maybe<Float[] | Float>;
+  price_lt?: Maybe<Float>;
+  price_lte?: Maybe<Float>;
+  price_gt?: Maybe<Float>;
+  price_gte?: Maybe<Float>;
+  AND?: Maybe<TicketScalarWhereInput[] | TicketScalarWhereInput>;
+  OR?: Maybe<TicketScalarWhereInput[] | TicketScalarWhereInput>;
+  NOT?: Maybe<TicketScalarWhereInput[] | TicketScalarWhereInput>;
+}
+
+export interface UserWhereInput {
+>>>>>>> development
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
+<<<<<<< HEAD
+=======
+  createdAt?: Maybe<DateTimeInput>;
+  createdAt_not?: Maybe<DateTimeInput>;
+  createdAt_in?: Maybe<DateTimeInput[] | DateTimeInput>;
+  createdAt_not_in?: Maybe<DateTimeInput[] | DateTimeInput>;
+  createdAt_lt?: Maybe<DateTimeInput>;
+  createdAt_lte?: Maybe<DateTimeInput>;
+  createdAt_gt?: Maybe<DateTimeInput>;
+  createdAt_gte?: Maybe<DateTimeInput>;
+  updatedAt?: Maybe<DateTimeInput>;
+  updatedAt_not?: Maybe<DateTimeInput>;
+  updatedAt_in?: Maybe<DateTimeInput[] | DateTimeInput>;
+  updatedAt_not_in?: Maybe<DateTimeInput[] | DateTimeInput>;
+  updatedAt_lt?: Maybe<DateTimeInput>;
+  updatedAt_lte?: Maybe<DateTimeInput>;
+  updatedAt_gt?: Maybe<DateTimeInput>;
+  updatedAt_gte?: Maybe<DateTimeInput>;
+  email?: Maybe<String>;
+  email_not?: Maybe<String>;
+  email_in?: Maybe<String[] | String>;
+  email_not_in?: Maybe<String[] | String>;
+  email_lt?: Maybe<String>;
+  email_lte?: Maybe<String>;
+  email_gt?: Maybe<String>;
+  email_gte?: Maybe<String>;
+  email_contains?: Maybe<String>;
+  email_not_contains?: Maybe<String>;
+  email_starts_with?: Maybe<String>;
+  email_not_starts_with?: Maybe<String>;
+  email_ends_with?: Maybe<String>;
+  email_not_ends_with?: Maybe<String>;
+  password?: Maybe<String>;
+  password_not?: Maybe<String>;
+  password_in?: Maybe<String[] | String>;
+  password_not_in?: Maybe<String[] | String>;
+  password_lt?: Maybe<String>;
+  password_lte?: Maybe<String>;
+  password_gt?: Maybe<String>;
+  password_gte?: Maybe<String>;
+  password_contains?: Maybe<String>;
+  password_not_contains?: Maybe<String>;
+  password_starts_with?: Maybe<String>;
+  password_not_starts_with?: Maybe<String>;
+  password_ends_with?: Maybe<String>;
+  password_not_ends_with?: Maybe<String>;
+>>>>>>> development
   name?: Maybe<String>;
   name_not?: Maybe<String>;
   name_in?: Maybe<String[] | String>;
@@ -812,6 +1011,7 @@ export interface ActorWhereInput {
   name_not_starts_with?: Maybe<String>;
   name_ends_with?: Maybe<String>;
   name_not_ends_with?: Maybe<String>;
+<<<<<<< HEAD
   AND?: Maybe<ActorWhereInput[] | ActorWhereInput>;
 }
 
@@ -865,6 +1065,40 @@ export type CinemaWhereUniqueInput = AtLeastOne<{
 }>;
 
 export interface PurchaseWhereInput {
+=======
+  card?: Maybe<CardWhereInput>;
+  history_some?: Maybe<PurchaseWhereInput>;
+  AND?: Maybe<UserWhereInput[] | UserWhereInput>;
+}
+
+export interface ProductUpdateDataInput {
+  name?: Maybe<String>;
+  price?: Maybe<Float>;
+}
+
+export interface PayrollUpdateManyInput {
+  create?: Maybe<PayrollCreateInput[] | PayrollCreateInput>;
+  update?: Maybe<
+    | PayrollUpdateWithWhereUniqueNestedInput[]
+    | PayrollUpdateWithWhereUniqueNestedInput
+  >;
+  upsert?: Maybe<
+    | PayrollUpsertWithWhereUniqueNestedInput[]
+    | PayrollUpsertWithWhereUniqueNestedInput
+  >;
+  delete?: Maybe<PayrollWhereUniqueInput[] | PayrollWhereUniqueInput>;
+  connect?: Maybe<PayrollWhereUniqueInput[] | PayrollWhereUniqueInput>;
+  set?: Maybe<PayrollWhereUniqueInput[] | PayrollWhereUniqueInput>;
+  disconnect?: Maybe<PayrollWhereUniqueInput[] | PayrollWhereUniqueInput>;
+  deleteMany?: Maybe<PayrollScalarWhereInput[] | PayrollScalarWhereInput>;
+  updateMany?: Maybe<
+    | PayrollUpdateManyWithWhereNestedInput[]
+    | PayrollUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface PurchaseWhereInput {
+>>>>>>> development
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -892,6 +1126,7 @@ export interface PurchaseWhereInput {
   AND?: Maybe<PurchaseWhereInput[] | PurchaseWhereInput>;
 }
 
+<<<<<<< HEAD
 export interface ProdNQuanWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
@@ -917,6 +1152,10 @@ export interface ProdNQuanWhereInput {
   quantity_gt?: Maybe<Int>;
   quantity_gte?: Maybe<Int>;
   AND?: Maybe<ProdNQuanWhereInput[] | ProdNQuanWhereInput>;
+=======
+export interface PurchaseUpdateManyDataInput {
+  total?: Maybe<Float>;
+>>>>>>> development
 }
 
 export interface ProductWhereInput {
@@ -959,6 +1198,7 @@ export interface ProductWhereInput {
   AND?: Maybe<ProductWhereInput[] | ProductWhereInput>;
 }
 
+<<<<<<< HEAD
 export interface TicketWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
@@ -985,6 +1225,11 @@ export interface TicketWhereInput {
   price_gt?: Maybe<Float>;
   price_gte?: Maybe<Float>;
   AND?: Maybe<TicketWhereInput[] | TicketWhereInput>;
+=======
+export interface PurchaseUpdateManyWithWhereNestedInput {
+  where: PurchaseScalarWhereInput;
+  data: PurchaseUpdateManyDataInput;
+>>>>>>> development
 }
 
 export interface ShowWhereInput {
@@ -1029,6 +1274,37 @@ export interface ShowWhereInput {
   AND?: Maybe<ShowWhereInput[] | ShowWhereInput>;
 }
 
+<<<<<<< HEAD
+=======
+export interface PurchaseScalarWhereInput {
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
+  total?: Maybe<Float>;
+  total_not?: Maybe<Float>;
+  total_in?: Maybe<Float[] | Float>;
+  total_not_in?: Maybe<Float[] | Float>;
+  total_lt?: Maybe<Float>;
+  total_lte?: Maybe<Float>;
+  total_gt?: Maybe<Float>;
+  total_gte?: Maybe<Float>;
+  AND?: Maybe<PurchaseScalarWhereInput[] | PurchaseScalarWhereInput>;
+  OR?: Maybe<PurchaseScalarWhereInput[] | PurchaseScalarWhereInput>;
+  NOT?: Maybe<PurchaseScalarWhereInput[] | PurchaseScalarWhereInput>;
+}
+
+>>>>>>> development
 export interface MovieWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
@@ -1113,6 +1389,7 @@ export interface MovieWhereInput {
   AND?: Maybe<MovieWhereInput[] | MovieWhereInput>;
 }
 
+<<<<<<< HEAD
 export interface DirectorWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
@@ -1145,6 +1422,8 @@ export interface DirectorWhereInput {
   AND?: Maybe<DirectorWhereInput[] | DirectorWhereInput>;
 }
 
+=======
+>>>>>>> development
 export interface RoomWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
@@ -1210,6 +1489,103 @@ export interface SeatWhereInput {
   AND?: Maybe<SeatWhereInput[] | SeatWhereInput>;
 }
 
+<<<<<<< HEAD
+=======
+export interface ActorCreateInput {
+  id?: Maybe<ID_Input>;
+  name: String;
+}
+
+export interface RoomSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<RoomWhereInput>;
+  AND?: Maybe<RoomSubscriptionWhereInput[] | RoomSubscriptionWhereInput>;
+}
+
+export interface ActorUpdateInput {
+  name?: Maybe<String>;
+}
+
+export interface PurchaseSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PurchaseWhereInput>;
+  AND?: Maybe<
+    PurchaseSubscriptionWhereInput[] | PurchaseSubscriptionWhereInput
+  >;
+}
+
+export interface ActorUpdateManyMutationInput {
+  name?: Maybe<String>;
+}
+
+export interface ProdNQuanSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<ProdNQuanWhereInput>;
+  AND?: Maybe<
+    ProdNQuanSubscriptionWhereInput[] | ProdNQuanSubscriptionWhereInput
+  >;
+}
+
+export interface PurchaseUpsertWithWhereUniqueNestedInput {
+  where: PurchaseWhereUniqueInput;
+  update: PurchaseUpdateDataInput;
+  create: PurchaseCreateInput;
+}
+
+export interface MovieSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<MovieWhereInput>;
+  AND?: Maybe<MovieSubscriptionWhereInput[] | MovieSubscriptionWhereInput>;
+}
+
+export interface TicketUpdateManyDataInput {
+  price?: Maybe<Float>;
+}
+
+export interface DirectorSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<DirectorWhereInput>;
+  AND?: Maybe<
+    DirectorSubscriptionWhereInput[] | DirectorSubscriptionWhereInput
+  >;
+}
+
+export interface CardCreateInput {
+  id?: Maybe<ID_Input>;
+  cardID: String;
+  points: Float;
+}
+
+export interface CardSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<CardWhereInput>;
+  AND?: Maybe<CardSubscriptionWhereInput[] | CardSubscriptionWhereInput>;
+}
+
+export interface CardUpdateInput {
+  cardID?: Maybe<String>;
+  points?: Maybe<Float>;
+}
+
+>>>>>>> development
 export interface PayrollWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
@@ -1237,6 +1613,7 @@ export interface PayrollWhereInput {
   AND?: Maybe<PayrollWhereInput[] | PayrollWhereInput>;
 }
 
+<<<<<<< HEAD
 export interface EmployeeWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
@@ -1353,6 +1730,35 @@ export interface EmployeeWhereInput {
   cinemaId_ends_with?: Maybe<String>;
   cinemaId_not_ends_with?: Maybe<String>;
   AND?: Maybe<EmployeeWhereInput[] | EmployeeWhereInput>;
+=======
+export interface CardUpdateManyMutationInput {
+  cardID?: Maybe<String>;
+  points?: Maybe<Float>;
+}
+
+export type CardWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+  cardID?: Maybe<String>;
+}>;
+
+export interface CinemaCreateInput {
+  id?: Maybe<ID_Input>;
+  name: String;
+  address: String;
+  purchases?: Maybe<PurchaseCreateManyInput>;
+  payroll?: Maybe<PayrollCreateManyInput>;
+  employees?: Maybe<EmployeeCreateManyInput>;
+}
+
+export interface CardUpsertNestedInput {
+  update: CardUpdateDataInput;
+  create: CardCreateInput;
+}
+
+export interface PurchaseCreateManyInput {
+  create?: Maybe<PurchaseCreateInput[] | PurchaseCreateInput>;
+  connect?: Maybe<PurchaseWhereUniqueInput[] | PurchaseWhereUniqueInput>;
+>>>>>>> development
 }
 
 export interface CinemaWhereInput {
@@ -1404,6 +1810,7 @@ export interface CinemaWhereInput {
   AND?: Maybe<CinemaWhereInput[] | CinemaWhereInput>;
 }
 
+<<<<<<< HEAD
 export type DirectorWhereUniqueInput = AtLeastOne<{
   id: Maybe<ID_Input>;
 }>;
@@ -1624,6 +2031,100 @@ export interface ShowCreateOneInput {
 }
 
 export interface ShowCreateInput {
+=======
+export interface PurchaseCreateInput {
+  id?: Maybe<ID_Input>;
+  products?: Maybe<ProdNQuanCreateManyInput>;
+  tickets?: Maybe<TicketCreateManyInput>;
+  total: Float;
+}
+
+export interface UserUpdateInput {
+  email?: Maybe<String>;
+  password?: Maybe<String>;
+  name?: Maybe<String>;
+  card?: Maybe<CardUpdateOneInput>;
+  history?: Maybe<PurchaseUpdateManyInput>;
+}
+
+export interface ProdNQuanCreateManyInput {
+  create?: Maybe<ProdNQuanCreateInput[] | ProdNQuanCreateInput>;
+  connect?: Maybe<ProdNQuanWhereUniqueInput[] | ProdNQuanWhereUniqueInput>;
+}
+
+export interface UserCreateInput {
+  id?: Maybe<ID_Input>;
+  email: String;
+  password?: Maybe<String>;
+  name: String;
+  card?: Maybe<CardCreateOneInput>;
+  history?: Maybe<PurchaseCreateManyInput>;
+}
+
+export interface ProdNQuanCreateInput {
+  id?: Maybe<ID_Input>;
+  product?: Maybe<ProductCreateOneInput>;
+  quantity?: Maybe<Int>;
+}
+
+export interface TicketUpdateManyMutationInput {
+  price?: Maybe<Float>;
+}
+
+export interface ProductCreateOneInput {
+  create?: Maybe<ProductCreateInput>;
+  connect?: Maybe<ProductWhereUniqueInput>;
+}
+
+export interface ShowUpdateManyMutationInput {
+  date?: Maybe<DateTimeInput>;
+  showType?: Maybe<String>;
+}
+
+export interface ProductCreateInput {
+  id?: Maybe<ID_Input>;
+  name: String;
+  price: Float;
+}
+
+export type EmployeeWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+  empNum?: Maybe<Int>;
+  email?: Maybe<String>;
+}>;
+
+export interface TicketCreateManyInput {
+  create?: Maybe<TicketCreateInput[] | TicketCreateInput>;
+  connect?: Maybe<TicketWhereUniqueInput[] | TicketWhereUniqueInput>;
+}
+
+export interface SeatUpdateInput {
+  seatCode?: Maybe<String>;
+  available?: Maybe<Boolean>;
+}
+
+export interface TicketCreateInput {
+  id?: Maybe<ID_Input>;
+  show: ShowCreateOneInput;
+  seat: SeatCreateOneInput;
+  price: Float;
+}
+
+export type MovieWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export interface ShowCreateOneInput {
+  create?: Maybe<ShowCreateInput>;
+  connect?: Maybe<ShowWhereUniqueInput>;
+}
+
+export interface PurchaseUpdateManyMutationInput {
+  total?: Maybe<Float>;
+}
+
+export interface ShowCreateInput {
+>>>>>>> development
   id?: Maybe<ID_Input>;
   date: DateTimeInput;
   movie: MovieCreateOneInput;
@@ -1631,11 +2132,27 @@ export interface ShowCreateInput {
   showType: String;
 }
 
+<<<<<<< HEAD
+=======
+export interface ProductUpdateManyMutationInput {
+  name?: Maybe<String>;
+  price?: Maybe<Float>;
+}
+
+>>>>>>> development
 export interface MovieCreateOneInput {
   create?: Maybe<MovieCreateInput>;
   connect?: Maybe<MovieWhereUniqueInput>;
 }
 
+<<<<<<< HEAD
+=======
+export interface ProductUpdateInput {
+  name?: Maybe<String>;
+  price?: Maybe<Float>;
+}
+
+>>>>>>> development
 export interface MovieCreateInput {
   id?: Maybe<ID_Input>;
   title: String;
@@ -1647,26 +2164,79 @@ export interface MovieCreateInput {
   class: String;
 }
 
+<<<<<<< HEAD
+=======
+export interface ProdNQuanUpdateInput {
+  product?: Maybe<ProductUpdateOneInput>;
+  quantity?: Maybe<Int>;
+}
+
+>>>>>>> development
 export interface DirectorCreateOneInput {
   create?: Maybe<DirectorCreateInput>;
   connect?: Maybe<DirectorWhereUniqueInput>;
 }
 
+<<<<<<< HEAD
+=======
+export interface PayrollUpdateManyMutationInput {
+  paid?: Maybe<Float>;
+}
+
+>>>>>>> development
 export interface DirectorCreateInput {
   id?: Maybe<ID_Input>;
   name: String;
 }
 
+<<<<<<< HEAD
+=======
+export interface MovieUpdateManyMutationInput {
+  title?: Maybe<String>;
+  year?: Maybe<Int>;
+  summary?: Maybe<String>;
+  gender?: Maybe<String>;
+  class?: Maybe<String>;
+}
+
+>>>>>>> development
 export interface ActorCreateManyInput {
   create?: Maybe<ActorCreateInput[] | ActorCreateInput>;
   connect?: Maybe<ActorWhereUniqueInput[] | ActorWhereUniqueInput>;
 }
 
+<<<<<<< HEAD
+=======
+export interface MovieUpdateInput {
+  title?: Maybe<String>;
+  year?: Maybe<Int>;
+  summary?: Maybe<String>;
+  director?: Maybe<DirectorUpdateOneRequiredInput>;
+  actors?: Maybe<ActorUpdateManyInput>;
+  gender?: Maybe<String>;
+  class?: Maybe<String>;
+}
+
+>>>>>>> development
 export interface RoomCreateOneInput {
   create?: Maybe<RoomCreateInput>;
   connect?: Maybe<RoomWhereUniqueInput>;
 }
 
+<<<<<<< HEAD
+=======
+export interface EmployeeUpdateInput {
+  empNum?: Maybe<Int>;
+  name?: Maybe<String>;
+  email?: Maybe<String>;
+  password?: Maybe<String>;
+  days?: Maybe<Int>;
+  status?: Maybe<String>;
+  area?: Maybe<String>;
+  cinemaId?: Maybe<String>;
+}
+
+>>>>>>> development
 export interface RoomCreateInput {
   id?: Maybe<ID_Input>;
   roomNum: Int;
@@ -1674,22 +2244,45 @@ export interface RoomCreateInput {
   seats?: Maybe<SeatCreateManyInput>;
 }
 
+<<<<<<< HEAD
+=======
+export type PurchaseWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+>>>>>>> development
 export interface SeatCreateManyInput {
   create?: Maybe<SeatCreateInput[] | SeatCreateInput>;
   connect?: Maybe<SeatWhereUniqueInput[] | SeatWhereUniqueInput>;
 }
 
+<<<<<<< HEAD
+=======
+export interface CinemaUpdateManyMutationInput {
+  name?: Maybe<String>;
+  address?: Maybe<String>;
+}
+
+>>>>>>> development
 export interface SeatCreateInput {
   id?: Maybe<ID_Input>;
   seatCode: String;
   available?: Maybe<Boolean>;
 }
 
+<<<<<<< HEAD
+=======
+export type RoomWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+>>>>>>> development
 export interface SeatCreateOneInput {
   create?: Maybe<SeatCreateInput>;
   connect?: Maybe<SeatWhereUniqueInput>;
 }
 
+<<<<<<< HEAD
 export interface PayrollCreateManyInput {
   create?: Maybe<PayrollCreateInput[] | PayrollCreateInput>;
   connect?: Maybe<PayrollWhereUniqueInput[] | PayrollWhereUniqueInput>;
@@ -1820,6 +2413,8 @@ export interface ProdNQuanUpsertWithWhereUniqueNestedInput {
 }
 
 export interface ProdNQuanScalarWhereInput {
+=======
+export interface EmployeeScalarWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -1834,6 +2429,180 @@ export interface ProdNQuanScalarWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
+  empNum?: Maybe<Int>;
+  empNum_not?: Maybe<Int>;
+  empNum_in?: Maybe<Int[] | Int>;
+  empNum_not_in?: Maybe<Int[] | Int>;
+  empNum_lt?: Maybe<Int>;
+  empNum_lte?: Maybe<Int>;
+  empNum_gt?: Maybe<Int>;
+  empNum_gte?: Maybe<Int>;
+  name?: Maybe<String>;
+  name_not?: Maybe<String>;
+  name_in?: Maybe<String[] | String>;
+  name_not_in?: Maybe<String[] | String>;
+  name_lt?: Maybe<String>;
+  name_lte?: Maybe<String>;
+  name_gt?: Maybe<String>;
+  name_gte?: Maybe<String>;
+  name_contains?: Maybe<String>;
+  name_not_contains?: Maybe<String>;
+  name_starts_with?: Maybe<String>;
+  name_not_starts_with?: Maybe<String>;
+  name_ends_with?: Maybe<String>;
+  name_not_ends_with?: Maybe<String>;
+  email?: Maybe<String>;
+  email_not?: Maybe<String>;
+  email_in?: Maybe<String[] | String>;
+  email_not_in?: Maybe<String[] | String>;
+  email_lt?: Maybe<String>;
+  email_lte?: Maybe<String>;
+  email_gt?: Maybe<String>;
+  email_gte?: Maybe<String>;
+  email_contains?: Maybe<String>;
+  email_not_contains?: Maybe<String>;
+  email_starts_with?: Maybe<String>;
+  email_not_starts_with?: Maybe<String>;
+  email_ends_with?: Maybe<String>;
+  email_not_ends_with?: Maybe<String>;
+  password?: Maybe<String>;
+  password_not?: Maybe<String>;
+  password_in?: Maybe<String[] | String>;
+  password_not_in?: Maybe<String[] | String>;
+  password_lt?: Maybe<String>;
+  password_lte?: Maybe<String>;
+  password_gt?: Maybe<String>;
+  password_gte?: Maybe<String>;
+  password_contains?: Maybe<String>;
+  password_not_contains?: Maybe<String>;
+  password_starts_with?: Maybe<String>;
+  password_not_starts_with?: Maybe<String>;
+  password_ends_with?: Maybe<String>;
+  password_not_ends_with?: Maybe<String>;
+  days?: Maybe<Int>;
+  days_not?: Maybe<Int>;
+  days_in?: Maybe<Int[] | Int>;
+  days_not_in?: Maybe<Int[] | Int>;
+  days_lt?: Maybe<Int>;
+  days_lte?: Maybe<Int>;
+  days_gt?: Maybe<Int>;
+  days_gte?: Maybe<Int>;
+  status?: Maybe<String>;
+  status_not?: Maybe<String>;
+  status_in?: Maybe<String[] | String>;
+  status_not_in?: Maybe<String[] | String>;
+  status_lt?: Maybe<String>;
+  status_lte?: Maybe<String>;
+  status_gt?: Maybe<String>;
+  status_gte?: Maybe<String>;
+  status_contains?: Maybe<String>;
+  status_not_contains?: Maybe<String>;
+  status_starts_with?: Maybe<String>;
+  status_not_starts_with?: Maybe<String>;
+  status_ends_with?: Maybe<String>;
+  status_not_ends_with?: Maybe<String>;
+  area?: Maybe<String>;
+  area_not?: Maybe<String>;
+  area_in?: Maybe<String[] | String>;
+  area_not_in?: Maybe<String[] | String>;
+  area_lt?: Maybe<String>;
+  area_lte?: Maybe<String>;
+  area_gt?: Maybe<String>;
+  area_gte?: Maybe<String>;
+  area_contains?: Maybe<String>;
+  area_not_contains?: Maybe<String>;
+  area_starts_with?: Maybe<String>;
+  area_not_starts_with?: Maybe<String>;
+  area_ends_with?: Maybe<String>;
+  area_not_ends_with?: Maybe<String>;
+  cinemaId?: Maybe<String>;
+  cinemaId_not?: Maybe<String>;
+  cinemaId_in?: Maybe<String[] | String>;
+  cinemaId_not_in?: Maybe<String[] | String>;
+  cinemaId_lt?: Maybe<String>;
+  cinemaId_lte?: Maybe<String>;
+  cinemaId_gt?: Maybe<String>;
+  cinemaId_gte?: Maybe<String>;
+  cinemaId_contains?: Maybe<String>;
+  cinemaId_not_contains?: Maybe<String>;
+  cinemaId_starts_with?: Maybe<String>;
+  cinemaId_not_starts_with?: Maybe<String>;
+  cinemaId_ends_with?: Maybe<String>;
+  cinemaId_not_ends_with?: Maybe<String>;
+  AND?: Maybe<EmployeeScalarWhereInput[] | EmployeeScalarWhereInput>;
+  OR?: Maybe<EmployeeScalarWhereInput[] | EmployeeScalarWhereInput>;
+  NOT?: Maybe<EmployeeScalarWhereInput[] | EmployeeScalarWhereInput>;
+}
+
+export interface PayrollCreateManyInput {
+  create?: Maybe<PayrollCreateInput[] | PayrollCreateInput>;
+  connect?: Maybe<PayrollWhereUniqueInput[] | PayrollWhereUniqueInput>;
+}
+
+export interface EmployeeUpdateWithWhereUniqueNestedInput {
+  where: EmployeeWhereUniqueInput;
+  data: EmployeeUpdateDataInput;
+}
+
+export interface PayrollCreateInput {
+  id?: Maybe<ID_Input>;
+  employee: EmployeeCreateOneInput;
+  paid: Float;
+}
+
+export interface EmployeeUpdateManyInput {
+  create?: Maybe<EmployeeCreateInput[] | EmployeeCreateInput>;
+  update?: Maybe<
+    | EmployeeUpdateWithWhereUniqueNestedInput[]
+    | EmployeeUpdateWithWhereUniqueNestedInput
+  >;
+  upsert?: Maybe<
+    | EmployeeUpsertWithWhereUniqueNestedInput[]
+    | EmployeeUpsertWithWhereUniqueNestedInput
+  >;
+  delete?: Maybe<EmployeeWhereUniqueInput[] | EmployeeWhereUniqueInput>;
+  connect?: Maybe<EmployeeWhereUniqueInput[] | EmployeeWhereUniqueInput>;
+  set?: Maybe<EmployeeWhereUniqueInput[] | EmployeeWhereUniqueInput>;
+  disconnect?: Maybe<EmployeeWhereUniqueInput[] | EmployeeWhereUniqueInput>;
+  deleteMany?: Maybe<EmployeeScalarWhereInput[] | EmployeeScalarWhereInput>;
+  updateMany?: Maybe<
+    | EmployeeUpdateManyWithWhereNestedInput[]
+    | EmployeeUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface EmployeeCreateOneInput {
+  create?: Maybe<EmployeeCreateInput>;
+  connect?: Maybe<EmployeeWhereUniqueInput>;
+}
+
+export interface PayrollUpdateManyWithWhereNestedInput {
+  where: PayrollScalarWhereInput;
+  data: PayrollUpdateManyDataInput;
+}
+
+export interface TicketUpdateManyWithWhereNestedInput {
+  where: TicketScalarWhereInput;
+  data: TicketUpdateManyDataInput;
+}
+
+export interface ActorWhereInput {
+>>>>>>> development
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
+<<<<<<< HEAD
   quantity?: Maybe<Int>;
   quantity_not?: Maybe<Int>;
   quantity_in?: Maybe<Int[] | Int>;
@@ -1971,6 +2740,93 @@ export interface ActorUpsertWithWhereUniqueNestedInput {
 }
 
 export interface ActorScalarWhereInput {
+=======
+  name?: Maybe<String>;
+  name_not?: Maybe<String>;
+  name_in?: Maybe<String[] | String>;
+  name_not_in?: Maybe<String[] | String>;
+  name_lt?: Maybe<String>;
+  name_lte?: Maybe<String>;
+  name_gt?: Maybe<String>;
+  name_gte?: Maybe<String>;
+  name_contains?: Maybe<String>;
+  name_not_contains?: Maybe<String>;
+  name_starts_with?: Maybe<String>;
+  name_not_starts_with?: Maybe<String>;
+  name_ends_with?: Maybe<String>;
+  name_not_ends_with?: Maybe<String>;
+  AND?: Maybe<ActorWhereInput[] | ActorWhereInput>;
+}
+
+export interface EmployeeCreateManyInput {
+  create?: Maybe<EmployeeCreateInput[] | EmployeeCreateInput>;
+  connect?: Maybe<EmployeeWhereUniqueInput[] | EmployeeWhereUniqueInput>;
+}
+
+export interface PayrollUpsertWithWhereUniqueNestedInput {
+  where: PayrollWhereUniqueInput;
+  update: PayrollUpdateDataInput;
+  create: PayrollCreateInput;
+}
+
+export interface CinemaUpdateInput {
+  name?: Maybe<String>;
+  address?: Maybe<String>;
+  purchases?: Maybe<PurchaseUpdateManyInput>;
+  payroll?: Maybe<PayrollUpdateManyInput>;
+  employees?: Maybe<EmployeeUpdateManyInput>;
+}
+
+export type TicketWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export interface PurchaseUpdateManyInput {
+  create?: Maybe<PurchaseCreateInput[] | PurchaseCreateInput>;
+  update?: Maybe<
+    | PurchaseUpdateWithWhereUniqueNestedInput[]
+    | PurchaseUpdateWithWhereUniqueNestedInput
+  >;
+  upsert?: Maybe<
+    | PurchaseUpsertWithWhereUniqueNestedInput[]
+    | PurchaseUpsertWithWhereUniqueNestedInput
+  >;
+  delete?: Maybe<PurchaseWhereUniqueInput[] | PurchaseWhereUniqueInput>;
+  connect?: Maybe<PurchaseWhereUniqueInput[] | PurchaseWhereUniqueInput>;
+  set?: Maybe<PurchaseWhereUniqueInput[] | PurchaseWhereUniqueInput>;
+  disconnect?: Maybe<PurchaseWhereUniqueInput[] | PurchaseWhereUniqueInput>;
+  deleteMany?: Maybe<PurchaseScalarWhereInput[] | PurchaseScalarWhereInput>;
+  updateMany?: Maybe<
+    | PurchaseUpdateManyWithWhereNestedInput[]
+    | PurchaseUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface EmployeeUpdateOneRequiredInput {
+  create?: Maybe<EmployeeCreateInput>;
+  update?: Maybe<EmployeeUpdateDataInput>;
+  upsert?: Maybe<EmployeeUpsertNestedInput>;
+  connect?: Maybe<EmployeeWhereUniqueInput>;
+}
+
+export interface PurchaseUpdateWithWhereUniqueNestedInput {
+  where: PurchaseWhereUniqueInput;
+  data: PurchaseUpdateDataInput;
+}
+
+export type UserWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+  email?: Maybe<String>;
+}>;
+
+export interface PurchaseUpdateDataInput {
+  products?: Maybe<ProdNQuanUpdateManyInput>;
+  tickets?: Maybe<TicketUpdateManyInput>;
+  total?: Maybe<Float>;
+}
+
+export interface ProdNQuanWhereInput {
+>>>>>>> development
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -1985,6 +2841,7 @@ export interface ActorScalarWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
+<<<<<<< HEAD
   name?: Maybe<String>;
   name_not?: Maybe<String>;
   name_in?: Maybe<String[] | String>;
@@ -2068,6 +2925,70 @@ export interface SeatUpsertWithWhereUniqueNestedInput {
 }
 
 export interface SeatScalarWhereInput {
+=======
+  product?: Maybe<ProductWhereInput>;
+  quantity?: Maybe<Int>;
+  quantity_not?: Maybe<Int>;
+  quantity_in?: Maybe<Int[] | Int>;
+  quantity_not_in?: Maybe<Int[] | Int>;
+  quantity_lt?: Maybe<Int>;
+  quantity_lte?: Maybe<Int>;
+  quantity_gt?: Maybe<Int>;
+  quantity_gte?: Maybe<Int>;
+  AND?: Maybe<ProdNQuanWhereInput[] | ProdNQuanWhereInput>;
+}
+
+export interface ProdNQuanUpdateManyInput {
+  create?: Maybe<ProdNQuanCreateInput[] | ProdNQuanCreateInput>;
+  update?: Maybe<
+    | ProdNQuanUpdateWithWhereUniqueNestedInput[]
+    | ProdNQuanUpdateWithWhereUniqueNestedInput
+  >;
+  upsert?: Maybe<
+    | ProdNQuanUpsertWithWhereUniqueNestedInput[]
+    | ProdNQuanUpsertWithWhereUniqueNestedInput
+  >;
+  delete?: Maybe<ProdNQuanWhereUniqueInput[] | ProdNQuanWhereUniqueInput>;
+  connect?: Maybe<ProdNQuanWhereUniqueInput[] | ProdNQuanWhereUniqueInput>;
+  set?: Maybe<ProdNQuanWhereUniqueInput[] | ProdNQuanWhereUniqueInput>;
+  disconnect?: Maybe<ProdNQuanWhereUniqueInput[] | ProdNQuanWhereUniqueInput>;
+  deleteMany?: Maybe<ProdNQuanScalarWhereInput[] | ProdNQuanScalarWhereInput>;
+  updateMany?: Maybe<
+    | ProdNQuanUpdateManyWithWhereNestedInput[]
+    | ProdNQuanUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface TicketSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<TicketWhereInput>;
+  AND?: Maybe<TicketSubscriptionWhereInput[] | TicketSubscriptionWhereInput>;
+}
+
+export interface ProdNQuanUpdateWithWhereUniqueNestedInput {
+  where: ProdNQuanWhereUniqueInput;
+  data: ProdNQuanUpdateDataInput;
+}
+
+export interface ShowSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<ShowWhereInput>;
+  AND?: Maybe<ShowSubscriptionWhereInput[] | ShowSubscriptionWhereInput>;
+}
+
+export interface ProdNQuanUpdateDataInput {
+  product?: Maybe<ProductUpdateOneInput>;
+  quantity?: Maybe<Int>;
+}
+
+export interface CardWhereInput {
+>>>>>>> development
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -2082,6 +3003,7 @@ export interface SeatScalarWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
+<<<<<<< HEAD
   seatCode?: Maybe<String>;
   seatCode_not?: Maybe<String>;
   seatCode_in?: Maybe<String[] | String>;
@@ -2142,6 +3064,70 @@ export interface TicketUpsertWithWhereUniqueNestedInput {
 }
 
 export interface TicketScalarWhereInput {
+=======
+  cardID?: Maybe<String>;
+  cardID_not?: Maybe<String>;
+  cardID_in?: Maybe<String[] | String>;
+  cardID_not_in?: Maybe<String[] | String>;
+  cardID_lt?: Maybe<String>;
+  cardID_lte?: Maybe<String>;
+  cardID_gt?: Maybe<String>;
+  cardID_gte?: Maybe<String>;
+  cardID_contains?: Maybe<String>;
+  cardID_not_contains?: Maybe<String>;
+  cardID_starts_with?: Maybe<String>;
+  cardID_not_starts_with?: Maybe<String>;
+  cardID_ends_with?: Maybe<String>;
+  cardID_not_ends_with?: Maybe<String>;
+  points?: Maybe<Float>;
+  points_not?: Maybe<Float>;
+  points_in?: Maybe<Float[] | Float>;
+  points_not_in?: Maybe<Float[] | Float>;
+  points_lt?: Maybe<Float>;
+  points_lte?: Maybe<Float>;
+  points_gt?: Maybe<Float>;
+  points_gte?: Maybe<Float>;
+  AND?: Maybe<CardWhereInput[] | CardWhereInput>;
+}
+
+export interface ProductUpdateOneInput {
+  create?: Maybe<ProductCreateInput>;
+  update?: Maybe<ProductUpdateDataInput>;
+  upsert?: Maybe<ProductUpsertNestedInput>;
+  delete?: Maybe<Boolean>;
+  disconnect?: Maybe<Boolean>;
+  connect?: Maybe<ProductWhereUniqueInput>;
+}
+
+export interface PayrollSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PayrollWhereInput>;
+  AND?: Maybe<PayrollSubscriptionWhereInput[] | PayrollSubscriptionWhereInput>;
+}
+
+export type CinemaWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export interface CinemaSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<CinemaWhereInput>;
+  AND?: Maybe<CinemaSubscriptionWhereInput[] | CinemaSubscriptionWhereInput>;
+}
+
+export interface ProductUpsertNestedInput {
+  update: ProductUpdateDataInput;
+  create: ProductCreateInput;
+}
+
+export interface EmployeeWhereInput {
+>>>>>>> development
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -2156,6 +3142,7 @@ export interface TicketScalarWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
+<<<<<<< HEAD
   price?: Maybe<Float>;
   price_not?: Maybe<Float>;
   price_in?: Maybe<Float[] | Float>;
@@ -2185,6 +3172,123 @@ export interface PurchaseUpsertWithWhereUniqueNestedInput {
 }
 
 export interface PurchaseScalarWhereInput {
+=======
+  empNum?: Maybe<Int>;
+  empNum_not?: Maybe<Int>;
+  empNum_in?: Maybe<Int[] | Int>;
+  empNum_not_in?: Maybe<Int[] | Int>;
+  empNum_lt?: Maybe<Int>;
+  empNum_lte?: Maybe<Int>;
+  empNum_gt?: Maybe<Int>;
+  empNum_gte?: Maybe<Int>;
+  name?: Maybe<String>;
+  name_not?: Maybe<String>;
+  name_in?: Maybe<String[] | String>;
+  name_not_in?: Maybe<String[] | String>;
+  name_lt?: Maybe<String>;
+  name_lte?: Maybe<String>;
+  name_gt?: Maybe<String>;
+  name_gte?: Maybe<String>;
+  name_contains?: Maybe<String>;
+  name_not_contains?: Maybe<String>;
+  name_starts_with?: Maybe<String>;
+  name_not_starts_with?: Maybe<String>;
+  name_ends_with?: Maybe<String>;
+  name_not_ends_with?: Maybe<String>;
+  email?: Maybe<String>;
+  email_not?: Maybe<String>;
+  email_in?: Maybe<String[] | String>;
+  email_not_in?: Maybe<String[] | String>;
+  email_lt?: Maybe<String>;
+  email_lte?: Maybe<String>;
+  email_gt?: Maybe<String>;
+  email_gte?: Maybe<String>;
+  email_contains?: Maybe<String>;
+  email_not_contains?: Maybe<String>;
+  email_starts_with?: Maybe<String>;
+  email_not_starts_with?: Maybe<String>;
+  email_ends_with?: Maybe<String>;
+  email_not_ends_with?: Maybe<String>;
+  password?: Maybe<String>;
+  password_not?: Maybe<String>;
+  password_in?: Maybe<String[] | String>;
+  password_not_in?: Maybe<String[] | String>;
+  password_lt?: Maybe<String>;
+  password_lte?: Maybe<String>;
+  password_gt?: Maybe<String>;
+  password_gte?: Maybe<String>;
+  password_contains?: Maybe<String>;
+  password_not_contains?: Maybe<String>;
+  password_starts_with?: Maybe<String>;
+  password_not_starts_with?: Maybe<String>;
+  password_ends_with?: Maybe<String>;
+  password_not_ends_with?: Maybe<String>;
+  days?: Maybe<Int>;
+  days_not?: Maybe<Int>;
+  days_in?: Maybe<Int[] | Int>;
+  days_not_in?: Maybe<Int[] | Int>;
+  days_lt?: Maybe<Int>;
+  days_lte?: Maybe<Int>;
+  days_gt?: Maybe<Int>;
+  days_gte?: Maybe<Int>;
+  status?: Maybe<String>;
+  status_not?: Maybe<String>;
+  status_in?: Maybe<String[] | String>;
+  status_not_in?: Maybe<String[] | String>;
+  status_lt?: Maybe<String>;
+  status_lte?: Maybe<String>;
+  status_gt?: Maybe<String>;
+  status_gte?: Maybe<String>;
+  status_contains?: Maybe<String>;
+  status_not_contains?: Maybe<String>;
+  status_starts_with?: Maybe<String>;
+  status_not_starts_with?: Maybe<String>;
+  status_ends_with?: Maybe<String>;
+  status_not_ends_with?: Maybe<String>;
+  area?: Maybe<String>;
+  area_not?: Maybe<String>;
+  area_in?: Maybe<String[] | String>;
+  area_not_in?: Maybe<String[] | String>;
+  area_lt?: Maybe<String>;
+  area_lte?: Maybe<String>;
+  area_gt?: Maybe<String>;
+  area_gte?: Maybe<String>;
+  area_contains?: Maybe<String>;
+  area_not_contains?: Maybe<String>;
+  area_starts_with?: Maybe<String>;
+  area_not_starts_with?: Maybe<String>;
+  area_ends_with?: Maybe<String>;
+  area_not_ends_with?: Maybe<String>;
+  cinemaId?: Maybe<String>;
+  cinemaId_not?: Maybe<String>;
+  cinemaId_in?: Maybe<String[] | String>;
+  cinemaId_not_in?: Maybe<String[] | String>;
+  cinemaId_lt?: Maybe<String>;
+  cinemaId_lte?: Maybe<String>;
+  cinemaId_gt?: Maybe<String>;
+  cinemaId_gte?: Maybe<String>;
+  cinemaId_contains?: Maybe<String>;
+  cinemaId_not_contains?: Maybe<String>;
+  cinemaId_starts_with?: Maybe<String>;
+  cinemaId_not_starts_with?: Maybe<String>;
+  cinemaId_ends_with?: Maybe<String>;
+  cinemaId_not_ends_with?: Maybe<String>;
+  AND?: Maybe<EmployeeWhereInput[] | EmployeeWhereInput>;
+}
+
+export interface ProdNQuanUpsertWithWhereUniqueNestedInput {
+  where: ProdNQuanWhereUniqueInput;
+  update: ProdNQuanUpdateDataInput;
+  create: ProdNQuanCreateInput;
+}
+
+export interface CardUpdateDataInput {
+  cardID?: Maybe<String>;
+  points?: Maybe<Float>;
+}
+
+export interface ProdNQuanScalarWhereInput {
+>>>>>>> development
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -2199,6 +3303,7 @@ export interface PurchaseScalarWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
+<<<<<<< HEAD
   total?: Maybe<Float>;
   total_not?: Maybe<Float>;
   total_in?: Maybe<Float[] | Float>;
@@ -2260,6 +3365,123 @@ export interface EmployeeUpdateOneRequiredInput {
 }
 
 export interface EmployeeUpdateDataInput {
+=======
+  quantity?: Maybe<Int>;
+  quantity_not?: Maybe<Int>;
+  quantity_in?: Maybe<Int[] | Int>;
+  quantity_not_in?: Maybe<Int[] | Int>;
+  quantity_lt?: Maybe<Int>;
+  quantity_lte?: Maybe<Int>;
+  quantity_gt?: Maybe<Int>;
+  quantity_gte?: Maybe<Int>;
+  AND?: Maybe<ProdNQuanScalarWhereInput[] | ProdNQuanScalarWhereInput>;
+  OR?: Maybe<ProdNQuanScalarWhereInput[] | ProdNQuanScalarWhereInput>;
+  NOT?: Maybe<ProdNQuanScalarWhereInput[] | ProdNQuanScalarWhereInput>;
+}
+
+export interface CardCreateOneInput {
+  create?: Maybe<CardCreateInput>;
+  connect?: Maybe<CardWhereUniqueInput>;
+}
+
+export interface ProdNQuanUpdateManyWithWhereNestedInput {
+  where: ProdNQuanScalarWhereInput;
+  data: ProdNQuanUpdateManyDataInput;
+}
+
+export interface TicketUpdateInput {
+  show?: Maybe<ShowUpdateOneRequiredInput>;
+  seat?: Maybe<SeatUpdateOneRequiredInput>;
+  price?: Maybe<Float>;
+}
+
+export interface ProdNQuanUpdateManyDataInput {
+  quantity?: Maybe<Int>;
+}
+
+export interface SeatUpdateManyMutationInput {
+  seatCode?: Maybe<String>;
+  available?: Maybe<Boolean>;
+}
+
+export interface TicketUpdateManyInput {
+  create?: Maybe<TicketCreateInput[] | TicketCreateInput>;
+  update?: Maybe<
+    | TicketUpdateWithWhereUniqueNestedInput[]
+    | TicketUpdateWithWhereUniqueNestedInput
+  >;
+  upsert?: Maybe<
+    | TicketUpsertWithWhereUniqueNestedInput[]
+    | TicketUpsertWithWhereUniqueNestedInput
+  >;
+  delete?: Maybe<TicketWhereUniqueInput[] | TicketWhereUniqueInput>;
+  connect?: Maybe<TicketWhereUniqueInput[] | TicketWhereUniqueInput>;
+  set?: Maybe<TicketWhereUniqueInput[] | TicketWhereUniqueInput>;
+  disconnect?: Maybe<TicketWhereUniqueInput[] | TicketWhereUniqueInput>;
+  deleteMany?: Maybe<TicketScalarWhereInput[] | TicketScalarWhereInput>;
+  updateMany?: Maybe<
+    | TicketUpdateManyWithWhereNestedInput[]
+    | TicketUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface RoomUpdateInput {
+  roomNum?: Maybe<Int>;
+  roomType?: Maybe<RoomType>;
+  seats?: Maybe<SeatUpdateManyInput>;
+}
+
+export interface TicketUpdateWithWhereUniqueNestedInput {
+  where: TicketWhereUniqueInput;
+  data: TicketUpdateDataInput;
+}
+
+export type PayrollWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export interface TicketUpdateDataInput {
+  show?: Maybe<ShowUpdateOneRequiredInput>;
+  seat?: Maybe<SeatUpdateOneRequiredInput>;
+  price?: Maybe<Float>;
+}
+
+export type ProdNQuanWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export interface ShowUpdateOneRequiredInput {
+  create?: Maybe<ShowCreateInput>;
+  update?: Maybe<ShowUpdateDataInput>;
+  upsert?: Maybe<ShowUpsertNestedInput>;
+  connect?: Maybe<ShowWhereUniqueInput>;
+}
+
+export type ProductWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+  name?: Maybe<String>;
+}>;
+
+export interface ShowUpdateDataInput {
+  date?: Maybe<DateTimeInput>;
+  movie?: Maybe<MovieUpdateOneRequiredInput>;
+  room?: Maybe<RoomUpdateOneRequiredInput>;
+  showType?: Maybe<String>;
+}
+
+export interface DirectorUpdateManyMutationInput {
+  name?: Maybe<String>;
+}
+
+export interface MovieUpdateOneRequiredInput {
+  create?: Maybe<MovieCreateInput>;
+  update?: Maybe<MovieUpdateDataInput>;
+  upsert?: Maybe<MovieUpsertNestedInput>;
+  connect?: Maybe<MovieWhereUniqueInput>;
+}
+
+export interface EmployeeUpdateManyDataInput {
+>>>>>>> development
   empNum?: Maybe<Int>;
   name?: Maybe<String>;
   email?: Maybe<String>;
@@ -2270,15 +3492,46 @@ export interface EmployeeUpdateDataInput {
   cinemaId?: Maybe<String>;
 }
 
+<<<<<<< HEAD
 export interface EmployeeUpsertNestedInput {
+=======
+export interface MovieUpdateDataInput {
+  title?: Maybe<String>;
+  year?: Maybe<Int>;
+  summary?: Maybe<String>;
+  director?: Maybe<DirectorUpdateOneRequiredInput>;
+  actors?: Maybe<ActorUpdateManyInput>;
+  gender?: Maybe<String>;
+  class?: Maybe<String>;
+}
+
+export interface EmployeeUpsertWithWhereUniqueNestedInput {
+  where: EmployeeWhereUniqueInput;
+>>>>>>> development
   update: EmployeeUpdateDataInput;
   create: EmployeeCreateInput;
 }
 
+<<<<<<< HEAD
 export interface PayrollUpsertWithWhereUniqueNestedInput {
   where: PayrollWhereUniqueInput;
   update: PayrollUpdateDataInput;
   create: PayrollCreateInput;
+=======
+export interface DirectorUpdateOneRequiredInput {
+  create?: Maybe<DirectorCreateInput>;
+  update?: Maybe<DirectorUpdateDataInput>;
+  upsert?: Maybe<DirectorUpsertNestedInput>;
+  connect?: Maybe<DirectorWhereUniqueInput>;
+}
+
+export interface PayrollUpdateManyDataInput {
+  paid?: Maybe<Float>;
+}
+
+export interface DirectorUpdateDataInput {
+  name?: Maybe<String>;
+>>>>>>> development
 }
 
 export interface PayrollScalarWhereInput {
@@ -2309,6 +3562,7 @@ export interface PayrollScalarWhereInput {
   NOT?: Maybe<PayrollScalarWhereInput[] | PayrollScalarWhereInput>;
 }
 
+<<<<<<< HEAD
 export interface PayrollUpdateManyWithWhereNestedInput {
   where: PayrollScalarWhereInput;
   data: PayrollUpdateManyDataInput;
@@ -2351,6 +3605,59 @@ export interface EmployeeUpsertWithWhereUniqueNestedInput {
 }
 
 export interface EmployeeScalarWhereInput {
+=======
+export interface DirectorUpsertNestedInput {
+  update: DirectorUpdateDataInput;
+  create: DirectorCreateInput;
+}
+
+export interface EmployeeUpdateDataInput {
+  empNum?: Maybe<Int>;
+  name?: Maybe<String>;
+  email?: Maybe<String>;
+  password?: Maybe<String>;
+  days?: Maybe<Int>;
+  status?: Maybe<String>;
+  area?: Maybe<String>;
+  cinemaId?: Maybe<String>;
+}
+
+export interface ActorUpdateManyInput {
+  create?: Maybe<ActorCreateInput[] | ActorCreateInput>;
+  update?: Maybe<
+    | ActorUpdateWithWhereUniqueNestedInput[]
+    | ActorUpdateWithWhereUniqueNestedInput
+  >;
+  upsert?: Maybe<
+    | ActorUpsertWithWhereUniqueNestedInput[]
+    | ActorUpsertWithWhereUniqueNestedInput
+  >;
+  delete?: Maybe<ActorWhereUniqueInput[] | ActorWhereUniqueInput>;
+  connect?: Maybe<ActorWhereUniqueInput[] | ActorWhereUniqueInput>;
+  set?: Maybe<ActorWhereUniqueInput[] | ActorWhereUniqueInput>;
+  disconnect?: Maybe<ActorWhereUniqueInput[] | ActorWhereUniqueInput>;
+  deleteMany?: Maybe<ActorScalarWhereInput[] | ActorScalarWhereInput>;
+  updateMany?: Maybe<
+    ActorUpdateManyWithWhereNestedInput[] | ActorUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface UserSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<UserWhereInput>;
+  AND?: Maybe<UserSubscriptionWhereInput[] | UserSubscriptionWhereInput>;
+}
+
+export interface ActorUpdateWithWhereUniqueNestedInput {
+  where: ActorWhereUniqueInput;
+  data: ActorUpdateDataInput;
+}
+
+export interface DirectorWhereInput {
+>>>>>>> development
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -2365,6 +3672,7 @@ export interface EmployeeScalarWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
+<<<<<<< HEAD
   empNum?: Maybe<Int>;
   empNum_not?: Maybe<Int>;
   empNum_in?: Maybe<Int[] | Int>;
@@ -2373,6 +3681,8 @@ export interface EmployeeScalarWhereInput {
   empNum_lte?: Maybe<Int>;
   empNum_gt?: Maybe<Int>;
   empNum_gte?: Maybe<Int>;
+=======
+>>>>>>> development
   name?: Maybe<String>;
   name_not?: Maybe<String>;
   name_in?: Maybe<String[] | String>;
@@ -2387,6 +3697,7 @@ export interface EmployeeScalarWhereInput {
   name_not_starts_with?: Maybe<String>;
   name_ends_with?: Maybe<String>;
   name_not_ends_with?: Maybe<String>;
+<<<<<<< HEAD
   email?: Maybe<String>;
   email_not?: Maybe<String>;
   email_in?: Maybe<String[] | String>;
@@ -2565,6 +3876,96 @@ export interface ProductUpdateInput {
 export interface ProductUpdateManyMutationInput {
   name?: Maybe<String>;
   price?: Maybe<Float>;
+=======
+  AND?: Maybe<DirectorWhereInput[] | DirectorWhereInput>;
+}
+
+export interface ActorUpdateDataInput {
+  name?: Maybe<String>;
+}
+
+export interface ProductSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<ProductWhereInput>;
+  AND?: Maybe<ProductSubscriptionWhereInput[] | ProductSubscriptionWhereInput>;
+}
+
+export interface ActorUpsertWithWhereUniqueNestedInput {
+  where: ActorWhereUniqueInput;
+  update: ActorUpdateDataInput;
+  create: ActorCreateInput;
+}
+
+export interface ActorSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<ActorWhereInput>;
+  AND?: Maybe<ActorSubscriptionWhereInput[] | ActorSubscriptionWhereInput>;
+}
+
+export interface ActorScalarWhereInput {
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
+  name?: Maybe<String>;
+  name_not?: Maybe<String>;
+  name_in?: Maybe<String[] | String>;
+  name_not_in?: Maybe<String[] | String>;
+  name_lt?: Maybe<String>;
+  name_lte?: Maybe<String>;
+  name_gt?: Maybe<String>;
+  name_gte?: Maybe<String>;
+  name_contains?: Maybe<String>;
+  name_not_contains?: Maybe<String>;
+  name_starts_with?: Maybe<String>;
+  name_not_starts_with?: Maybe<String>;
+  name_ends_with?: Maybe<String>;
+  name_not_ends_with?: Maybe<String>;
+  AND?: Maybe<ActorScalarWhereInput[] | ActorScalarWhereInput>;
+  OR?: Maybe<ActorScalarWhereInput[] | ActorScalarWhereInput>;
+  NOT?: Maybe<ActorScalarWhereInput[] | ActorScalarWhereInput>;
+}
+
+export interface CardUpdateOneInput {
+  create?: Maybe<CardCreateInput>;
+  update?: Maybe<CardUpdateDataInput>;
+  upsert?: Maybe<CardUpsertNestedInput>;
+  delete?: Maybe<Boolean>;
+  disconnect?: Maybe<Boolean>;
+  connect?: Maybe<CardWhereUniqueInput>;
+}
+
+export interface ActorUpdateManyWithWhereNestedInput {
+  where: ActorScalarWhereInput;
+  data: ActorUpdateManyDataInput;
+}
+
+export interface ShowUpdateInput {
+  date?: Maybe<DateTimeInput>;
+  movie?: Maybe<MovieUpdateOneRequiredInput>;
+  room?: Maybe<RoomUpdateOneRequiredInput>;
+  showType?: Maybe<String>;
+}
+
+export interface ActorUpdateManyDataInput {
+  name?: Maybe<String>;
+>>>>>>> development
 }
 
 export interface PurchaseUpdateInput {
@@ -2573,6 +3974,7 @@ export interface PurchaseUpdateInput {
   total?: Maybe<Float>;
 }
 
+<<<<<<< HEAD
 export interface PurchaseUpdateManyMutationInput {
   total?: Maybe<Float>;
 }
@@ -2703,6 +4105,100 @@ export interface DirectorSubscriptionWhereInput {
   AND?: Maybe<
     DirectorSubscriptionWhereInput[] | DirectorSubscriptionWhereInput
   >;
+=======
+export interface MovieUpsertNestedInput {
+  update: MovieUpdateDataInput;
+  create: MovieCreateInput;
+}
+
+export interface PayrollUpdateInput {
+  employee?: Maybe<EmployeeUpdateOneRequiredInput>;
+  paid?: Maybe<Float>;
+}
+
+export interface RoomUpdateOneRequiredInput {
+  create?: Maybe<RoomCreateInput>;
+  update?: Maybe<RoomUpdateDataInput>;
+  upsert?: Maybe<RoomUpsertNestedInput>;
+  connect?: Maybe<RoomWhereUniqueInput>;
+}
+
+export interface DirectorUpdateInput {
+  name?: Maybe<String>;
+}
+
+export interface RoomUpdateDataInput {
+  roomNum?: Maybe<Int>;
+  roomType?: Maybe<RoomType>;
+  seats?: Maybe<SeatUpdateManyInput>;
+}
+
+export type SeatWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export interface SeatUpdateManyInput {
+  create?: Maybe<SeatCreateInput[] | SeatCreateInput>;
+  update?: Maybe<
+    | SeatUpdateWithWhereUniqueNestedInput[]
+    | SeatUpdateWithWhereUniqueNestedInput
+  >;
+  upsert?: Maybe<
+    | SeatUpsertWithWhereUniqueNestedInput[]
+    | SeatUpsertWithWhereUniqueNestedInput
+  >;
+  delete?: Maybe<SeatWhereUniqueInput[] | SeatWhereUniqueInput>;
+  connect?: Maybe<SeatWhereUniqueInput[] | SeatWhereUniqueInput>;
+  set?: Maybe<SeatWhereUniqueInput[] | SeatWhereUniqueInput>;
+  disconnect?: Maybe<SeatWhereUniqueInput[] | SeatWhereUniqueInput>;
+  deleteMany?: Maybe<SeatScalarWhereInput[] | SeatScalarWhereInput>;
+  updateMany?: Maybe<
+    SeatUpdateManyWithWhereNestedInput[] | SeatUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface EmployeeUpsertNestedInput {
+  update: EmployeeUpdateDataInput;
+  create: EmployeeCreateInput;
+}
+
+export interface SeatUpdateWithWhereUniqueNestedInput {
+  where: SeatWhereUniqueInput;
+  data: SeatUpdateDataInput;
+}
+
+export interface TicketWhereInput {
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
+  show?: Maybe<ShowWhereInput>;
+  seat?: Maybe<SeatWhereInput>;
+  price?: Maybe<Float>;
+  price_not?: Maybe<Float>;
+  price_in?: Maybe<Float[] | Float>;
+  price_not_in?: Maybe<Float[] | Float>;
+  price_lt?: Maybe<Float>;
+  price_lte?: Maybe<Float>;
+  price_gt?: Maybe<Float>;
+  price_gte?: Maybe<Float>;
+  AND?: Maybe<TicketWhereInput[] | TicketWhereInput>;
+}
+
+export interface SeatUpdateDataInput {
+  seatCode?: Maybe<String>;
+  available?: Maybe<Boolean>;
+>>>>>>> development
 }
 
 export interface EmployeeSubscriptionWhereInput {
@@ -2716,6 +4212,7 @@ export interface EmployeeSubscriptionWhereInput {
   >;
 }
 
+<<<<<<< HEAD
 export interface MovieSubscriptionWhereInput {
   mutation_in?: Maybe<MutationType[] | MutationType>;
   updatedFields_contains?: Maybe<String>;
@@ -3450,6 +4947,375 @@ export interface RoomNullablePromise
     first?: Int;
     last?: Int;
   }) => T;
+=======
+export interface SeatUpsertWithWhereUniqueNestedInput {
+  where: SeatWhereUniqueInput;
+  update: SeatUpdateDataInput;
+  create: SeatCreateInput;
+}
+
+export type DirectorWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export interface SeatScalarWhereInput {
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
+  seatCode?: Maybe<String>;
+  seatCode_not?: Maybe<String>;
+  seatCode_in?: Maybe<String[] | String>;
+  seatCode_not_in?: Maybe<String[] | String>;
+  seatCode_lt?: Maybe<String>;
+  seatCode_lte?: Maybe<String>;
+  seatCode_gt?: Maybe<String>;
+  seatCode_gte?: Maybe<String>;
+  seatCode_contains?: Maybe<String>;
+  seatCode_not_contains?: Maybe<String>;
+  seatCode_starts_with?: Maybe<String>;
+  seatCode_not_starts_with?: Maybe<String>;
+  seatCode_ends_with?: Maybe<String>;
+  seatCode_not_ends_with?: Maybe<String>;
+  available?: Maybe<Boolean>;
+  available_not?: Maybe<Boolean>;
+  AND?: Maybe<SeatScalarWhereInput[] | SeatScalarWhereInput>;
+  OR?: Maybe<SeatScalarWhereInput[] | SeatScalarWhereInput>;
+  NOT?: Maybe<SeatScalarWhereInput[] | SeatScalarWhereInput>;
+}
+
+export interface ProdNQuanUpdateManyMutationInput {
+  quantity?: Maybe<Int>;
+}
+
+export interface SeatUpdateManyWithWhereNestedInput {
+  where: SeatScalarWhereInput;
+  data: SeatUpdateManyDataInput;
+}
+
+export interface EmployeeUpdateManyWithWhereNestedInput {
+  where: EmployeeScalarWhereInput;
+  data: EmployeeUpdateManyDataInput;
+}
+
+export interface SeatUpdateManyDataInput {
+  seatCode?: Maybe<String>;
+  available?: Maybe<Boolean>;
+}
+
+export interface PayrollUpdateDataInput {
+  employee?: Maybe<EmployeeUpdateOneRequiredInput>;
+  paid?: Maybe<Float>;
+}
+
+export interface RoomUpsertNestedInput {
+  update: RoomUpdateDataInput;
+  create: RoomCreateInput;
+}
+
+export interface UserUpdateManyMutationInput {
+  email?: Maybe<String>;
+  password?: Maybe<String>;
+  name?: Maybe<String>;
+}
+
+export interface TicketUpsertWithWhereUniqueNestedInput {
+  where: TicketWhereUniqueInput;
+  update: TicketUpdateDataInput;
+  create: TicketCreateInput;
+}
+
+export interface SeatUpsertNestedInput {
+  update: SeatUpdateDataInput;
+  create: SeatCreateInput;
+}
+
+export interface SeatUpdateOneRequiredInput {
+  create?: Maybe<SeatCreateInput>;
+  update?: Maybe<SeatUpdateDataInput>;
+  upsert?: Maybe<SeatUpsertNestedInput>;
+  connect?: Maybe<SeatWhereUniqueInput>;
+}
+
+export interface ShowUpsertNestedInput {
+  update: ShowUpdateDataInput;
+  create: ShowCreateInput;
+}
+
+export interface RoomUpdateManyMutationInput {
+  roomNum?: Maybe<Int>;
+  roomType?: Maybe<RoomType>;
+}
+
+export interface SeatSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<SeatWhereInput>;
+  AND?: Maybe<SeatSubscriptionWhereInput[] | SeatSubscriptionWhereInput>;
+}
+
+export type ShowWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
+export interface EmployeeUpdateManyMutationInput {
+  empNum?: Maybe<Int>;
+  name?: Maybe<String>;
+  email?: Maybe<String>;
+  password?: Maybe<String>;
+  days?: Maybe<Int>;
+  status?: Maybe<String>;
+  area?: Maybe<String>;
+  cinemaId?: Maybe<String>;
+}
+
+export interface NodeNode {
+  id: ID_Output;
+}
+
+export interface UserPreviousValues {
+  id: ID_Output;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+  email: String;
+  password?: String;
+  name: String;
+}
+
+export interface UserPreviousValuesPromise
+  extends Promise<UserPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+  email: () => Promise<String>;
+  password: () => Promise<String>;
+  name: () => Promise<String>;
+}
+
+export interface UserPreviousValuesSubscription
+  extends Promise<AsyncIterator<UserPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  email: () => Promise<AsyncIterator<String>>;
+  password: () => Promise<AsyncIterator<String>>;
+  name: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateActor {
+  count: Int;
+}
+
+export interface AggregateActorPromise
+  extends Promise<AggregateActor>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateActorSubscription
+  extends Promise<AsyncIterator<AggregateActor>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface AggregateCard {
+  count: Int;
+}
+
+export interface AggregateCardPromise
+  extends Promise<AggregateCard>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateCardSubscription
+  extends Promise<AsyncIterator<AggregateCard>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Employee {
+  id: ID_Output;
+  empNum: Int;
+  name: String;
+  email: String;
+  password: String;
+  days: Int;
+  status: String;
+  area: String;
+  cinemaId?: String;
+}
+
+export interface EmployeePromise extends Promise<Employee>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  empNum: () => Promise<Int>;
+  name: () => Promise<String>;
+  email: () => Promise<String>;
+  password: () => Promise<String>;
+  days: () => Promise<Int>;
+  status: () => Promise<String>;
+  area: () => Promise<String>;
+  cinemaId: () => Promise<String>;
+}
+
+export interface EmployeeSubscription
+  extends Promise<AsyncIterator<Employee>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  empNum: () => Promise<AsyncIterator<Int>>;
+  name: () => Promise<AsyncIterator<String>>;
+  email: () => Promise<AsyncIterator<String>>;
+  password: () => Promise<AsyncIterator<String>>;
+  days: () => Promise<AsyncIterator<Int>>;
+  status: () => Promise<AsyncIterator<String>>;
+  area: () => Promise<AsyncIterator<String>>;
+  cinemaId: () => Promise<AsyncIterator<String>>;
+}
+
+export interface EmployeeNullablePromise
+  extends Promise<Employee | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  empNum: () => Promise<Int>;
+  name: () => Promise<String>;
+  email: () => Promise<String>;
+  password: () => Promise<String>;
+  days: () => Promise<Int>;
+  status: () => Promise<String>;
+  area: () => Promise<String>;
+  cinemaId: () => Promise<String>;
+}
+
+export interface BatchPayload {
+  count: Long;
+}
+
+export interface BatchPayloadPromise
+  extends Promise<BatchPayload>,
+    Fragmentable {
+  count: () => Promise<Long>;
+}
+
+export interface BatchPayloadSubscription
+  extends Promise<AsyncIterator<BatchPayload>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Long>>;
+}
+
+export interface Payroll {
+  id: ID_Output;
+  paid: Float;
+}
+
+export interface PayrollPromise extends Promise<Payroll>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  employee: <T = EmployeePromise>() => T;
+  paid: () => Promise<Float>;
+}
+
+export interface PayrollSubscription
+  extends Promise<AsyncIterator<Payroll>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  employee: <T = EmployeeSubscription>() => T;
+  paid: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface PayrollNullablePromise
+  extends Promise<Payroll | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  employee: <T = EmployeePromise>() => T;
+  paid: () => Promise<Float>;
+}
+
+export interface UserEdge {
+  node: User;
+  cursor: String;
+}
+
+export interface UserEdgePromise extends Promise<UserEdge>, Fragmentable {
+  node: <T = UserPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface UserEdgeSubscription
+  extends Promise<AsyncIterator<UserEdge>>,
+    Fragmentable {
+  node: <T = UserSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface TicketPreviousValues {
+  id: ID_Output;
+  price: Float;
+}
+
+export interface TicketPreviousValuesPromise
+  extends Promise<TicketPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  price: () => Promise<Float>;
+}
+
+export interface TicketPreviousValuesSubscription
+  extends Promise<AsyncIterator<TicketPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  price: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface ShowPreviousValues {
+  id: ID_Output;
+  date: DateTimeOutput;
+  showType: String;
+}
+
+export interface ShowPreviousValuesPromise
+  extends Promise<ShowPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  date: () => Promise<DateTimeOutput>;
+  showType: () => Promise<String>;
+}
+
+export interface ShowPreviousValuesSubscription
+  extends Promise<AsyncIterator<ShowPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  date: () => Promise<AsyncIterator<DateTimeOutput>>;
+  showType: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateUser {
+  count: Int;
+}
+
+export interface AggregateUserPromise
+  extends Promise<AggregateUser>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateUserSubscription
+  extends Promise<AsyncIterator<AggregateUser>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+>>>>>>> development
 }
 
 export interface Seat {
@@ -3480,6 +5346,7 @@ export interface SeatNullablePromise
   available: () => Promise<Boolean>;
 }
 
+<<<<<<< HEAD
 export interface Payroll {
   id: ID_Output;
   paid: Float;
@@ -3715,16 +5582,350 @@ export interface AggregateEmployee {
 
 export interface AggregateEmployeePromise
   extends Promise<AggregateEmployee>,
+=======
+export interface UserConnection {
+  pageInfo: PageInfo;
+  edges: UserEdge[];
+}
+
+export interface UserConnectionPromise
+  extends Promise<UserConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<UserEdge>>() => T;
+  aggregate: <T = AggregateUserPromise>() => T;
+}
+
+export interface UserConnectionSubscription
+  extends Promise<AsyncIterator<UserConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<UserEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateUserSubscription>() => T;
+}
+
+export interface TicketEdge {
+  node: Ticket;
+  cursor: String;
+}
+
+export interface TicketEdgePromise extends Promise<TicketEdge>, Fragmentable {
+  node: <T = TicketPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface TicketEdgeSubscription
+  extends Promise<AsyncIterator<TicketEdge>>,
+    Fragmentable {
+  node: <T = TicketSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface User {
+  id: ID_Output;
+  createdAt: DateTimeOutput;
+  updatedAt: DateTimeOutput;
+  email: String;
+  password?: String;
+  name: String;
+}
+
+export interface UserPromise extends Promise<User>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+  email: () => Promise<String>;
+  password: () => Promise<String>;
+  name: () => Promise<String>;
+  card: <T = CardPromise>() => T;
+  history: <T = FragmentableArray<Purchase>>(args?: {
+    where?: PurchaseWhereInput;
+    orderBy?: PurchaseOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+}
+
+export interface UserSubscription
+  extends Promise<AsyncIterator<User>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  createdAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  updatedAt: () => Promise<AsyncIterator<DateTimeOutput>>;
+  email: () => Promise<AsyncIterator<String>>;
+  password: () => Promise<AsyncIterator<String>>;
+  name: () => Promise<AsyncIterator<String>>;
+  card: <T = CardSubscription>() => T;
+  history: <T = Promise<AsyncIterator<PurchaseSubscription>>>(args?: {
+    where?: PurchaseWhereInput;
+    orderBy?: PurchaseOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+}
+
+export interface UserNullablePromise
+  extends Promise<User | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  createdAt: () => Promise<DateTimeOutput>;
+  updatedAt: () => Promise<DateTimeOutput>;
+  email: () => Promise<String>;
+  password: () => Promise<String>;
+  name: () => Promise<String>;
+  card: <T = CardPromise>() => T;
+  history: <T = FragmentableArray<Purchase>>(args?: {
+    where?: PurchaseWhereInput;
+    orderBy?: PurchaseOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+}
+
+export interface AggregateShow {
+  count: Int;
+}
+
+export interface AggregateShowPromise
+  extends Promise<AggregateShow>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregateEmployeeSubscription
-  extends Promise<AsyncIterator<AggregateEmployee>>,
+export interface AggregateShowSubscription
+  extends Promise<AsyncIterator<AggregateShow>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
 
+export interface Actor {
+  id: ID_Output;
+  name: String;
+}
+
+export interface ActorPromise extends Promise<Actor>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+}
+
+export interface ActorSubscription
+  extends Promise<AsyncIterator<Actor>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ActorNullablePromise
+  extends Promise<Actor | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+}
+
+export interface ShowConnection {
+  pageInfo: PageInfo;
+  edges: ShowEdge[];
+}
+
+export interface ShowConnectionPromise
+  extends Promise<ShowConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ShowEdge>>() => T;
+  aggregate: <T = AggregateShowPromise>() => T;
+}
+
+export interface ShowConnectionSubscription
+  extends Promise<AsyncIterator<ShowConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ShowEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateShowSubscription>() => T;
+}
+
+export interface ActorSubscriptionPayload {
+  mutation: MutationType;
+  node: Actor;
+  updatedFields: String[];
+  previousValues: ActorPreviousValues;
+}
+
+export interface ActorSubscriptionPayloadPromise
+  extends Promise<ActorSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ActorPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ActorPreviousValuesPromise>() => T;
+}
+
+export interface ActorSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ActorSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ActorSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ActorPreviousValuesSubscription>() => T;
+}
+
+export interface SeatEdge {
+  node: Seat;
+  cursor: String;
+}
+
+export interface SeatEdgePromise extends Promise<SeatEdge>, Fragmentable {
+  node: <T = SeatPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface SeatEdgeSubscription
+  extends Promise<AsyncIterator<SeatEdge>>,
+    Fragmentable {
+  node: <T = SeatSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ActorPreviousValues {
+  id: ID_Output;
+  name: String;
+}
+
+export interface ActorPreviousValuesPromise
+  extends Promise<ActorPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+}
+
+export interface ActorPreviousValuesSubscription
+  extends Promise<AsyncIterator<ActorPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateRoom {
+  count: Int;
+}
+
+export interface AggregateRoomPromise
+  extends Promise<AggregateRoom>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateRoomSubscription
+  extends Promise<AsyncIterator<AggregateRoom>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Card {
+  id: ID_Output;
+  cardID: String;
+  points: Float;
+}
+
+export interface CardPromise extends Promise<Card>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  cardID: () => Promise<String>;
+  points: () => Promise<Float>;
+}
+
+export interface CardSubscription
+  extends Promise<AsyncIterator<Card>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  cardID: () => Promise<AsyncIterator<String>>;
+  points: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface CardNullablePromise
+  extends Promise<Card | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  cardID: () => Promise<String>;
+  points: () => Promise<Float>;
+}
+
+export interface RoomConnection {
+  pageInfo: PageInfo;
+  edges: RoomEdge[];
+}
+
+export interface RoomConnectionPromise
+  extends Promise<RoomConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<RoomEdge>>() => T;
+  aggregate: <T = AggregateRoomPromise>() => T;
+}
+
+export interface RoomConnectionSubscription
+  extends Promise<AsyncIterator<RoomConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<RoomEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateRoomSubscription>() => T;
+}
+
+export interface CardSubscriptionPayload {
+  mutation: MutationType;
+  node: Card;
+  updatedFields: String[];
+  previousValues: CardPreviousValues;
+}
+
+export interface CardSubscriptionPayloadPromise
+  extends Promise<CardSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = CardPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = CardPreviousValuesPromise>() => T;
+}
+
+export interface CardSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<CardSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = CardSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = CardPreviousValuesSubscription>() => T;
+}
+
+export interface AggregatePurchase {
+  count: Int;
+}
+
+export interface AggregatePurchasePromise
+  extends Promise<AggregatePurchase>,
+>>>>>>> development
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+<<<<<<< HEAD
+export interface AggregateEmployeeSubscription
+  extends Promise<AsyncIterator<AggregateEmployee>>,
+=======
+export interface AggregatePurchaseSubscription
+  extends Promise<AsyncIterator<AggregatePurchase>>,
+>>>>>>> development
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+<<<<<<< HEAD
 export interface MovieConnection {
   pageInfo: PageInfo;
   edges: MovieEdge[];
@@ -3852,6 +6053,189 @@ export interface ProdNQuanConnectionSubscription
   pageInfo: <T = PageInfoSubscription>() => T;
   edges: <T = Promise<AsyncIterator<ProdNQuanEdgeSubscription>>>() => T;
   aggregate: <T = AggregateProdNQuanSubscription>() => T;
+=======
+export interface CardPreviousValues {
+  id: ID_Output;
+  cardID: String;
+  points: Float;
+}
+
+export interface CardPreviousValuesPromise
+  extends Promise<CardPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  cardID: () => Promise<String>;
+  points: () => Promise<Float>;
+}
+
+export interface CardPreviousValuesSubscription
+  extends Promise<AsyncIterator<CardPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  cardID: () => Promise<AsyncIterator<String>>;
+  points: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface PurchaseConnection {
+  pageInfo: PageInfo;
+  edges: PurchaseEdge[];
+}
+
+export interface PurchaseConnectionPromise
+  extends Promise<PurchaseConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PurchaseEdge>>() => T;
+  aggregate: <T = AggregatePurchasePromise>() => T;
+}
+
+export interface PurchaseConnectionSubscription
+  extends Promise<AsyncIterator<PurchaseConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PurchaseEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePurchaseSubscription>() => T;
+}
+
+export interface Room {
+  id: ID_Output;
+  roomNum: Int;
+  roomType: RoomType;
+}
+
+export interface RoomPromise extends Promise<Room>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  roomNum: () => Promise<Int>;
+  roomType: () => Promise<RoomType>;
+  seats: <T = FragmentableArray<Seat>>(args?: {
+    where?: SeatWhereInput;
+    orderBy?: SeatOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+}
+
+export interface RoomSubscription
+  extends Promise<AsyncIterator<Room>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  roomNum: () => Promise<AsyncIterator<Int>>;
+  roomType: () => Promise<AsyncIterator<RoomType>>;
+  seats: <T = Promise<AsyncIterator<SeatSubscription>>>(args?: {
+    where?: SeatWhereInput;
+    orderBy?: SeatOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+}
+
+export interface RoomNullablePromise
+  extends Promise<Room | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  roomNum: () => Promise<Int>;
+  roomType: () => Promise<RoomType>;
+  seats: <T = FragmentableArray<Seat>>(args?: {
+    where?: SeatWhereInput;
+    orderBy?: SeatOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+}
+
+export interface ProductEdge {
+  node: Product;
+  cursor: String;
+}
+
+export interface ProductEdgePromise extends Promise<ProductEdge>, Fragmentable {
+  node: <T = ProductPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ProductEdgeSubscription
+  extends Promise<AsyncIterator<ProductEdge>>,
+    Fragmentable {
+  node: <T = ProductSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface CinemaSubscriptionPayload {
+  mutation: MutationType;
+  node: Cinema;
+  updatedFields: String[];
+  previousValues: CinemaPreviousValues;
+}
+
+export interface CinemaSubscriptionPayloadPromise
+  extends Promise<CinemaSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = CinemaPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = CinemaPreviousValuesPromise>() => T;
+}
+
+export interface CinemaSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<CinemaSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = CinemaSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = CinemaPreviousValuesSubscription>() => T;
+}
+
+export interface ActorConnection {
+  pageInfo: PageInfo;
+  edges: ActorEdge[];
+}
+
+export interface ActorConnectionPromise
+  extends Promise<ActorConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ActorEdge>>() => T;
+  aggregate: <T = AggregateActorPromise>() => T;
+}
+
+export interface ActorConnectionSubscription
+  extends Promise<AsyncIterator<ActorConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ActorEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateActorSubscription>() => T;
+}
+
+export interface CinemaPreviousValues {
+  id: ID_Output;
+  name: String;
+  address: String;
+}
+
+export interface CinemaPreviousValuesPromise
+  extends Promise<CinemaPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  address: () => Promise<String>;
+}
+
+export interface CinemaPreviousValuesSubscription
+  extends Promise<AsyncIterator<CinemaPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  address: () => Promise<AsyncIterator<String>>;
+>>>>>>> development
 }
 
 export interface ProdNQuanEdge {
@@ -3873,6 +6257,7 @@ export interface ProdNQuanEdgeSubscription
   cursor: () => Promise<AsyncIterator<String>>;
 }
 
+<<<<<<< HEAD
 export interface AggregateProdNQuan {
   count: Int;
 }
@@ -4151,16 +6536,425 @@ export interface AggregateShow {
 
 export interface AggregateShowPromise
   extends Promise<AggregateShow>,
+=======
+export interface Director {
+  id: ID_Output;
+  name: String;
+}
+
+export interface DirectorPromise extends Promise<Director>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+}
+
+export interface DirectorSubscription
+  extends Promise<AsyncIterator<Director>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+}
+
+export interface DirectorNullablePromise
+  extends Promise<Director | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+}
+
+export interface AggregatePayroll {
+  count: Int;
+}
+
+export interface AggregatePayrollPromise
+  extends Promise<AggregatePayroll>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregateShowSubscription
-  extends Promise<AsyncIterator<AggregateShow>>,
+export interface AggregatePayrollSubscription
+  extends Promise<AsyncIterator<AggregatePayroll>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
 
+export interface DirectorSubscriptionPayload {
+  mutation: MutationType;
+  node: Director;
+  updatedFields: String[];
+  previousValues: DirectorPreviousValues;
+}
+
+export interface DirectorSubscriptionPayloadPromise
+  extends Promise<DirectorSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = DirectorPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = DirectorPreviousValuesPromise>() => T;
+}
+
+export interface DirectorSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<DirectorSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = DirectorSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = DirectorPreviousValuesSubscription>() => T;
+}
+
+export interface PayrollConnection {
+  pageInfo: PageInfo;
+  edges: PayrollEdge[];
+}
+
+export interface PayrollConnectionPromise
+  extends Promise<PayrollConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PayrollEdge>>() => T;
+  aggregate: <T = AggregatePayrollPromise>() => T;
+}
+
+export interface PayrollConnectionSubscription
+  extends Promise<AsyncIterator<PayrollConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PayrollEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePayrollSubscription>() => T;
+}
+
+export interface DirectorPreviousValues {
+  id: ID_Output;
+  name: String;
+}
+
+export interface DirectorPreviousValuesPromise
+  extends Promise<DirectorPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+}
+
+export interface DirectorPreviousValuesSubscription
+  extends Promise<AsyncIterator<DirectorPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+}
+
+export interface MovieEdge {
+  node: Movie;
+  cursor: String;
+}
+
+export interface MovieEdgePromise extends Promise<MovieEdge>, Fragmentable {
+  node: <T = MoviePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface MovieEdgeSubscription
+  extends Promise<AsyncIterator<MovieEdge>>,
+    Fragmentable {
+  node: <T = MovieSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface Movie {
+  id: ID_Output;
+  title: String;
+  year: Int;
+  summary: String;
+  gender: String;
+  class: String;
+}
+
+export interface MoviePromise extends Promise<Movie>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  title: () => Promise<String>;
+  year: () => Promise<Int>;
+  summary: () => Promise<String>;
+  director: <T = DirectorPromise>() => T;
+  actors: <T = FragmentableArray<Actor>>(args?: {
+    where?: ActorWhereInput;
+    orderBy?: ActorOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  gender: () => Promise<String>;
+  class: () => Promise<String>;
+}
+
+export interface MovieSubscription
+  extends Promise<AsyncIterator<Movie>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  title: () => Promise<AsyncIterator<String>>;
+  year: () => Promise<AsyncIterator<Int>>;
+  summary: () => Promise<AsyncIterator<String>>;
+  director: <T = DirectorSubscription>() => T;
+  actors: <T = Promise<AsyncIterator<ActorSubscription>>>(args?: {
+    where?: ActorWhereInput;
+    orderBy?: ActorOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  gender: () => Promise<AsyncIterator<String>>;
+  class: () => Promise<AsyncIterator<String>>;
+}
+
+export interface MovieNullablePromise
+  extends Promise<Movie | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  title: () => Promise<String>;
+  year: () => Promise<Int>;
+  summary: () => Promise<String>;
+  director: <T = DirectorPromise>() => T;
+  actors: <T = FragmentableArray<Actor>>(args?: {
+    where?: ActorWhereInput;
+    orderBy?: ActorOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  gender: () => Promise<String>;
+  class: () => Promise<String>;
+}
+
+export interface PageInfo {
+  hasNextPage: Boolean;
+  hasPreviousPage: Boolean;
+  startCursor?: String;
+  endCursor?: String;
+}
+
+export interface PageInfoPromise extends Promise<PageInfo>, Fragmentable {
+  hasNextPage: () => Promise<Boolean>;
+  hasPreviousPage: () => Promise<Boolean>;
+  startCursor: () => Promise<String>;
+  endCursor: () => Promise<String>;
+}
+
+export interface PageInfoSubscription
+  extends Promise<AsyncIterator<PageInfo>>,
+    Fragmentable {
+  hasNextPage: () => Promise<AsyncIterator<Boolean>>;
+  hasPreviousPage: () => Promise<AsyncIterator<Boolean>>;
+  startCursor: () => Promise<AsyncIterator<String>>;
+  endCursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface EmployeeSubscriptionPayload {
+  mutation: MutationType;
+  node: Employee;
+  updatedFields: String[];
+  previousValues: EmployeePreviousValues;
+}
+
+export interface EmployeeSubscriptionPayloadPromise
+  extends Promise<EmployeeSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = EmployeePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = EmployeePreviousValuesPromise>() => T;
+}
+
+export interface EmployeeSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<EmployeeSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = EmployeeSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = EmployeePreviousValuesSubscription>() => T;
+}
+
+export interface EmployeeEdge {
+  node: Employee;
+  cursor: String;
+}
+
+export interface EmployeeEdgePromise
+  extends Promise<EmployeeEdge>,
+    Fragmentable {
+  node: <T = EmployeePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface EmployeeEdgeSubscription
+  extends Promise<AsyncIterator<EmployeeEdge>>,
+    Fragmentable {
+  node: <T = EmployeeSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface EmployeePreviousValues {
+  id: ID_Output;
+  empNum: Int;
+  name: String;
+  email: String;
+  password: String;
+  days: Int;
+  status: String;
+  area: String;
+  cinemaId?: String;
+}
+
+export interface EmployeePreviousValuesPromise
+  extends Promise<EmployeePreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  empNum: () => Promise<Int>;
+  name: () => Promise<String>;
+  email: () => Promise<String>;
+  password: () => Promise<String>;
+  days: () => Promise<Int>;
+  status: () => Promise<String>;
+  area: () => Promise<String>;
+  cinemaId: () => Promise<String>;
+}
+
+export interface EmployeePreviousValuesSubscription
+  extends Promise<AsyncIterator<EmployeePreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  empNum: () => Promise<AsyncIterator<Int>>;
+  name: () => Promise<AsyncIterator<String>>;
+  email: () => Promise<AsyncIterator<String>>;
+  password: () => Promise<AsyncIterator<String>>;
+  days: () => Promise<AsyncIterator<Int>>;
+  status: () => Promise<AsyncIterator<String>>;
+  area: () => Promise<AsyncIterator<String>>;
+  cinemaId: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateDirector {
+  count: Int;
+}
+
+export interface AggregateDirectorPromise
+  extends Promise<AggregateDirector>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateDirectorSubscription
+  extends Promise<AsyncIterator<AggregateDirector>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Show {
+  id: ID_Output;
+  date: DateTimeOutput;
+  showType: String;
+}
+
+export interface ShowPromise extends Promise<Show>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  date: () => Promise<DateTimeOutput>;
+  movie: <T = MoviePromise>() => T;
+  room: <T = RoomPromise>() => T;
+  showType: () => Promise<String>;
+}
+
+export interface ShowSubscription
+  extends Promise<AsyncIterator<Show>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  date: () => Promise<AsyncIterator<DateTimeOutput>>;
+  movie: <T = MovieSubscription>() => T;
+  room: <T = RoomSubscription>() => T;
+  showType: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ShowNullablePromise
+  extends Promise<Show | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  date: () => Promise<DateTimeOutput>;
+  movie: <T = MoviePromise>() => T;
+  room: <T = RoomPromise>() => T;
+  showType: () => Promise<String>;
+}
+
+export interface DirectorConnection {
+  pageInfo: PageInfo;
+  edges: DirectorEdge[];
+}
+
+export interface DirectorConnectionPromise
+  extends Promise<DirectorConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<DirectorEdge>>() => T;
+  aggregate: <T = AggregateDirectorPromise>() => T;
+}
+
+export interface DirectorConnectionSubscription
+  extends Promise<AsyncIterator<DirectorConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<DirectorEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateDirectorSubscription>() => T;
+}
+
+export interface MovieSubscriptionPayload {
+  mutation: MutationType;
+  node: Movie;
+  updatedFields: String[];
+  previousValues: MoviePreviousValues;
+}
+
+export interface MovieSubscriptionPayloadPromise
+  extends Promise<MovieSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = MoviePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = MoviePreviousValuesPromise>() => T;
+}
+
+export interface MovieSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<MovieSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = MovieSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = MoviePreviousValuesSubscription>() => T;
+}
+
+export interface AggregateCinema {
+  count: Int;
+}
+
+export interface AggregateCinemaPromise
+  extends Promise<AggregateCinema>,
+>>>>>>> development
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+<<<<<<< HEAD
+export interface AggregateShowSubscription
+  extends Promise<AsyncIterator<AggregateShow>>,
+=======
+export interface AggregateCinemaSubscription
+  extends Promise<AsyncIterator<AggregateCinema>>,
+>>>>>>> development
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+<<<<<<< HEAD
 export interface TicketConnection {
   pageInfo: PageInfo;
   edges: TicketEdge[];
@@ -4197,6 +6991,88 @@ export interface TicketEdgeSubscription
     Fragmentable {
   node: <T = TicketSubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
+=======
+export interface MoviePreviousValues {
+  id: ID_Output;
+  title: String;
+  year: Int;
+  summary: String;
+  gender: String;
+  class: String;
+}
+
+export interface MoviePreviousValuesPromise
+  extends Promise<MoviePreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  title: () => Promise<String>;
+  year: () => Promise<Int>;
+  summary: () => Promise<String>;
+  gender: () => Promise<String>;
+  class: () => Promise<String>;
+}
+
+export interface MoviePreviousValuesSubscription
+  extends Promise<AsyncIterator<MoviePreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  title: () => Promise<AsyncIterator<String>>;
+  year: () => Promise<AsyncIterator<Int>>;
+  summary: () => Promise<AsyncIterator<String>>;
+  gender: () => Promise<AsyncIterator<String>>;
+  class: () => Promise<AsyncIterator<String>>;
+}
+
+export interface CinemaConnection {
+  pageInfo: PageInfo;
+  edges: CinemaEdge[];
+}
+
+export interface CinemaConnectionPromise
+  extends Promise<CinemaConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<CinemaEdge>>() => T;
+  aggregate: <T = AggregateCinemaPromise>() => T;
+}
+
+export interface CinemaConnectionSubscription
+  extends Promise<AsyncIterator<CinemaConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<CinemaEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateCinemaSubscription>() => T;
+}
+
+export interface Ticket {
+  id: ID_Output;
+  price: Float;
+}
+
+export interface TicketPromise extends Promise<Ticket>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  show: <T = ShowPromise>() => T;
+  seat: <T = SeatPromise>() => T;
+  price: () => Promise<Float>;
+}
+
+export interface TicketSubscription
+  extends Promise<AsyncIterator<Ticket>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  show: <T = ShowSubscription>() => T;
+  seat: <T = SeatSubscription>() => T;
+  price: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface TicketNullablePromise
+  extends Promise<Ticket | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  show: <T = ShowPromise>() => T;
+  seat: <T = SeatPromise>() => T;
+  price: () => Promise<Float>;
+>>>>>>> development
 }
 
 export interface AggregateTicket {
@@ -4215,6 +7091,7 @@ export interface AggregateTicketSubscription
   count: () => Promise<AsyncIterator<Int>>;
 }
 
+<<<<<<< HEAD
 export interface User {
   id: ID_Output;
   createdAt: DateTimeOutput;
@@ -4835,6 +7712,658 @@ export interface PurchasePreviousValuesSubscription
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
   total: () => Promise<AsyncIterator<Float>>;
+=======
+export interface PayrollSubscriptionPayload {
+  mutation: MutationType;
+  node: Payroll;
+  updatedFields: String[];
+  previousValues: PayrollPreviousValues;
+}
+
+export interface PayrollSubscriptionPayloadPromise
+  extends Promise<PayrollSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PayrollPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PayrollPreviousValuesPromise>() => T;
+}
+
+export interface PayrollSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PayrollSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PayrollSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PayrollPreviousValuesSubscription>() => T;
+}
+
+export interface ShowEdge {
+  node: Show;
+  cursor: String;
+}
+
+export interface ShowEdgePromise extends Promise<ShowEdge>, Fragmentable {
+  node: <T = ShowPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ShowEdgeSubscription
+  extends Promise<AsyncIterator<ShowEdge>>,
+    Fragmentable {
+  node: <T = ShowSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PayrollPreviousValues {
+  id: ID_Output;
+  paid: Float;
+}
+
+export interface PayrollPreviousValuesPromise
+  extends Promise<PayrollPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  paid: () => Promise<Float>;
+}
+
+export interface PayrollPreviousValuesSubscription
+  extends Promise<AsyncIterator<PayrollPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  paid: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface SeatConnection {
+  pageInfo: PageInfo;
+  edges: SeatEdge[];
+}
+
+export interface SeatConnectionPromise
+  extends Promise<SeatConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<SeatEdge>>() => T;
+  aggregate: <T = AggregateSeatPromise>() => T;
+}
+
+export interface SeatConnectionSubscription
+  extends Promise<AsyncIterator<SeatConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<SeatEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateSeatSubscription>() => T;
+}
+
+export interface TicketSubscriptionPayload {
+  mutation: MutationType;
+  node: Ticket;
+  updatedFields: String[];
+  previousValues: TicketPreviousValues;
+}
+
+export interface TicketSubscriptionPayloadPromise
+  extends Promise<TicketSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = TicketPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = TicketPreviousValuesPromise>() => T;
+}
+
+export interface TicketSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<TicketSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = TicketSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = TicketPreviousValuesSubscription>() => T;
+}
+
+export interface UserSubscriptionPayload {
+  mutation: MutationType;
+  node: User;
+  updatedFields: String[];
+  previousValues: UserPreviousValues;
+}
+
+export interface UserSubscriptionPayloadPromise
+  extends Promise<UserSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = UserPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = UserPreviousValuesPromise>() => T;
+}
+
+export interface UserSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<UserSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = UserSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = UserPreviousValuesSubscription>() => T;
+}
+
+export interface ProdNQuanSubscriptionPayload {
+  mutation: MutationType;
+  node: ProdNQuan;
+  updatedFields: String[];
+  previousValues: ProdNQuanPreviousValues;
+}
+
+export interface ProdNQuanSubscriptionPayloadPromise
+  extends Promise<ProdNQuanSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ProdNQuanPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ProdNQuanPreviousValuesPromise>() => T;
+}
+
+export interface ProdNQuanSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ProdNQuanSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ProdNQuanSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ProdNQuanPreviousValuesSubscription>() => T;
+}
+
+export interface AggregateProduct {
+  count: Int;
+}
+
+export interface AggregateProductPromise
+  extends Promise<AggregateProduct>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateProductSubscription
+  extends Promise<AsyncIterator<AggregateProduct>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface ProdNQuanPreviousValues {
+  id: ID_Output;
+  quantity?: Int;
+}
+
+export interface ProdNQuanPreviousValuesPromise
+  extends Promise<ProdNQuanPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  quantity: () => Promise<Int>;
+}
+
+export interface ProdNQuanPreviousValuesSubscription
+  extends Promise<AsyncIterator<ProdNQuanPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  quantity: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface AggregateProdNQuan {
+  count: Int;
+}
+
+export interface AggregateProdNQuanPromise
+  extends Promise<AggregateProdNQuan>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateProdNQuanSubscription
+  extends Promise<AsyncIterator<AggregateProdNQuan>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Product {
+  id: ID_Output;
+  name: String;
+  price: Float;
+}
+
+export interface ProductPromise extends Promise<Product>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  price: () => Promise<Float>;
+}
+
+export interface ProductSubscription
+  extends Promise<AsyncIterator<Product>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  price: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface ProductNullablePromise
+  extends Promise<Product | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  price: () => Promise<Float>;
+}
+
+export interface PayrollEdge {
+  node: Payroll;
+  cursor: String;
+}
+
+export interface PayrollEdgePromise extends Promise<PayrollEdge>, Fragmentable {
+  node: <T = PayrollPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PayrollEdgeSubscription
+  extends Promise<AsyncIterator<PayrollEdge>>,
+    Fragmentable {
+  node: <T = PayrollSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface ProductSubscriptionPayload {
+  mutation: MutationType;
+  node: Product;
+  updatedFields: String[];
+  previousValues: ProductPreviousValues;
+}
+
+export interface ProductSubscriptionPayloadPromise
+  extends Promise<ProductSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = ProductPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = ProductPreviousValuesPromise>() => T;
+}
+
+export interface ProductSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<ProductSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = ProductSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = ProductPreviousValuesSubscription>() => T;
+}
+
+export interface MovieConnection {
+  pageInfo: PageInfo;
+  edges: MovieEdge[];
+}
+
+export interface MovieConnectionPromise
+  extends Promise<MovieConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<MovieEdge>>() => T;
+  aggregate: <T = AggregateMoviePromise>() => T;
+}
+
+export interface MovieConnectionSubscription
+  extends Promise<AsyncIterator<MovieConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<MovieEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateMovieSubscription>() => T;
+}
+
+export interface ProductPreviousValues {
+  id: ID_Output;
+  name: String;
+  price: Float;
+}
+
+export interface ProductPreviousValuesPromise
+  extends Promise<ProductPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  price: () => Promise<Float>;
+}
+
+export interface ProductPreviousValuesSubscription
+  extends Promise<AsyncIterator<ProductPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  price: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface EmployeeConnection {
+  pageInfo: PageInfo;
+  edges: EmployeeEdge[];
+}
+
+export interface EmployeeConnectionPromise
+  extends Promise<EmployeeConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<EmployeeEdge>>() => T;
+  aggregate: <T = AggregateEmployeePromise>() => T;
+}
+
+export interface EmployeeConnectionSubscription
+  extends Promise<AsyncIterator<EmployeeConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<EmployeeEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateEmployeeSubscription>() => T;
+}
+
+export interface ProdNQuan {
+  id: ID_Output;
+  quantity?: Int;
+}
+
+export interface ProdNQuanPromise extends Promise<ProdNQuan>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  product: <T = ProductPromise>() => T;
+  quantity: () => Promise<Int>;
+}
+
+export interface ProdNQuanSubscription
+  extends Promise<AsyncIterator<ProdNQuan>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  product: <T = ProductSubscription>() => T;
+  quantity: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface ProdNQuanNullablePromise
+  extends Promise<ProdNQuan | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  product: <T = ProductPromise>() => T;
+  quantity: () => Promise<Int>;
+}
+
+export interface Cinema {
+  id: ID_Output;
+  name: String;
+  address: String;
+}
+
+export interface CinemaPromise extends Promise<Cinema>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  address: () => Promise<String>;
+  purchases: <T = FragmentableArray<Purchase>>(args?: {
+    where?: PurchaseWhereInput;
+    orderBy?: PurchaseOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  payroll: <T = FragmentableArray<Payroll>>(args?: {
+    where?: PayrollWhereInput;
+    orderBy?: PayrollOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  employees: <T = FragmentableArray<Employee>>(args?: {
+    where?: EmployeeWhereInput;
+    orderBy?: EmployeeOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+}
+
+export interface CinemaSubscription
+  extends Promise<AsyncIterator<Cinema>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  name: () => Promise<AsyncIterator<String>>;
+  address: () => Promise<AsyncIterator<String>>;
+  purchases: <T = Promise<AsyncIterator<PurchaseSubscription>>>(args?: {
+    where?: PurchaseWhereInput;
+    orderBy?: PurchaseOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  payroll: <T = Promise<AsyncIterator<PayrollSubscription>>>(args?: {
+    where?: PayrollWhereInput;
+    orderBy?: PayrollOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  employees: <T = Promise<AsyncIterator<EmployeeSubscription>>>(args?: {
+    where?: EmployeeWhereInput;
+    orderBy?: EmployeeOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+}
+
+export interface CinemaNullablePromise
+  extends Promise<Cinema | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  name: () => Promise<String>;
+  address: () => Promise<String>;
+  purchases: <T = FragmentableArray<Purchase>>(args?: {
+    where?: PurchaseWhereInput;
+    orderBy?: PurchaseOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  payroll: <T = FragmentableArray<Payroll>>(args?: {
+    where?: PayrollWhereInput;
+    orderBy?: PayrollOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  employees: <T = FragmentableArray<Employee>>(args?: {
+    where?: EmployeeWhereInput;
+    orderBy?: EmployeeOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+}
+
+export interface PurchaseSubscriptionPayload {
+  mutation: MutationType;
+  node: Purchase;
+  updatedFields: String[];
+  previousValues: PurchasePreviousValues;
+}
+
+export interface PurchaseSubscriptionPayloadPromise
+  extends Promise<PurchaseSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PurchasePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PurchasePreviousValuesPromise>() => T;
+}
+
+export interface PurchaseSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PurchaseSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PurchaseSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PurchasePreviousValuesSubscription>() => T;
+}
+
+export interface ActorEdge {
+  node: Actor;
+  cursor: String;
+}
+
+export interface ActorEdgePromise extends Promise<ActorEdge>, Fragmentable {
+  node: <T = ActorPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface ActorEdgeSubscription
+  extends Promise<AsyncIterator<ActorEdge>>,
+    Fragmentable {
+  node: <T = ActorSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PurchasePreviousValues {
+  id: ID_Output;
+  total: Float;
+}
+
+export interface PurchasePreviousValuesPromise
+  extends Promise<PurchasePreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  total: () => Promise<Float>;
+}
+
+export interface PurchasePreviousValuesSubscription
+  extends Promise<AsyncIterator<PurchasePreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  total: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface AggregateSeat {
+  count: Int;
+}
+
+export interface AggregateSeatPromise
+  extends Promise<AggregateSeat>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateSeatSubscription
+  extends Promise<AsyncIterator<AggregateSeat>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface Purchase {
+  id: ID_Output;
+  total: Float;
+}
+
+export interface PurchasePromise extends Promise<Purchase>, Fragmentable {
+  id: () => Promise<ID_Output>;
+  products: <T = FragmentableArray<ProdNQuan>>(args?: {
+    where?: ProdNQuanWhereInput;
+    orderBy?: ProdNQuanOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  tickets: <T = FragmentableArray<Ticket>>(args?: {
+    where?: TicketWhereInput;
+    orderBy?: TicketOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  total: () => Promise<Float>;
+}
+
+export interface PurchaseSubscription
+  extends Promise<AsyncIterator<Purchase>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  products: <T = Promise<AsyncIterator<ProdNQuanSubscription>>>(args?: {
+    where?: ProdNQuanWhereInput;
+    orderBy?: ProdNQuanOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  tickets: <T = Promise<AsyncIterator<TicketSubscription>>>(args?: {
+    where?: TicketWhereInput;
+    orderBy?: TicketOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  total: () => Promise<AsyncIterator<Float>>;
+}
+
+export interface PurchaseNullablePromise
+  extends Promise<Purchase | null>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  products: <T = FragmentableArray<ProdNQuan>>(args?: {
+    where?: ProdNQuanWhereInput;
+    orderBy?: ProdNQuanOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  tickets: <T = FragmentableArray<Ticket>>(args?: {
+    where?: TicketWhereInput;
+    orderBy?: TicketOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => T;
+  total: () => Promise<Float>;
+}
+
+export interface PurchaseEdge {
+  node: Purchase;
+  cursor: String;
+}
+
+export interface PurchaseEdgePromise
+  extends Promise<PurchaseEdge>,
+    Fragmentable {
+  node: <T = PurchasePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PurchaseEdgeSubscription
+  extends Promise<AsyncIterator<PurchaseEdge>>,
+    Fragmentable {
+  node: <T = PurchaseSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+>>>>>>> development
 }
 
 export interface RoomSubscriptionPayload {
@@ -4862,6 +8391,30 @@ export interface RoomSubscriptionPayloadSubscription
   previousValues: <T = RoomPreviousValuesSubscription>() => T;
 }
 
+<<<<<<< HEAD
+=======
+export interface ProdNQuanConnection {
+  pageInfo: PageInfo;
+  edges: ProdNQuanEdge[];
+}
+
+export interface ProdNQuanConnectionPromise
+  extends Promise<ProdNQuanConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ProdNQuanEdge>>() => T;
+  aggregate: <T = AggregateProdNQuanPromise>() => T;
+}
+
+export interface ProdNQuanConnectionSubscription
+  extends Promise<AsyncIterator<ProdNQuanConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ProdNQuanEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateProdNQuanSubscription>() => T;
+}
+
+>>>>>>> development
 export interface RoomPreviousValues {
   id: ID_Output;
   roomNum: Int;
@@ -4884,6 +8437,7 @@ export interface RoomPreviousValuesSubscription
   roomType: () => Promise<AsyncIterator<RoomType>>;
 }
 
+<<<<<<< HEAD
 export interface SeatSubscriptionPayload {
   mutation: MutationType;
   node: Seat;
@@ -4929,6 +8483,77 @@ export interface SeatPreviousValuesSubscription
   id: () => Promise<AsyncIterator<ID_Output>>;
   seatCode: () => Promise<AsyncIterator<String>>;
   available: () => Promise<AsyncIterator<Boolean>>;
+=======
+export interface AggregateEmployee {
+  count: Int;
+}
+
+export interface AggregateEmployeePromise
+  extends Promise<AggregateEmployee>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateEmployeeSubscription
+  extends Promise<AsyncIterator<AggregateEmployee>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface CardConnection {
+  pageInfo: PageInfo;
+  edges: CardEdge[];
+}
+
+export interface CardConnectionPromise
+  extends Promise<CardConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<CardEdge>>() => T;
+  aggregate: <T = AggregateCardPromise>() => T;
+}
+
+export interface CardConnectionSubscription
+  extends Promise<AsyncIterator<CardConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<CardEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateCardSubscription>() => T;
+}
+
+export interface CinemaEdge {
+  node: Cinema;
+  cursor: String;
+}
+
+export interface CinemaEdgePromise extends Promise<CinemaEdge>, Fragmentable {
+  node: <T = CinemaPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface CinemaEdgeSubscription
+  extends Promise<AsyncIterator<CinemaEdge>>,
+    Fragmentable {
+  node: <T = CinemaSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface RoomEdge {
+  node: Room;
+  cursor: String;
+}
+
+export interface RoomEdgePromise extends Promise<RoomEdge>, Fragmentable {
+  node: <T = RoomPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface RoomEdgeSubscription
+  extends Promise<AsyncIterator<RoomEdge>>,
+    Fragmentable {
+  node: <T = RoomSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+>>>>>>> development
 }
 
 export interface ShowSubscriptionPayload {
@@ -4956,6 +8581,7 @@ export interface ShowSubscriptionPayloadSubscription
   previousValues: <T = ShowPreviousValuesSubscription>() => T;
 }
 
+<<<<<<< HEAD
 export interface ShowPreviousValues {
   id: ID_Output;
   date: DateTimeOutput;
@@ -5076,6 +8702,147 @@ export interface UserPreviousValuesSubscription
   email: () => Promise<AsyncIterator<String>>;
   password: () => Promise<AsyncIterator<String>>;
   name: () => Promise<AsyncIterator<String>>;
+=======
+export interface CardEdge {
+  node: Card;
+  cursor: String;
+}
+
+export interface CardEdgePromise extends Promise<CardEdge>, Fragmentable {
+  node: <T = CardPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface CardEdgeSubscription
+  extends Promise<AsyncIterator<CardEdge>>,
+    Fragmentable {
+  node: <T = CardSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface SeatPreviousValues {
+  id: ID_Output;
+  seatCode: String;
+  available: Boolean;
+}
+
+export interface SeatPreviousValuesPromise
+  extends Promise<SeatPreviousValues>,
+    Fragmentable {
+  id: () => Promise<ID_Output>;
+  seatCode: () => Promise<String>;
+  available: () => Promise<Boolean>;
+}
+
+export interface SeatPreviousValuesSubscription
+  extends Promise<AsyncIterator<SeatPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
+  seatCode: () => Promise<AsyncIterator<String>>;
+  available: () => Promise<AsyncIterator<Boolean>>;
+}
+
+export interface SeatSubscriptionPayload {
+  mutation: MutationType;
+  node: Seat;
+  updatedFields: String[];
+  previousValues: SeatPreviousValues;
+}
+
+export interface SeatSubscriptionPayloadPromise
+  extends Promise<SeatSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = SeatPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = SeatPreviousValuesPromise>() => T;
+}
+
+export interface SeatSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<SeatSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = SeatSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = SeatPreviousValuesSubscription>() => T;
+}
+
+export interface ProductConnection {
+  pageInfo: PageInfo;
+  edges: ProductEdge[];
+}
+
+export interface ProductConnectionPromise
+  extends Promise<ProductConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<ProductEdge>>() => T;
+  aggregate: <T = AggregateProductPromise>() => T;
+}
+
+export interface ProductConnectionSubscription
+  extends Promise<AsyncIterator<ProductConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<ProductEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateProductSubscription>() => T;
+}
+
+export interface TicketConnection {
+  pageInfo: PageInfo;
+  edges: TicketEdge[];
+}
+
+export interface TicketConnectionPromise
+  extends Promise<TicketConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<TicketEdge>>() => T;
+  aggregate: <T = AggregateTicketPromise>() => T;
+}
+
+export interface TicketConnectionSubscription
+  extends Promise<AsyncIterator<TicketConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<TicketEdgeSubscription>>>() => T;
+  aggregate: <T = AggregateTicketSubscription>() => T;
+}
+
+export interface DirectorEdge {
+  node: Director;
+  cursor: String;
+}
+
+export interface DirectorEdgePromise
+  extends Promise<DirectorEdge>,
+    Fragmentable {
+  node: <T = DirectorPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface DirectorEdgeSubscription
+  extends Promise<AsyncIterator<DirectorEdge>>,
+    Fragmentable {
+  node: <T = DirectorSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregateMovie {
+  count: Int;
+}
+
+export interface AggregateMoviePromise
+  extends Promise<AggregateMovie>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregateMovieSubscription
+  extends Promise<AsyncIterator<AggregateMovie>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+>>>>>>> development
 }
 
 /*
@@ -5099,6 +8866,11 @@ The `Boolean` scalar type represents `true` or `false`.
 */
 export type Boolean = boolean;
 
+<<<<<<< HEAD
+=======
+export type Long = string;
+
+>>>>>>> development
 /*
 The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
 */
@@ -5114,8 +8886,11 @@ DateTime scalar output type, which is always a string
 */
 export type DateTimeOutput = string;
 
+<<<<<<< HEAD
 export type Long = string;
 
+=======
+>>>>>>> development
 /**
  * Model Metadata
  */

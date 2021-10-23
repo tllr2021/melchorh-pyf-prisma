@@ -22,7 +22,7 @@ jobs:
           echo PRISMA_SECRET=${{ secrets.PRISMA_SECRET }} >> .env
           echo APP_SECRET=${{ secrets.APP_SECRET }} >> .env
           echo ENVIRONMENT=${{ secrets.ENVIRONMENT }} >> .env
-          echo URL_BASE=${{ secrets.URL_BASE }} >> .env
+          echo URL_BASE=${{ secrets.URL_BASE }} >>
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2

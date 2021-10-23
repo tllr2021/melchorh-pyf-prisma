@@ -14,6 +14,14 @@ COPY --chown=node . ${WORKDIR}
 
 ENV PORT=3000
 
+ENV APP_SECRET="jwtsecret123"
+
+ENV PRISMA_SECRET="mysecret123"
+
+ENV URL_BASE="http://147.182.187.121:4466"
+
+ENV ENVIRONMENT="production"
+
 EXPOSE ${PORT}
 
 CMD ["yarn", "start"]

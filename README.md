@@ -9,7 +9,7 @@ El proyecto es una implementación de las tecnologías:
 <div  align="center"><img  src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_light_prisma_icon_130444.png" width="70"/><img  src="https://imgur.com/DX1VKtn.png"  width="70" />
 <img src="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" width="70"/></div>
 
-Se pretende hacer un administrador de un cine, que sea capaz de manejar compras dentro del cine, acciones de nivel administrativo, como tener un registro de los empleados dentro del establecimiento así como ser capaz de proveer datos referentes a las finanzas del mismo, teniendo en cuenta ventas y pagos a empleados.
+Se pretende hacer un administrador de un cine, que sea capaz de manejar compras dentro del cine, acciones de nivel administrativo, como tener un registro de los empleados dentro del establecimiento así como ser capaz de proveer datos referentes a las finanzas del mismo, teniendo en cuenta ventas y pagos a empleados .
 
 ## Levantamiento de Sistema
 

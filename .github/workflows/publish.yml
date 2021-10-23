@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 name: publish to Dockerhub
 on:
   push:
@@ -23,6 +24,8 @@ jobs:
         with:
           push: true
 =======
+=======
+>>>>>>> development
 name: publish to DockerHub
 on:
   push:
@@ -73,5 +76,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
+<<<<<<< HEAD
+>>>>>>> development
+=======
 >>>>>>> development
           tags: ${{secrets.DOCKERHUB_USERNAME}}/melchorh_proj:latest

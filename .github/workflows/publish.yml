@@ -5,10 +5,10 @@ on:
       - 'development'
 env:
   PRISMA_MANAGEMENT_API_SECRET: ${{ secrets.PRISMA_MANAGEMENT_API_SECRET}}
-  URL_BASE: ${{ secrets.URL_BASE}}
-  PRISMA_SECRET:  ${{ secrets.PRISMA_SECRET }}
+  URL_BASE: http://147.182.187.121:4466
+  PRISMA_SECRET: mysecret123
   ENVIRONMENT: production
-  APP_SECRET:  ${{ secrets.APP_SECRET }}
+  APP_SECRET:  jwtsecret123
 jobs:
   prisma_deploy:
     name: Run Prisma Deploy
@@ -27,6 +27,13 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - name: Create env file
+        run: |
+          touch .env
+          echo PRISMA_SECRET=${{ secrets.PRISMA_SECRET }} >> .env
+          echo APP_SECRET=${{ secrets.APP_SECRET }} >> .env
+          echo URL_BASE=${{ secrets.URL_BASE }} >> .env
+          echo PRISMA_MANAGEMENT_SECRET=${{ secrets.PRISMA_MANAGEMENT_SECRET }} >> .env
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx

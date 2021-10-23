@@ -23,6 +23,7 @@ jobs:
           push: true
           tags: ${{secrets.DOCKERHUB_USERNAME}}/melchorh_proj:latest
       - name: Create env file
+        run: |
           touch .env
           echo PRISMA_SECRET=${{ secrets.PRISMA_SECRET }}
           echo APP_SECRET=${{ secrets.APP_SECRET }}

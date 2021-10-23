@@ -13,6 +13,21 @@ Se pretende hacer un administrador de un cine, que sea capaz de manejar compras 
 
 ## Levantamiento de Sistema
 
+Desde Docker Hub:
+
+Requerimientos antes de levantamiento: 
+- **Docker** instalado en la computadora destino.
+
+```sh
+docker pull ozymandias9/melchorh_proj:latest
+
+docker run -p 3000:3000 ozymandias9/melchorh_proj:latest
+```
+
+Ahora lo único que queda es acceder desde nuestro navegador en localhost:3000.
+
+Desde la carpeta de este repo:
+
 Requerimientos antes de levantamiento: 
 - **NodeJS v.10.24.1** (necesaria para correr Prisma 1).
 - **Docker** instalado en la computadora destino.
